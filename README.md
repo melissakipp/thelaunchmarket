@@ -4,6 +4,11 @@ A small design and develop agency for Solopreneur businesses and Freelances. Boo
 ## Getting Started: Web Application Developement Environment
 Clone repo:
 ```bash
+git clone git@github.com:melissakipp/thelaunchmarket.git
+```
+Install Dependencies
+```bash
+npm install
 ```
 
 First, run the development server:
