@@ -6,8 +6,9 @@ services:
       - "3000:3000"
     build:
       context: .
-      dockerfile: Dockerfile-dev
+      dockerfile: Dockerfile
     volumes:
       - ./:/home/nextjs/app
     environment:
       - NODE_ENV=development
+    command: npm run dev

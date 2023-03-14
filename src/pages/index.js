@@ -39,8 +39,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.center}>
-          <h1>Docker</h1>
+        <div>
+          <h1>Docker is working successfully!!!</h1>
+          <br/>
+          <h2>Reload is working successfully!!!</h2>
         </div>
 
         <div className={styles.grid}>
