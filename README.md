@@ -20,25 +20,25 @@ npm run dev
 
 ### Docker Container
 ```bash
-	$ rm -rf .next node_modules  
-	$ rm package-lock.json
+rm -rf .next node_modules  
+rm package-lock.json
 ```
 Next run the NPM command:
 ```bash
-	$ npm install
+npm install
 ```
 DO NOT RUN THE DEV SERVER - Run for the first time
 ```bash
-	$ docker compose up --build
+docker compose up --build
 ```
 After this you will use the following commands to manage the development environment
 **To start the container**
 ```bash
-	$ docker compose up
+docker compose up
 ```
 OR using -d flag will run the container in the background (no output)
 ```bash
-	$ docker compose up -d
+docker compose up -d
 ```
 
 ### Go to your browser
