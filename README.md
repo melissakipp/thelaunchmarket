@@ -31,7 +31,8 @@ DO NOT RUN THE DEV SERVER - Run for the first time
 ```bash
 docker compose up --build
 ```
-After this you will use the following commands to manage the development environment
+After this you will use the following commands to manage the development environment:
+<br />
 **To start the container**
 ```bash
 docker compose up
@@ -47,4 +48,4 @@ docker compose up -d
 
 ### Goals
 - [X]  Docker for development and deployment
-- [X]  Create a Docker Deploy/Production container
+- [ ]  Create a Docker Deploy/Production container
