@@ -46,4 +46,5 @@ docker compose up -d
 
 
 ### Goals
-- [ ]  Docker for development and deployment
+- [X]  Docker for development and deployment
+- [X]  Create a Docker Deploy/Production container
