@@ -40,7 +40,7 @@ export default function Home() {
         </div>
 
         <div className={styles.center}>
-          <h1>Learning NextJS</h1>
+          <h1>Docker</h1>
         </div>
 
         <div className={styles.grid}>
