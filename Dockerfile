@@ -4,7 +4,7 @@ ENV NPM_VERSION 9.6.1
 
 EXPOSE 3000
 
-WORKDIR /home/nextjs/app
+WORKDIR /home/nextjs
 
 COPY package*.json ./
 
