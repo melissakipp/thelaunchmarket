@@ -4,7 +4,7 @@ ENV NPM_VERSION 9.6.1
 
 EXPOSE 3000
 
-WORKDIR /home/nextjs
+WORKDIR /home/nextjs/app
 
 COPY package*.json ./
 
@@ -20,4 +20,4 @@ USER node
 
 COPY . .
 
-CMD ["node"]
+ENTRYPOINT [ "node" ]
