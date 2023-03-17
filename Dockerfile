@@ -20,4 +20,4 @@ USER node
 
 COPY . .
 
-ENTRYPOINT [ "node" ]
+CMD [ "node" ]
