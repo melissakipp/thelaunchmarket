@@ -1,6 +1,13 @@
 # The Launch Market
 A small design and develop agency for Solopreneur businesses and Freelances. Bootcamp grads need experience an small start-ups need to get things done.
 
+## Current Versions:
+- NodeJS 18.15.0
+- NPM 9.6.2
+- NextJS 13.2.4
+- TypeScript 5.0.2
+- Docker 20.10.23, build 7155243
+
 ## Getting Started: Web Application Developement Environment
 ### Run application without Docker
 Clone repo:
