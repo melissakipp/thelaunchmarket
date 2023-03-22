@@ -6,7 +6,6 @@ A small design and develop agency for Solopreneur businesses and Freelances. Boo
 - NPM 9.6.2
 - NextJS 13.2.4
 - TypeScript 5.0.2
-- Docker 20.10.23, build 7155243
 
 ## Getting Started: Web Application Developement Environment
 ### Run application without Docker
