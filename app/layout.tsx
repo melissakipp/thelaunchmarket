@@ -1,4 +1,10 @@
-import './globals.css'
+import './globals.css';
+import { Noto_Sans_Lao } from '@next/font/google';
+
+const notoSansLao = Noto_Sans_Lao({
+  subsets: ['latin'],
+  weight: '400',
+})
 
 export default function RootLayout({
   children,
@@ -6,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={notoSansLao.className}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
@@ -14,5 +20,5 @@ export default function RootLayout({
       <head />
       <body>{children}</body>
     </html>
-  )
+  );
 }
