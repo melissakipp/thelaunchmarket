@@ -1,4 +1,4 @@
-version: '2.4'
+version: '3.9'
 
 services:
   nextjs:
@@ -11,4 +11,4 @@ services:
       - ./:/home/nextjs/app
     environment:
       - NODE_ENV=development
-    command: npm run dev
+    command: ["npm", "run", "dev"]
