@@ -1,6 +1,24 @@
 {
   "name": "thelaunchmarket",
-  "version": "0.1.0",
+  "description": "A small design and develop agency for Solopreneur businesses and Freelances",
+  "version": "0.1.1",
+  "homepage": "https://github.com/melissakipp/thelaunchmarket",
+  "license": "MIT",
+  "author": {
+    "name": "Melissa Kipp",
+    "url": "https://melissajkipp.com",
+    "email": "melissakipp.az@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Christer Johansson",
+      "url": "https://christerjohansson.se",
+      "email": "christer.johansson@stenungsund.nu"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/melissakipp/thelaunchmarket/issues"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
