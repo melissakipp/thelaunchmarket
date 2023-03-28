@@ -12,3 +12,28 @@ services:
     environment:
       - NODE_ENV=development
     command: npm run dev
+
+  # nginx:
+  #   image: nginx
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf
+  # selenium:
+  #   image: selenium/standalone-chrome-debug
+  #   ports:
+  #     - 4444:4444
+  #     - 5900:5900
+  # unit-tests:
+  #   build:
+  #     dockerfile: rspec.Dockerfile
+  #     context: .
+  #   environment:
+  #     SELENIUM_HOST: selenium
+  #     SELENIUM_PORT: 4444
+  #   volumes:
+  #     - $PWD:/home/nextjs/app
+  #   entrypoint: rspec
+  #   command:
+  #     - --pattern
+  #     - /home/nextjs/app/spec/unit/*_spec.rb
