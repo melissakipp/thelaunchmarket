@@ -7,7 +7,13 @@ Current Frontend issues:
     - Will be removing rspec from final files
 - Selenium is available on port 4444
   *** Issue: "Whoops! The URL specified routes to this help page."
+      - ON HOLD
 - Terraform
   *** Issue: cannot get Terraform into a Docker container...
 - Work on making the image(s) smaller
 - Typography Resource: https://codepen.io/mikemai2awesome/pen/VwGmMLv
+
+First Phase Steps:
+1. Docker-Dev Env
+2. Jenkins (Run tests, lint code, build static prod code)
+3. Docker
