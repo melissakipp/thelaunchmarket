@@ -1,0 +1,19 @@
+Current Frontend issues:
+- NGINX is displaying 500 error
+  *** I think NGINX is port is for production... because I can see the sign in the dev port 3000
+    - The instructor goes to localhost to see his site...
+- rspec is finding test files and able to run the test but is failing. I believe the issue is that I am not pointing to the right port...
+  *** I am almost positive that there is no real reason to use rspec because in the end I will be using Jest
+    - Will be removing rspec from final files
+- Selenium is available on port 4444
+  *** Issue: "Whoops! The URL specified routes to this help page."
+      - ON HOLD
+- Terraform
+  *** Issue: cannot get Terraform into a Docker container...
+- Work on making the image(s) smaller
+- Typography Resource: https://codepen.io/mikemai2awesome/pen/VwGmMLv
+
+First Phase Steps:
+1. Docker-Dev Env
+2. Jenkins (Run tests, lint code, build static prod code)
+3. Docker
