@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
 import head from 'next/head';
 // Must add 'use client' for the ThemeProvider to work
 import { ThemeProvider } from 'next-themes';
@@ -14,8 +13,8 @@ import Footer from './components/Footer/Footer';
 const getTheme = () => {
   // useEffect(() => {
     // Get the current theme from the browser
-    const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    return theme;
+    const themes = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return themes;
   // }, []);
 }
 
@@ -30,7 +29,7 @@ export default function RootLayout({
       <head />
       <body>
         {/* when added attribute='class' functionality broke */}
-        <ThemeProvider theme={getTheme()}>
+        <ThemeProvider themes={getTheme()}>
           <Header />
           {children}
           <Footer />
