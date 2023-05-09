@@ -1,8 +1,4 @@
-'use client';
-
 import head from 'next/head';
-// Must add 'use client' for the ThemeProvider to work
-import { ThemeProvider } from 'next-themes';
 
 import './styles/globals.css';
 
@@ -19,11 +15,9 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <ThemeProvider>
-          <Header />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );

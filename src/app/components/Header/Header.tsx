@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div>        
-        <DarkMode />
+          <p>The Launch Market</p>
       </div>
 
     </header>
