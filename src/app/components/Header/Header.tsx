@@ -1,7 +1,5 @@
-'use client';
 
 import styles from '../../styles/Header.module.css';
-import DarkMode from './DarkMode';
 
 export default function Header() {
   return (
