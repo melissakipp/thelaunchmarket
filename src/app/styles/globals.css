@@ -31,6 +31,7 @@
   --lgShadow: 15px -8px #A5BF6B;
   --margin: 2rem 0;
   --marginAll: 2rem;
+  --paddingXs: 0.5rem;
   --paddingSm: 1rem;
   --paddingLg: 2rem;
   --radius: 0.5rem;
@@ -81,8 +82,6 @@ body.dark-theme .fa {
 }
 
 html {font-size: 100%}
-
-body {font-size: 16px; outline: 3px soldi red;}
 
 html,
 body {
@@ -161,9 +160,14 @@ button {
 }
 
 .containerToggles {
-  display: flex;
+  border: 2px solid var(--borderColor);
+  border-radius: var(--radius);
+  padding: var(--paddingXs);
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
+
+  
 }
 
 .ctaBox {
