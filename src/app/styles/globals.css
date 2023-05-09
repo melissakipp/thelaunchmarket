@@ -1,0 +1,180 @@
+@import 'normalize.css';
+@import 'typography.css';
+
+:root {
+  color-scheme: light dark;
+
+  --font-family: 'Roboto', sans-serif;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  /* Color Palette */
+  --primaryColor: hsl(41, 99%, 65%);
+  --secondaryColor: hsl(80, 48%, 25%);
+  --white: hsl(0, 0%, 99%);
+  --black: hsl(0, 0%, 2%);
+  --borderColor: hsl(0, 0%, 89%);
+
+  /* Default */
+  --background: var(--white);
+  --foreground: var(--black);
+  --headerFooterBg: hsl(0, 0%, 100%);
+  --primaryBtn: var(--primaryColor);
+  --darkModeBg: hsl(0, 0%, 19%);
+
+  /* Buttons */
+  --btnPadding: 0.5rem 1rem;
+  --btnBorder: 1px solid var(--borderColor);
+  
+  --boxShadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  --lgShadow: 15px -8px #A5BF6B;
+  --margin: 2rem 0;
+  --marginAll: 2rem;
+  --paddingSm: 1rem;
+  --paddingLg: 2rem;
+  --radius: 0.5rem;
+  --circleRadius: 50%;
+
+  --ctaBox: var(--secondaryColor);
+
+}
+
+[data-theme='dark'] {
+
+  --headerFooterBg: hsl(30, 1%, 28%);
+  --background: var(--darkModeBg);
+  --foreground: var(--white);
+  --primaryBtn: var(--primaryColor);
+  --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px, rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;
+}
+
+/* Apply the filter directly on the body tag */
+body.dark-theme img {
+  filter: brightness(.8) contrast(1.2);
+}
+
+/* Or apply it via media query */
+@media (prefers-color-scheme: dark) {
+  img {
+    filter: brightness(.8) contrast(1.2);
+  }
+}
+
+/* SVG icon */
+body.dark-theme svg.icon path {
+  fill: #efefef;
+}
+
+/* Font icon (using Font Awesome as an example) */
+body.dark-theme .fa {
+  color: #efefef;
+}
+
+*,
+*::after,
+*::before {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {font-size: 100%}
+
+body {font-size: 16px; outline: 3px soldi red;}
+
+html,
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.75;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body::after[data-theme='dark'] {
+  background-color: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: var(--btnBorder);
+  border-radius: var(--radius);
+  background-color: transparent;
+  box-shadow: var(--boxShadow);
+  cursor: pointer;
+  font-weight: 700;
+  margin: var(--margin);
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.primaryBtn {
+  background-color: var(--primaryBtn);
+  color: var(--white);
+  padding: var(--btnPadding);
+}
+
+.smallLetterSpacing {
+  letter-spacing: -0.15px;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+
+/* Accessibility */
+.srOnly:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.toggle {
+  /* background-color: var(--black); */
+  /* border-radius: var(--circleRadius); */
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  height: 40px;
+  /* margin: var(--marginAll); */
+  width: 40px;
+}
+
+.toggle:is(:hover, :focus) {
+  /* background-color: var(--primaryColor); */
+  opacity: 0.8;
+}
+
+.containerToggles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ctaBox {
+  background-color: var(--ctaBox);
+  border-radius: var(--radius);
+  box-shadow: var(--lgShadow);
+  color: var(--white);
+  font-weight: 700;
+  margin: var(--margin);
+  max-width: 500px;
+  padding: var(--paddingLg);
+  text-align: center;
+}
+

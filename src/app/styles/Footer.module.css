@@ -1,0 +1,11 @@
+.footer {
+  background-color: var(--headerFooterBg);
+  box-shadow: var(--boxShadow);
+  padding: var(--paddingLg);
+  text-align: center;
+}
+
+.footer h3 {
+  font-size: 2.5vmax;
+  font-weight: 100;
+}
