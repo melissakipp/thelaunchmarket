@@ -147,9 +147,13 @@ button {
   /* background-color: var(--black); */
   /* border-radius: var(--circleRadius); */
   cursor: pointer;
-  display: grid;
-  place-items: center;
+  /* display: grid;
+  place-items: center; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   height: 40px;
+
   /* margin: var(--marginAll); */
   width: 40px;
 }
@@ -160,12 +164,13 @@ button {
 }
 
 .containerToggles {
-  border: 2px solid var(--borderColor);
-  border-radius: var(--radius);
-  padding: var(--paddingXs);
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+
+  
+}
 
   
 }
