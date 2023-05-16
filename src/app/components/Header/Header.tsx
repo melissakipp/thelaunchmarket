@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import styles from '../../../styles/Header.module.css';
 import DarkMode from './DarkMode';
 
@@ -7,12 +8,15 @@ const MENU_ITEMS = [
     href: '/',
   },
 ];
+=======
+import styles from '../../styles/Header.module.css';
+>>>>>>> main
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <div>        
-        <DarkMode />
+          <p>The Launch Market</p>
       </div>
 
     </header>
