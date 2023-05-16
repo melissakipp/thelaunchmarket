@@ -1,5 +1,6 @@
 'use client';
 import head from 'next/head';
+import { ThemeProvider } from 'next-themes';
 
 import './styles/globals.css';
 
@@ -11,23 +12,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
-  // const { systemTheme, theme, setTheme } = useTheme();
-  // const [mounted, setMounted] = useState(false);
-
-  // useEffect(() => {
-  //   setMounted(true);
-  // }, []);
-
-  // if (!mounted) return null;
-  // const currentTheme = theme === 'system' ? systemTheme : theme;
-
   return (
     
     <html lang="en">
       <head />
       <body>
-        {/* when added attribute='class' functionality broke */}
         <ThemeProvider>
           <Header />
           {children}
