@@ -1,8 +1,5 @@
 'use client';
-// import React, { useEffect, useState } from 'react';
 import head from 'next/head';
-// Must add 'use client' for the ThemeProvider to work
-import { ThemeProvider } from 'next-themes';
 
 import './styles/globals.css';
 

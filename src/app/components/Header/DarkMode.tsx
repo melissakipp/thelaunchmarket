@@ -1,10 +1,11 @@
-'use client'
 
+'use client'
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
 export default function DarkMode() {
   
+
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -15,6 +16,19 @@ export default function DarkMode() {
   if (!mounted) return null;
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  // useEffect only runs on the client, so now we can safely show the UI
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
+
   return (
     <div className='containerToggles'>
       {/* <label className='srOnly' htmlFor='theme-mode'>Choose a theme:</label>
@@ -22,6 +36,7 @@ export default function DarkMode() {
         <option value='system'>System</option>
         <option value='light'>Light</option>
         <option value='dark'>Dark</option>
+
       </select> */}
 
        <div className="flex justify-center">
@@ -60,7 +75,6 @@ export default function DarkMode() {
       </button>&nbsp;&nbsp; */}
       {/* <button onClick={() => setTheme('system')}>System</button> */}
 
-      {/* <button className='toggle' role='switch' aria-label='light/dark mode'></button> */}
       <audio src='audio/light-on.mp3' className='themeAudio__lightOn' data-attribute='adapted from user 160033 file on freesound.org https://freesound.org/people/160033/sounds/366184/ under CC BY-NC 3.0'></audio>
       <audio src='audio/light-off.mp3' className='themeAudio__lightOff' data-attribute='adapted from user 160033 file on freesound.org https://freesound.org/people/160033/sounds/366184/ under CC BY-NC 3.0'></audio>
     </div>
