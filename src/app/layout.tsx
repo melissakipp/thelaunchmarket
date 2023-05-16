@@ -2,7 +2,7 @@
 import head from 'next/head';
 import { ThemeProvider } from 'next-themes';
 
-import './styles/globals.css';
+import '../styles/globals.css';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
