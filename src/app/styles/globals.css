@@ -160,9 +160,6 @@ button {
   margin: 1rem; 
 }
 
-  
-}
-
 .ctaBox {
   background-color: var(--ctaBox);
   border-radius: var(--radius);
