@@ -1,6 +1,6 @@
 import DarkModeToggle from './DarkMode';
 
-import styles from '../../../styles/Header.module.css';
+import styles from '../../../styles/Header.module.scss';
 
 export default function Header() {
   return (
