@@ -17,7 +17,7 @@ export default function Home() {
           <h2>Coming Soon</h2>
         </section>
 
-        <section className='ctaBox'>
+        <section className={styles.ctaBox}>
           <p>Are you ready to launch your product or service to the market?</p>
         </section>
 
