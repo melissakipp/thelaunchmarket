@@ -1,4 +1,5 @@
 'use client';
+
 import head from 'next/head';
 import { ThemeProvider } from 'next-themes';
 
