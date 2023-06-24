@@ -26,9 +26,10 @@
   /* Buttons */
   --btnPadding: 0.5rem 1rem;
   --btnBorder: 1px solid var(--borderColor);
-  
-  --boxShadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  --lgShadow: 15px -8px #A5BF6B;
+
+  --boxShadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  --lgShadow: 15px -8px #a5bf6b;
   --margin: 2rem 0;
   --marginAll: 2rem;
   --paddingXs: 0.5rem;
@@ -39,32 +40,33 @@
 
   --ctaBox: var(--secondaryColor);
 
+  --logo: var(--white);
 }
 
 [data-theme='dark'] {
-
   --headerFooterBg: hsl(30, 1%, 28%);
   --background: var(--darkModeBg);
   --foreground: var(--white);
   --primaryBtn: var(--primaryColor);
-  --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px, rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;
+  --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px,
+    rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;
 }
 
 /* Apply the filter directly on the body tag */
 body.dark-theme img {
-  filter: brightness(.8) contrast(1.2);
+  filter: brightness(0.8) contrast(1.2);
 }
 
 /* Or apply it via media query */
 @media (prefers-color-scheme: dark) {
   img {
-    filter: brightness(.8) contrast(1.2);
+    filter: brightness(0.8) contrast(1.2);
   }
 }
 
 /* SVG icon */
 body.dark-theme svg.icon path {
-  fill: #efefef;
+  fill: var(--white);
 }
 
 /* Font icon (using Font Awesome as an example) */
@@ -81,7 +83,9 @@ body.dark-theme .fa {
   box-sizing: border-box;
 }
 
-html {font-size: 100%}
+html {
+  font-size: 100%;
+}
 
 html,
 body {
@@ -131,7 +135,6 @@ button {
   }
 }
 
-
 /* Accessibility */
 .srOnly:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
@@ -157,8 +160,5 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem; 
+  margin: 1rem;
 }
-
-
-

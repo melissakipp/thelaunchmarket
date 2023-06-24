@@ -36,7 +36,13 @@
   margin: 0 1rem;
 }
 
-
+.menu__item a {
+  text-decoration: none;
+  color: var(--textColor);
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
 
 /* Tablet & Desktop */
 /* @media screen and (width >=62.5em) {} */
