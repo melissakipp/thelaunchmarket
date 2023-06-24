@@ -48,9 +48,9 @@ export default function Header() {
             <li className={styles.menu__item}>
               <Link href='/'>Home</Link>
             </li>
-            <li className={styles.menu__item}>
+            {/* <li className={styles.menu__item}>
               <Link href='/about'>About</Link>
-            </li>
+            </li> */}
             <li className={styles.menu__item}>
               <Link href='/contact'>Contact</Link>
             </li>
