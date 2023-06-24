@@ -1,3 +1,8 @@
 export default function Hero() {
-  return (<h1>Hello</h1>);
+  return (
+    <>
+      <p>Welcome to the</p>
+      <h1>Launch Market</h1>;
+    </>
+  );
 }
