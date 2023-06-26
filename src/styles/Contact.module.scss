@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 6rem;
   min-height: 100vh;
 }
 
@@ -35,5 +34,12 @@
       width: 2rem;
       height: 2rem;
     }
+  }
+}
+
+/* Desktop */
+@media screen and (width >= 62.5em) {
+  .main {
+    padding: 6rem;
   }
 }
