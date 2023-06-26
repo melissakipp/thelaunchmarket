@@ -1,6 +1,6 @@
 import styles from '../../styles/Contact.module.scss';
 import type { Metadata } from 'next';
-import { Scheduler } from '../components/Scheduler/Scheduler';
+import Form from '../components/Form/Form';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -11,8 +11,9 @@ export default function Contact() {
   return (
     <main className={styles.main}>
       <article>
+        <section></section>
         <section>
-          <Scheduler />
+          <Form />
         </section>
       </article>
     </main>
