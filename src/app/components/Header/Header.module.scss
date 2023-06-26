@@ -1,26 +1,8 @@
-// .header {
-//   background-color: var(--headerFooterBg);
-//   box-shadow: var(--boxShadow);
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   /* padding: var(--paddingSm); */
-//   position: sticky;
-//   top: 0;
-//   z-index: 30;
-//   cursor: pointer;
-// }
-
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 0 0 1rem;
-  // background: linear-gradient(180deg, #F2D562 0%, #EEB52F 63.54%, #EC7817 100%);
-  /* padding: var(--paddingSm); */
-  // position: sticky;
-  // top: 0;
-  // z-index: 30;
   cursor: pointer;
 }
 .menu {
@@ -28,7 +10,7 @@
 }
 
 .menuBtn {
-  background-color: var(--primaryColor-300);
+  background-color: var(--gray);
   padding: 0.75rem 1rem;
 }
 
@@ -45,10 +27,8 @@
 }
 
 .modal {
-  color: var(--black);
   position: fixed;
   z-index: 500;
-  // background-color: white;
   width: 60vw;
   height: 40vh;
   border: 1px solid #ccc;
