@@ -1,6 +1,6 @@
 import { BiSolidEnvelope, BiCopyright, BiHomeHeart } from 'react-icons/bi';
 
-import styles from '../../../styles/Footer.module.scss';
+import styles from './Footer.module.scss';
 
 export default function Footer() {
   return (
