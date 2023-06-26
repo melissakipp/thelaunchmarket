@@ -1,5 +1,5 @@
-@import 'normalize.css';
-@import 'typography.css';
+@import 'normalize.scss';
+@import 'typography.scss';
 
 :root {
   color-scheme: light dark;
@@ -10,25 +10,43 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   /* Color Palette */
-  --primaryColor: hsl(41, 99%, 65%);
-  --secondaryColor: hsl(80, 48%, 25%);
-  --white: hsl(0, 0%, 99%);
+  --primaryColor-300: hsl(48, 85%, 67%);
+  --primaryColor-600: hsl(42, 85%, 56%);
+  --primaryColor-900: hsl(27, 85%, 51%);
+
+  --secondaryColor: hsl(193, 43%, 54%);
+
+  --white: hsl(45, 40%, 98%);
   --black: hsl(0, 0%, 2%);
-  --borderColor: hsl(0, 0%, 89%);
+  --gray: hsl(0, 0%, 86%);
+  --grayShadow: rgba(133, 133, 133, 0.1);
+
+  --error-t-800: #d74332;
+
+  --borderColor: hsl(0, 0%, 86%);
+  --borderStyle: 1px solid var(--borderColor);
 
   /* Default */
-  --background: var(--white);
+  --background: white;
   --foreground: var(--black);
+
+  --backgroundGradient: linear-gradient(
+    180deg,
+    #f2d562 0%,
+    #eeb52f 63.54%,
+    #ec7817 100%
+  );
+
   --headerFooterBg: hsl(0, 0%, 100%);
-  --primaryBtn: var(--primaryColor);
-  --darkModeBg: hsl(0, 0%, 19%);
+  --primaryBtn: var(--primaryColor-300);
+  --darkModeBg: hsl(0, 0%, 18%);
 
   /* Buttons */
   --btnPadding: 0.5rem 1rem;
   --btnBorder: 1px solid var(--borderColor);
-  
-  --boxShadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  --lgShadow: 15px -8px #A5BF6B;
+
+  --boxShadow: var(--grayShadow), rgba(133, 133, 133, 0.15) 0px 1px 3px 1px;
+  --lgShadow: 15px -8px #bae9f4;
   --margin: 2rem 0;
   --marginAll: 2rem;
   --paddingXs: 0.5rem;
@@ -39,32 +57,33 @@
 
   --ctaBox: var(--secondaryColor);
 
+  --logo: var(--white);
 }
 
 [data-theme='dark'] {
-
   --headerFooterBg: hsl(30, 1%, 28%);
   --background: var(--darkModeBg);
   --foreground: var(--white);
-  --primaryBtn: var(--primaryColor);
-  --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px, rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;
+  --primaryBtn: var(--primaryColor-300);
+  // --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px,
+  //   rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;
 }
 
 /* Apply the filter directly on the body tag */
 body.dark-theme img {
-  filter: brightness(.8) contrast(1.2);
+  filter: brightness(0.8) contrast(1.2);
 }
 
 /* Or apply it via media query */
 @media (prefers-color-scheme: dark) {
   img {
-    filter: brightness(.8) contrast(1.2);
+    filter: brightness(0.8) contrast(1.2);
   }
 }
 
 /* SVG icon */
 body.dark-theme svg.icon path {
-  fill: #efefef;
+  fill: var(--white);
 }
 
 /* Font icon (using Font Awesome as an example) */
@@ -81,7 +100,9 @@ body.dark-theme .fa {
   box-sizing: border-box;
 }
 
-html {font-size: 100%}
+html {
+  font-size: 100%;
+}
 
 html,
 body {
@@ -113,12 +134,7 @@ button {
   margin: var(--margin);
   padding: 0;
   transition: all 0.2s ease-in-out;
-}
-
-.primaryBtn {
-  background-color: var(--primaryBtn);
-  color: var(--white);
-  padding: var(--btnPadding);
+  // padding: 0.75rem;
 }
 
 .smallLetterSpacing {
@@ -130,7 +146,6 @@ button {
     color-scheme: dark;
   }
 }
-
 
 /* Accessibility */
 .srOnly:not(:focus):not(:active) {
@@ -157,18 +172,5 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem; 
+  margin: 1rem;
 }
-
-.ctaBox {
-  background-color: var(--ctaBox);
-  border-radius: var(--radius);
-  box-shadow: var(--lgShadow);
-  color: var(--white);
-  font-weight: 700;
-  margin: var(--margin);
-  max-width: 500px;
-  padding: var(--paddingLg);
-  text-align: center;
-}
-

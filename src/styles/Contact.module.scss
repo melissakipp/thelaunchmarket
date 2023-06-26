@@ -1,0 +1,39 @@
+/* Mobile first */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 2rem 2rem 2rem;
+  gap: 2rem;
+}
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  list-style-type: none;
+  li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

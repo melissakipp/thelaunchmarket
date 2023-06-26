@@ -1,10 +1,21 @@
-import styles from './Footer.module.css';
+import { BiSolidEnvelope, BiCopyright, BiHomeHeart } from 'react-icons/bi';
+
+import styles from '../../../styles/Footer.module.scss';
+
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <h3>The Launch Market &copy; 2023</h3>
-      <p>&#128386; <a href="mailto:info@thelaunchmarket.com ">Contact Us</a></p>
-      <small>Created with &#10084; <a href="https://melissajkipp.com">Melissa Kipp</a></small>
+      <h3>
+        Launch Market <BiCopyright /> 2023
+      </h3>
+      <p>
+        <BiSolidEnvelope />{' '}
+        <a href='mailto:info@thelaunchmarket.com '>Contact Us</a>
+      </p>
+      <small>
+        Created with <BiHomeHeart />{' '}
+        <a href='https://melissajkipp.com'>Melissa Kipp</a>
+      </small>
     </footer>
   );
 }

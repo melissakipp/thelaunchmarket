@@ -1,0 +1,91 @@
+.header {
+  border: var(--borderStyle);
+  border-radius: 4px;
+  padding: 2rem;
+  margin: 0 0 2rem 0;
+  max-width: 60vw;
+  h3 {
+    margin: 0 0 1rem 0;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 60vw;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  border: var(--borderStyle);
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.input {
+  border: var(--borderStyle);
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.legend {
+  font-size: 1.25rem;
+  font-weight: 700;
+  background-color: var(--grayShadow);
+  width: 100%;
+  text-align: center;
+}
+
+.label {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  span {
+    color: var(--error-t-800);
+  }
+}
+
+.textArea p {
+  margin: 0 0 0 0;
+}
+
+.textArea .counter {
+  font-size: 1rem;
+}
+
+.submitBtn {
+  background-color: var(--grayShadow);
+  padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  span {
+    width: 24px;
+  }
+}
+
+/* Style the radio button when it is checked */
+.label:hover .radioBtn:checked {
+  background-color: var(--primaryColor-300);
+  color: #fff;
+}
+
+.radioContainer {
+  padding: 2rem 0 2rem 0;
+  .label {
+    margin: 2rem 1rem 2rem 1rem;
+  }
+
+  .radioBtn {
+    margin: 0 1rem 0 0;
+  }
+}
+
+.radioBtn:checked {
+  background: var(--primaryColor-300);
+  color: #fff;
+}
