@@ -18,7 +18,7 @@ export default function Form() {
   return (
     <>
       <form
-        action='https://formsubmit.co/el/juxode'
+        action='https://formsubmit.co/info@thelaunchmarket.com'
         method='POST'
         className={styles.form}
       >
@@ -77,7 +77,7 @@ export default function Form() {
               <input
                 className={styles.radioBtn}
                 type='radio'
-                name='project'
+                name='web'
                 value='web'
               />
               Web Development
@@ -87,7 +87,7 @@ export default function Form() {
               <input
                 className={styles.radioBtn}
                 type='radio'
-                name='project'
+                name='design'
                 value='design'
               />
               <span></span>
@@ -130,21 +130,25 @@ export default function Form() {
             name='_next'
             value='https://thelaunchmarket.com/thanks.html'
           />
-          <input type='hidden' name='_subject' value='New submission!' />
-          <input type='hidden' name='_captcha' value='true' />
+          <input
+            type='hidden'
+            name='_subject'
+            value='New submission from LM site!'
+          />
           <input
             type='hidden'
             name='_autoresponse'
             value='From: Melissa Kipp - Thank You for contacting me. I will review your message and get back to you within 48 hours. Below you will see a copy of your message.'
           />
-          <input type='hidden' name='_template' value='box' />
-          <input type='text' name='_honey' style={{ display: 'none' }} />
+          <input
+            type='hidden'
+            name='_url'
+            value='https://thelaunchmarket.com/contact.html'
+          ></input>
         </div>
         <Button
           type='submit'
           value='Send Message'
-          // className='g-recaptcha'
-          // data-sitekey='6LcaPgAdAAAAAL8_xAl1feANnhFbzIC6q8l6CPF_'
           data-callback='onSubmit'
           data-action='submit'
           className={styles.submitBtn}
