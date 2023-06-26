@@ -1,9 +1,8 @@
 .header {
   border: var(--borderStyle);
   border-radius: 4px;
-  padding: 2rem;
+  padding: 1rem;
   margin: 0 0 2rem 0;
-  max-width: 60vw;
   h3 {
     margin: 0 0 1rem 0;
   }
@@ -13,7 +12,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 60vw;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
@@ -88,4 +86,15 @@
 .radioBtn:checked {
   background: var(--primaryColor-300);
   color: #fff;
+}
+
+/* Desktop */
+@media screen and (width >= 62.5em) {
+  .header {
+    padding: 2rem;
+    max-width: 60vw;
+  }
+  .container {
+    max-width: 60vw;
+  }
 }

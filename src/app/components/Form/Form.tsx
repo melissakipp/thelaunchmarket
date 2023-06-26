@@ -18,7 +18,7 @@ export default function Form() {
   return (
     <>
       <form
-        action='https://formsubmit.co/info@thelaunchmarket.com'
+        action='https://formsubmit.co/el/juxode'
         method='POST'
         className={styles.form}
       >
@@ -41,7 +41,6 @@ export default function Form() {
 
             <label className={styles.label} htmlFor='fullName'>
               <span>*</span>Full Name:
-              {/* <span className='successControl' aria-live='polite'>&check;</span> */}
             </label>
             <input
               className={styles.input}
@@ -57,7 +56,6 @@ export default function Form() {
             </div>
             <label className={styles.label} htmlFor='email'>
               <span>*</span>Email:
-              {/* <span className='success' aria-live='polite'>&check;</span> */}
             </label>
             <input
               className={styles.input}
@@ -95,13 +93,6 @@ export default function Form() {
               <span></span>
               Design
             </label>
-            <br />
-
-            {/* <div className='error'> 
-                  <span className='contact-htmlForm__field--error contact-htmlForm__msg--success'
-                    ><small>Example error or success placeholder</small></span
-                  >
-                </div> */}
           </fieldset>
 
           <fieldset className={styles.textArea}>
@@ -133,19 +124,7 @@ export default function Form() {
             </p>
           </fieldset>
 
-          {/*<fieldset className='checks'>
-                <legend>Security Check</legend>
-                <input type='checkbox' name='newsletter' id='newsletter' />
-                <span ></span>
-                <label htmlFor='newsletter'>I am a human.</label>
-                </fieldset>*/}
-          {/* above input was 'chekced' */}
-
           <div aria-live='assertive'></div>
-          {/* Hidden Fields */}
-          {/* <!-- this is htmlFor production code in the _next input value='https://melissajkipp.com/thanks.html' 
-          http://localhost:8080/_pages/thanks.html/
-          --> */}
           <input
             type='hidden'
             name='_next'
@@ -165,29 +144,13 @@ export default function Form() {
           type='submit'
           value='Send Message'
           // className='g-recaptcha'
-          data-sitekey='6LcaPgAdAAAAAL8_xAl1feANnhFbzIC6q8l6CPF_'
+          // data-sitekey='6LcaPgAdAAAAAL8_xAl1feANnhFbzIC6q8l6CPF_'
           data-callback='onSubmit'
           data-action='submit'
           className={styles.submitBtn}
         >
           Submit
           <BiRocket />
-          {/* <span>
-            <svg
-              aria-hidden='true'
-              focusable='false'
-              data-prefix='fas'
-              data-icon='paper-plane'
-              role='img'
-              xmlns='http://www.w3.org/2000/svg'
-              viewBox='0 0 512 512'
-            >
-              <path
-                fill='currentColor'
-                d='M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z'
-              ></path>
-            </svg>
-          </span> */}
         </Button>
       </form>
     </>
