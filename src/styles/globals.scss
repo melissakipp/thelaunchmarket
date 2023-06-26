@@ -21,6 +21,8 @@
   --gray: hsl(0, 0%, 86%);
   --grayShadow: rgba(133, 133, 133, 0.1);
 
+  --error-t-800: #d74332;
+
   --borderColor: hsl(0, 0%, 86%);
   --borderStyle: 1px solid var(--borderColor);
 
@@ -63,8 +65,8 @@
   --background: var(--darkModeBg);
   --foreground: var(--white);
   --primaryBtn: var(--primaryColor-300);
-  --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px,
-    rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;
+  // --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px,
+  //   rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;
 }
 
 /* Apply the filter directly on the body tag */

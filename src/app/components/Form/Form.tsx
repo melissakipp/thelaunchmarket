@@ -1,7 +1,19 @@
+'use client';
+
+import { useState } from 'react';
+
 import Button from '../UI/Button';
 import styles from './Form.module.scss';
 
 export default function Form() {
+  const [text, setText] = useState('');
+  const [counter, setCounter] = useState(0);
+
+  const handleChange = (event: any) => {
+    setText(event.target.value);
+    setCounter(text.length);
+  };
+
   return (
     <>
       <form
@@ -24,9 +36,9 @@ export default function Form() {
 
         <div className={styles.container}>
           <fieldset>
-            <legend>Contact Information</legend>
+            <legend className={styles.legend}>Contact Information</legend>
 
-            <label htmlFor='fullName'>
+            <label className={styles.label} htmlFor='fullName'>
               <span>*</span>Full Name:
               {/* <span className='successControl' aria-live='polite'>&check;</span> */}
             </label>
@@ -42,9 +54,8 @@ export default function Form() {
                 <small>Example: John Doe</small>
               </span>
             </div>
-            <div>Your name must be 3 or more characters.</div>
-            <label htmlFor='email'>
-              Email: <small>&lpar;required&rpar;</small>
+            <label className={styles.label} htmlFor='email'>
+              <span>*</span>Email:
               {/* <span className='success' aria-live='polite'>&check;</span> */}
             </label>
             <input
@@ -59,24 +70,23 @@ export default function Form() {
                 <small>Example: johndoe@email.com</small>
               </span>
             </div>
-            <div>Please enter a correct email.</div>
           </fieldset>
-          <fieldset>
-            <legend>Type of Project&colon;</legend>
-            <label htmlFor='webDev'>
+
+          <fieldset className={styles.radioContainer}>
+            <legend className={styles.legend}>Type of Project:</legend>
+            <label className={styles.label} htmlFor='web'>
               <input
-                className={styles.input}
+                className={styles.radioBtn}
                 type='radio'
                 name='project'
                 value='web'
               />
-              <span></span>
               Web Development
             </label>
 
-            <label htmlFor='design'>
+            <label className={styles.label} htmlFor='design'>
               <input
-                className={styles.input}
+                className={styles.radioBtn}
                 type='radio'
                 name='project'
                 value='design'
@@ -93,26 +103,32 @@ export default function Form() {
                 </div> */}
           </fieldset>
 
-          <fieldset>
-            <legend>Details about your request</legend>
-            <label htmlFor='message'>
-              Your Message &sol; Question&colon;
-              <small>&nbsp;&lpar;required&rpar;</small>
+          <fieldset className={styles.textArea}>
+            <legend className={styles.legend}>
+              Details about your request
+            </legend>
+            <label className={styles.label} htmlFor='message'>
+              <span>*</span>Your Message & Question(s):
               <textarea
                 className={styles.input}
                 name='message'
-                // minlength={'30'}
                 aria-required={'true'}
+                rows={10}
+                cols={50}
+                required
+                onChange={handleChange}
               ></textarea>
             </label>
             <p>
-              <small>Note&colon;&nbsp;Minimum 30 character</small>
+              <small>Minimum 30 character</small>
             </p>
-            <p>
-              <strong>Count:</strong>&nbsp;
-              <output htmlFor='message' aria-live='polite'>
-                0
-              </output>
+            <p className={styles.counter}>
+              <strong>
+                Characters:{' '}
+                <output htmlFor='message' aria-live='polite'>
+                  {counter}/300
+                </output>
+              </strong>
             </p>
           </fieldset>
 
@@ -153,7 +169,7 @@ export default function Form() {
           className={styles.submitBtn}
         >
           Submit
-          <span>
+          {/* <span>
             <svg
               aria-hidden='true'
               focusable='false'
@@ -168,7 +184,7 @@ export default function Form() {
                 d='M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z'
               ></path>
             </svg>
-          </span>
+          </span> */}
         </Button>
       </form>
     </>
