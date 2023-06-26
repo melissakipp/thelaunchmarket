@@ -1,0 +1,113 @@
+// .header {
+//   background-color: var(--headerFooterBg);
+//   box-shadow: var(--boxShadow);
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   /* padding: var(--paddingSm); */
+//   position: sticky;
+//   top: 0;
+//   z-index: 30;
+//   cursor: pointer;
+// }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0 1rem;
+  // background: linear-gradient(180deg, #F2D562 0%, #EEB52F 63.54%, #EC7817 100%);
+  /* padding: var(--paddingSm); */
+  // position: sticky;
+  // top: 0;
+  // z-index: 30;
+  cursor: pointer;
+}
+.menu {
+  display: none;
+}
+
+.menuBtn {
+  background-color: var(--primaryColor-300);
+  padding: 0.75rem 1rem;
+}
+
+.menu__item {
+  margin: 0 1rem;
+}
+
+.menu__item a {
+  text-decoration: none;
+  color: var(--textColor);
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal {
+  color: var(--black);
+  position: fixed;
+  z-index: 500;
+  // background-color: white;
+  width: 60vw;
+  height: 40vh;
+  border: 1px solid #ccc;
+  box-shadow: var(--boxShadow);
+  padding: 16px;
+  left: 15%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding: 1rem;
+    &__item {
+      margin: auto auto 2rem auto;
+    }
+  }
+}
+
+.logoLarger {
+  display: none;
+}
+
+// TODO: not working...?
+.modal::backdrop {
+  background: linear-gradient(180deg, #f2d562 0%, #eeb52f 63.54%, #ec7817 100%);
+  opacity: 0.5;
+}
+
+/* Desktop */
+@media screen and (width >= 62.5em) {
+  .menu__item a:hover {
+    color: var(--primaryColor);
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding: 1rem;
+  }
+
+  .menuModal {
+    display: none;
+  }
+
+  .logoLarger {
+    display: block;
+  }
+
+  .logoSmall {
+    display: none;
+  }
+}
