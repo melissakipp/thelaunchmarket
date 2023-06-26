@@ -27,7 +27,7 @@ export default function Contact() {
             <ListWithIcon
               name='Email'
               icon={<BiSolidEnvelope />}
-              href='info@thelaunchmarket.com'
+              href='mailto:info@thelaunchmarket.com'
             />
             <ListWithIcon
               name='LinkedIn'

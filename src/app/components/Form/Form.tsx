@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { BiRocket } from 'react-icons/bi';
 
 import Button from '../UI/Button';
 import styles from './Form.module.scss';
@@ -169,6 +170,7 @@ export default function Form() {
           className={styles.submitBtn}
         >
           Submit
+          <BiRocket />
           {/* <span>
             <svg
               aria-hidden='true'
