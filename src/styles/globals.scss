@@ -18,6 +18,8 @@
 
   --white: hsl(45, 40%, 98%);
   --black: hsl(0, 0%, 2%);
+  --gray: hsl(0, 0%, 86%);
+  --grayShadow: rgba(133, 133, 133, 0.1);
 
   --borderColor: hsl(0, 0%, 86%);
   --borderStyle: 1px solid var(--borderColor);
@@ -41,8 +43,7 @@
   --btnPadding: 0.5rem 1rem;
   --btnBorder: 1px solid var(--borderColor);
 
-  --boxShadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  --boxShadow: var(--grayShadow), rgba(133, 133, 133, 0.15) 0px 1px 3px 1px;
   --lgShadow: 15px -8px #bae9f4;
   --margin: 2rem 0;
   --marginAll: 2rem;
@@ -131,12 +132,7 @@ button {
   margin: var(--margin);
   padding: 0;
   transition: all 0.2s ease-in-out;
-}
-
-.primaryBtn {
-  background-color: var(--primaryBtn);
-  color: var(--white);
-  padding: var(--btnPadding);
+  // padding: 0.75rem;
 }
 
 .smallLetterSpacing {
