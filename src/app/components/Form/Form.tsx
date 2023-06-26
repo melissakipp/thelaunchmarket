@@ -18,7 +18,7 @@ export default function Form() {
   return (
     <>
       <form
-        action='https://formsubmit.co/'
+        action='https://formsubmit.co/info@thelaunchmarket.com'
         method='POST'
         className={styles.form}
       >
@@ -36,7 +36,7 @@ export default function Form() {
         </header>
 
         <div className={styles.container}>
-          <fieldset>
+          <fieldset className={styles.fieldset}>
             <legend className={styles.legend}>Contact Information</legend>
 
             <label className={styles.label} htmlFor='fullName'>
@@ -73,7 +73,7 @@ export default function Form() {
             </div>
           </fieldset>
 
-          <fieldset className={styles.radioContainer}>
+          <fieldset className={`${styles.fieldset} ${styles.radioContainer}`}>
             <legend className={styles.legend}>Type of Project:</legend>
             <label className={styles.label} htmlFor='web'>
               <input
@@ -156,9 +156,10 @@ export default function Form() {
           <input
             type='hidden'
             name='_autoresponse'
-            value='From: Melissa Kipp - Thank You htmlFor contacting me. I will review your message and get back to you within 48 hours. Below you will see a copy of your message.'
+            value='From: Melissa Kipp - Thank You for contacting me. I will review your message and get back to you within 48 hours. Below you will see a copy of your message.'
           />
           <input type='hidden' name='_template' value='box' />
+          <input type='text' name='_honey' style={{ display: 'none' }} />
         </div>
         <Button
           type='submit'
