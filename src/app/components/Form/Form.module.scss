@@ -1,10 +1,11 @@
 .header {
-  border: var(--borderStyle);
-  border-radius: 4px;
   padding: 1rem;
   margin: 0 0 2rem 0;
   h3 {
-    margin: 0 0 1rem 0;
+    margin: 3rem 0 3rem 0;
+    text-align: center;
+    border-bottom: 2px solid var(--primaryColor-300);
+    padding-bottom: 1rem;
   }
 }
 
@@ -15,8 +16,6 @@
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
-  border: var(--borderStyle);
-  border-radius: 4px;
   margin-bottom: 20px;
 }
 
@@ -39,10 +38,6 @@
 
 .label {
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  span {
-    color: var(--error-t-800);
-  }
 }
 
 .textArea p {
@@ -53,16 +48,25 @@
   font-size: 1rem;
 }
 
-.submitBtn {
-  background-color: var(--grayShadow);
-  padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+.btnContainer {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  gap: 0.5rem;
-  span {
-    width: 24px;
+  gap: 1rem;
+  margin: 0 2rem 1rem 0;
+
+  .submitBtn {
+    background-color: var(--grayShadow);
+    padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    span {
+      width: 24px;
+    }
   }
 }
 
@@ -92,9 +96,13 @@
 @media screen and (width >= 62.5em) {
   .header {
     padding: 2rem;
-    max-width: 60vw;
+    max-width: 40vw;
   }
   .container {
-    max-width: 60vw;
+    max-width: 30vw;
+  }
+  .btnContainer {
+    max-width: 33vw;
+    margin: 0 0 1rem 0;
   }
 }
