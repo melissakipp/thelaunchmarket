@@ -40,12 +40,14 @@
   font-weight: 700;
 }
 
-.textArea p {
-  margin: 0 0 0 0;
-}
-
-.textArea .counter {
-  font-size: 1rem;
+.textArea {
+  margin: 3rem 0 0 0;
+  p {
+    margin: 0 0 0 0;
+  }
+  .counter {
+    font-size: 1rem;
+  }
 }
 
 .btnContainer {
