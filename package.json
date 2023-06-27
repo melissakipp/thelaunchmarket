@@ -22,6 +22,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/nodemailer": "^6.4.8",
     "sass": "^1.63.4"
   }
 }
