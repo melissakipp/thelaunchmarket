@@ -8,8 +8,9 @@ h5 {
 }
 
 h1 {
-  /* font-size: 6vw; */
+  // font-size: 6vw;
   font-size: 4.209rem;
+
   margin-top: 0;
 }
 
@@ -43,12 +44,14 @@ p {
 @media screen and (max-width: 400px) {
   h1 {
     /* 1.5 * 16 = 24px */
-    font-size: 1.5rem;
+    // font-size: 1.5rem;
+    font-size: 3.209rem;
   }
 
   h2 {
     /* 1.125 * 16 = 18px */
-    font-size: 1.125rem;
+    // font-size: 1.125rem;
+    font-size: 2.157rem;
   }
 
   p {
