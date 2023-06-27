@@ -18,7 +18,7 @@ export default function Form() {
   return (
     <>
       <form
-        action='https://formsubmit.co/info@thelaunchmarket.com'
+        action='https://formsubmit.co/melissa@thelaunchmarket.com'
         method='POST'
         className={styles.form}
       >
