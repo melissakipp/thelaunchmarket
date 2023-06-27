@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { name, email, web, design, message } = req.body;
+  const { name, email, message } = req.body;
 
   const user = process.env.USER;
   const pass = process.env.PASS;
@@ -21,14 +21,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const response = await transporter.sendMail({
       from: user,
-      to: 'melissa.dtcc@gmail.com',
+      to: 'melissakipp.az@gmail.com',
       replyTo: email,
       subject: `New message from ${name}`,
       html: `
       <p>Name: ${name}</p>
       <p>Email: ${email}</p>
-      <p>Website: ${web}</p>
-      <p>Design: ${design}</p>
       <p>Message: ${message}</p>
       `,
     });
