@@ -14,6 +14,23 @@
   align-items: center;
   padding: 2rem 2rem 2rem 2rem;
   gap: 2rem;
+  .title {
+    margin: 3rem 0 3rem 0;
+  }
+  .greeting {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    padding: 2rem 1rem 2rem 1rem;
+  }
+}
+
+.formContainer {
+  border: var(--borderStyle);
+  border-radius: 11px;
+  span {
+    color: var(--error-t-800);
+  }
 }
 
 .list {
@@ -21,8 +38,9 @@
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   list-style-type: none;
+  margin: 0 0 2rem 0;
   li a {
     display: flex;
     flex-direction: column;

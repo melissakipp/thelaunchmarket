@@ -9,19 +9,45 @@ import styles from './Form.module.scss';
 export default function Form() {
   const [text, setText] = useState('');
   const [counter, setCounter] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (event: any) => {
     setText(event.target.value);
     setCounter(text.length);
   };
 
+  async function handleSubmit(event: any) {
+    event.preventDefault();
+    setLoading(true);
+
+    const data = {
+      name: String(event.target.name.value),
+      email: String(event.target.email.value),
+      message: String(event.target.message.value),
+    };
+
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      event.target.reset();
+      setText('');
+      setCounter(0);
+      setLoading(false);
+    } else {
+      setLoading(false);
+      throw new Error(response.statusText);
+    }
+  }
+
   return (
     <>
-      <form
-        action='https://formsubmit.co/melissa@thelaunchmarket.com'
-        method='POST'
-        className={styles.form}
-      >
+      <form onSubmit={handleSubmit} className={styles.form}>
         <header className={styles.header}>
           <h3>Contact Form</h3>
           <p>
@@ -31,7 +57,9 @@ export default function Form() {
             link. We look forward to hearing from you!
           </p>
           <p>
-            <small>All fields with an asterisk (*) are required fields</small>
+            <small>
+              All fields with an asterisk (<span>*</span>) are required fields
+            </small>
           </p>
         </header>
 
@@ -39,60 +67,36 @@ export default function Form() {
           <fieldset className={styles.fieldset}>
             <legend className={styles.legend}>Contact Information</legend>
 
-            <label className={styles.label} htmlFor='fullName'>
-              <span>*</span>Full Name:
+            <label className={styles.label} htmlFor='name'>
+              Full Name: <span>*</span>
             </label>
             <input
               className={styles.input}
+              id='name'
               type='text'
-              name='fullName'
+              data-type='text'
+              name='name'
               required
               aria-required='true'
             />
             <div>
-              <span>
-                <small>Example: John Doe</small>
-              </span>
+              <small>Example: John Doe</small>
             </div>
             <label className={styles.label} htmlFor='email'>
-              <span>*</span>Email:
+              Email: <span>*</span>
             </label>
             <input
               className={styles.input}
-              type='text'
+              id='email'
+              type='email'
+              data-type='email'
               name='email'
               required
               aria-required='true'
             />
             <div>
-              <span>
-                <small>Example: johndoe@email.com</small>
-              </span>
+              <small>Example: johndoe@email.com</small>
             </div>
-          </fieldset>
-
-          <fieldset className={`${styles.fieldset} ${styles.radioContainer}`}>
-            <legend className={styles.legend}>Type of Project:</legend>
-            <label className={styles.label} htmlFor='web'>
-              <input
-                className={styles.radioBtn}
-                type='radio'
-                name='web'
-                value='web'
-              />
-              Web Development
-            </label>
-
-            <label className={styles.label} htmlFor='design'>
-              <input
-                className={styles.radioBtn}
-                type='radio'
-                name='design'
-                value='design'
-              />
-              <span></span>
-              Design
-            </label>
           </fieldset>
 
           <fieldset className={styles.textArea}>
@@ -100,9 +104,10 @@ export default function Form() {
               Details about your request
             </legend>
             <label className={styles.label} htmlFor='message'>
-              <span>*</span>Your Message & Question(s):
+              Your Message & Question(s): <span>*</span>
               <textarea
                 className={styles.input}
+                id='message'
                 name='message'
                 aria-required={'true'}
                 rows={10}
@@ -123,39 +128,20 @@ export default function Form() {
               </strong>
             </p>
           </fieldset>
-
-          <div aria-live='assertive'></div>
-          <input
-            type='hidden'
-            name='_next'
-            value='https://thelaunchmarket.com/thanks.html'
-          />
-          <input
-            type='hidden'
-            name='_subject'
-            value='New submission from LM site!'
-          />
-          <input
-            type='hidden'
-            name='_autoresponse'
-            value='From: Melissa Kipp - Thank You for contacting me. I will review your message and get back to you within 48 hours. Below you will see a copy of your message.'
-          />
-          <input
-            type='hidden'
-            name='_url'
-            value='https://thelaunchmarket.com/contact.html'
-          ></input>
         </div>
-        <Button
-          type='submit'
-          value='Send Message'
-          data-callback='onSubmit'
-          data-action='submit'
-          className={styles.submitBtn}
-        >
-          Submit
-          <BiRocket />
-        </Button>
+        <div className={styles.btnContainer}>
+          <Button
+            type='submit'
+            disabled={loading}
+            value='Send Message'
+            data-callback='onSubmit'
+            data-action='submit'
+            className={styles.submitBtn}
+          >
+            Submit
+            <BiRocket />
+          </Button>
+        </div>
       </form>
     </>
   );
