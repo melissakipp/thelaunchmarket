@@ -1,7 +1,7 @@
-FROM node:18.15.0-bullseye
+FROM node:21.7.3-bullseye
 ENV NODE_ENV development
 
-ENV NPM_VERSION 9.6.2
+ENV NPM_VERSION 10.8.0
 
 EXPOSE 3000
 
