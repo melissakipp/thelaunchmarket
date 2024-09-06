@@ -2,6 +2,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: `Method ${req.method} not allowed` });
+  }
+  
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
@@ -12,8 +16,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const pass = process.env.PASS;
 
   if (!user || !pass) {
-    console.error('Missing email credentials');
-    return res.status(500).json({ message: 'Internal server error' });
+    return res.status(500).json({ 
+      message: 'Internal server error: Please change your username and/or password' 
+    });
   }
   
   try {
@@ -39,10 +44,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       <p>Message: ${message}</p>
       `,
     });
-    console.log('Email sent:', mailResponse);
     return res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
-    console.error('Error sending email:', error);
     return res.status(500).json({ message: 'Internal server error' });
   }
 };
