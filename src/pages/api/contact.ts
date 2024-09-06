@@ -15,19 +15,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     console.error('Missing email credentials');
     return res.status(500).json({ message: 'Internal server error' });
   }
-
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // upgrade later with STARTTLS
-    auth: {
-      user: user,
-      pass: pass,
-    },
-  });
-
+  
   try {
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true, // upgrade later with STARTTLS
+      auth: {
+        user: user,
+        pass: pass,
+      },
+    });
+  
     const mailResponse = await transporter.sendMail({
       from: user,
       to: 'melissakipp.az@gmail.com',
