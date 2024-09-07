@@ -7,6 +7,10 @@
     border-bottom: 2px solid var(--primaryColor-300);
     padding-bottom: 1rem;
   }
+  p {
+    font-size: 1rem;
+    text-align: center;
+  }
 }
 
 .container {
@@ -95,16 +99,16 @@
 }
 
 /* Desktop */
-@media screen and (width >= 62.5em) {
-  .header {
-    padding: 2rem;
-    max-width: 40vw;
-  }
-  .container {
-    max-width: 30vw;
-  }
-  .btnContainer {
-    max-width: 33vw;
-    margin: 0 0 1rem 0;
-  }
-}
+// @media screen and (width >= 62.5em) {
+//   .header {
+//     padding: 2rem;
+//     max-width: 40vw;
+//   }
+//   .container {
+//     max-width: 30vw;
+//   }
+//   .btnContainer {
+//     max-width: 33vw;
+//     margin: 0 0 1rem 0;
+//   }
+// }

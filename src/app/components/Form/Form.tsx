@@ -42,6 +42,7 @@ export default function Form() {
         setText('');
         setCounter(0);
         setLoading(false);
+        window.location.href = '/thank-you';
       } else {
         setLoading(false);
         throw new Error(response.statusText);
@@ -61,10 +62,7 @@ export default function Form() {
       <header className={styles.header}>
         <h3>Contact Form</h3>
         <p>
-          Thank you for exploring the Launch Market! We are excited to hear
-          from you and learn about your project. Don't hesitate to drop us a
-          message or schedule a 15 minute chat with us through the scheduling
-          link. We look forward to hearing from you!
+          Thank you for exploring the Launch Market! We are excited to hear from you and learn about your project. Don't hesitate to drop us a message or schedule a 15 minute chat with us through the scheduling link. We look forward to hearing from you!
         </p>
         <p>
           <small>
@@ -110,9 +108,9 @@ export default function Form() {
         </fieldset>
 
         <fieldset className={styles.textArea}>
-          <legend className={styles.legend}>
+          {/* <legend className={styles.legend}>
             Details about your request
-          </legend>
+          </legend> */}
           <label className={styles.label} htmlFor='message'>
             Your Message & Question(s): <span>*</span>
             <textarea

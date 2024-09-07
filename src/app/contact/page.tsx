@@ -19,7 +19,7 @@ export default function Contact() {
       <article className={styles.container}>
         <div className={styles.title}>
           <h1>Contact Us</h1>
-          <p className={styles.greeting}>Say "Hi!"</p>
+          {/* <p className={styles.greeting}>Hello</p> */}
         </div>
         <section>
           <ul className={styles.list}>

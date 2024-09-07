@@ -28,6 +28,8 @@
 .formContainer {
   border: var(--borderStyle);
   border-radius: 11px;
+  
+  outline: 2px solid var(--primaryColor-300);
   span {
     color: var(--error-t-800);
   }
@@ -58,6 +60,17 @@
 /* Desktop */
 @media screen and (width >= 62.5em) {
   .main {
-    padding: 6rem;
+    padding: 3rem;
+  }
+  .container {
+    width: 60vw;
   }
 }
+
+/* Large desktop */
+@media screen and (width >= 75em) {
+  .container {
+    width: 50vw;
+  }
+}
+
