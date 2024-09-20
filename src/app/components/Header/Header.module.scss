@@ -5,15 +5,28 @@
   padding: 0 0 0 1rem;
   cursor: pointer;
 }
+
 .menu {
   display: none;
 }
 
 .menuBtn {
-  background-color: var(--gray);
+  background-color: transparent;
   padding: 0.75rem 1rem;
+  letter-spacing: 0.75px;
 }
 
+.logoLarger {
+  display: none;
+}
+
+// TODO: not working...?
+.modal::backdrop {
+  background: linear-gradient(180deg, #f2d562 0%, #eeb52f 63.54%, #ec7817 100%);
+  opacity: 0.5;
+}
+
+/* Model */
 .menu__item {
   margin: 0 1rem;
 }
@@ -55,18 +68,12 @@
   }
 }
 
-.logoLarger {
-  display: none;
-}
-
-// TODO: not working...?
-.modal::backdrop {
-  background: linear-gradient(180deg, #f2d562 0%, #eeb52f 63.54%, #ec7817 100%);
-  opacity: 0.5;
-}
-
 /* Desktop */
 @media screen and (width >= 62.5em) {
+  .menuBtn {
+    display: none;
+  }
+  
   .menu__item a:hover {
     color: var(--primaryColor);
   }
@@ -77,10 +84,6 @@
     align-items: center;
     list-style-type: none;
     padding: 1rem;
-  }
-
-  .menuModal {
-    display: none;
   }
 
   .logoLarger {
