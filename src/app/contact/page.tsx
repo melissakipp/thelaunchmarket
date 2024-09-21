@@ -1,5 +1,6 @@
-import styles from '../../styles/Contact.module.scss';
 import type { Metadata } from 'next';
+
+import styles from '../../styles/Contact.module.scss';
 import Form from '../components/Form/Form';
 import ListWithIcon from '../components/List/ListWithIcon';
 import {
@@ -9,7 +10,7 @@ import {
 } from 'react-icons/bi';
 
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: 'Contact | The Launch Market',
   description: 'Welcome to The Launch Market',
 };
 

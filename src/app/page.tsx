@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Hero from './components/Hero/Hero';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'Home | The Launch Market',
   description: 'Welcome to The Launch Market',
 };
 
