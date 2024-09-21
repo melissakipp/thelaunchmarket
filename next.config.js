@@ -5,6 +5,10 @@ const nextConfig = {
     config.resolve.alias['@'] = path.resolve(__dirname, 'src');
     return config;
   },
+  images: {
+    loader: 'default', // Use the default loader without optimization
+    formats: ['image/webp',],
+  },
 };
 
 const path = require('path');
