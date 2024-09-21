@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import styles from '../Header/Header.module.scss';
+import styles from './Dialog.module.scss';
 
 export default function Dialog({ open }: { open: boolean }) {
   return (
@@ -10,6 +10,9 @@ export default function Dialog({ open }: { open: boolean }) {
           <li className={styles.menu__item}>
             <Link href='/'>Home</Link>
           </li>
+          <li className={styles.menu__item}>
+              <Link href='/Services'>Services</Link>
+            </li>
           <li className={styles.menu__item}>
             <Link href='/contact'>Contact</Link>
           </li>

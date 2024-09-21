@@ -16,7 +16,7 @@ export default function DarkMode() {
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
   return (
-    <div className='containerToggles'>
+    <aside className='containerToggles'>
        <div className="flex justify-center">
             {currentTheme === 'dark' ? (
               <button
@@ -36,6 +36,6 @@ export default function DarkMode() {
           </div>
       <audio src='audio/light-on.mp3' className='themeAudio__lightOn' data-attribute='adapted from user 160033 file on freesound.org https://freesound.org/people/160033/sounds/366184/ under CC BY-NC 3.0'></audio>
       <audio src='audio/light-off.mp3' className='themeAudio__lightOff' data-attribute='adapted from user 160033 file on freesound.org https://freesound.org/people/160033/sounds/366184/ under CC BY-NC 3.0'></audio>
-    </div>
+    </aside>
   );
 }

@@ -10,23 +10,6 @@
   display: none;
 }
 
-.menuBtn {
-  background-color: transparent;
-  padding: 0.75rem 1rem;
-  letter-spacing: 0.75px;
-}
-
-.logoLarger {
-  display: none;
-}
-
-// TODO: not working...?
-.modal::backdrop {
-  background: linear-gradient(180deg, #f2d562 0%, #eeb52f 63.54%, #ec7817 100%);
-  opacity: 0.5;
-}
-
-/* Model */
 .menu__item {
   margin: 0 1rem;
 }
@@ -39,33 +22,26 @@
   transition: all 0.3s ease-in-out;
 }
 
-.modal {
-  position: fixed;
-  z-index: 500;
-  width: 60vw;
-  height: 40vh;
-  border: 1px solid #ccc;
-  box-shadow: var(--boxShadow);
-  padding: 16px;
-  left: 15%;
-  top: 30%;
-  box-sizing: border-box;
-  transition: all 0.3s ease-out;
-  border-radius: 11px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    list-style-type: none;
-    padding: 1rem;
-    &__item {
-      margin: auto auto 2rem auto;
-    }
-  }
+.menuBtn {
+  background-color: transparent;
+  padding: 0.75rem 1rem;
+  letter-spacing: 0.75px;
+}
+
+.logoLarger {
+  display: none;
+}
+
+.lgSvg {
+  margin: 1rem;
+  width: 100%;
+  height: auto
+}
+
+// TODO: not working...?
+.modal::backdrop {
+  background: linear-gradient(180deg, #f2d562 0%, #eeb52f 63.54%, #ec7817 100%);
+  opacity: 0.5;
 }
 
 /* Desktop */
