@@ -13,13 +13,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    
     <html lang="en">
       <head />
       <body>
         <ThemeProvider>
           <Header />
-          {children}
+            {children}
           <Footer />
         </ThemeProvider>
       </body>
