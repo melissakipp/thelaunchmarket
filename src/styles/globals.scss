@@ -19,7 +19,7 @@
   --white: hsl(45, 40%, 98%);
   --black: hsl(0, 0%, 2%);
   --gray: hsl(0, 0%, 86%);
-  --grayShadow: rgba(133, 133, 133, 0.1);
+  --grayShadow: rgba(0, 0, 0, 0.12);
 
   --error-t-800: #d74332;
 
@@ -45,7 +45,7 @@
   --btnPadding: 0.5rem 1rem;
   --btnBorder: 1px solid var(--borderColor);
 
-  --boxShadow: var(--grayShadow), rgba(133, 133, 133, 0.15) 0px 1px 3px 1px;
+  --boxShadow: var(--grayShadow) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
   --lgShadow: 15px -8px #bae9f4;
   --margin: 2rem 0;
   --marginAll: 2rem;
@@ -65,8 +65,8 @@
   --background: var(--darkModeBg);
   --foreground: var(--white);
   --primaryBtn: var(--primaryColor-300);
-  // --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px,
-  //   rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;
+  --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px,
+    rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;
   --gray: rgba(89,89,89,1);
 }
 
@@ -111,7 +111,7 @@ body {
   background-color: var(--background);
   font-family: var(--font-family);
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.5;
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -174,4 +174,15 @@ button {
   justify-content: center;
   align-items: center;
   margin: 1rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    outline: 2px solid red;
+  }
 }
