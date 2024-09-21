@@ -5,7 +5,7 @@ import Image from 'next/image';
 import DarkModeToggle from './DarkMode';
 import Dialog from './Dialog';
 
-import styles from './Header.module.scss';
+import styles from '../../../styles/components/Header/Header.module.scss';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
