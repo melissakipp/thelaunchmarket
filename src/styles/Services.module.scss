@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto 4rem auto;
+  
+  .intro {
+    background-color: #FEF8F5;
+    width: 100%;
+    .image {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+    }
+    .title {
+      text-align: center;
+    }
+    .text {
+      width: 65ch;
+      text-align: center;
+      margin: 2rem auto;
+    }
+  }
+
+  .offer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+  }
+}
