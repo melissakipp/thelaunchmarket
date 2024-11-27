@@ -1,24 +1,31 @@
-FROM node:21.7.3-bullseye
+FROM node:23.3.0-bookworm
 ENV NODE_ENV development
+WORKDIR /app
 
-ENV NPM_VERSION 10.8.3
+ENV NODE_VERSION 23.3.0
 
 EXPOSE 3000
 
-WORKDIR /home/nextjs/app
+WORKDIR /app
 
 COPY package*.json ./
 
-RUN apt update && apt -y install --no-install-recommends ca-certificates git git-lfs openssh-client curl jq cmake sqlite3 openssl psmisc python3 && \
-  apt-get clean autoclean && apt-get autoremove --yes && rm -rf /var/lib/{apt,dpkg,cache,log}
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  ca-certificates \
+  git \
+  openssh-client \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g npm@${NPM_VERSION} \
   npm install && npm cache clean --force && \
-  npx next telemetry disable
+  npx next telemetry disable \
+  # smoke tests
+  && node --version \
+  && npm --version
 
 RUN chown -R node:node .
 USER node
-
 COPY . .
 
-CMD [ "node" ]
+# Start the application
+CMD ["npm", "run", "dev"]

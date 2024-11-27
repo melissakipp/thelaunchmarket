@@ -1,55 +1,72 @@
-import { useState } from 'react';
+'use client';
+
+import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-
-import DarkModeToggle from './DarkMode';
-import Dialog from './Dialog';
-
+import { HiBars3, HiXMark } from 'react-icons/hi2';
 import styles from '@/src/styles/components/Header/Header.module.scss';
 
-export default function Header() {
-  const [open, setOpen] = useState(false);
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const handleClick = () => {
-    setOpen(!open);
-  };
+  React.useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = '';
+      };
+    }
+  }, [isMenuOpen]);
 
   return (
-    <header className={styles.container}>
-      <div className={styles.logoSmall}>
-        <Link href='/'>
-          <Image className={styles.smSvg} src='/images/the-launch-market_small-logo.svg' alt='The Launch Market' width={150} height={150} />
-        </Link>
-      </div>
-      <div className={styles.logoLarger}>
-        <Link href='/'>
-          <Image className={styles.lgSvg} src='/images/the-launch-market_large-logo_@0.5x.png' alt='The Launch Market' width={250} height={250} />
-        </Link>
-      </div>
-
+    <header className={styles.header}>
       <div className={styles.container}>
-        <nav>
-          <ul className={styles.menu}>
-            <li className={styles.menu__item}>
-              <Link href='/'>Home</Link>
-            </li>
-            <li className={styles.menu__item}>
-              <Link href='/services'>Services</Link>
-            </li>
-            <li className={styles.menu__item}>
-              <Link href='/contact'>Contact</Link>
-            </li>
-          </ul>
-        </nav>
+        <Link href="/" className={styles.logo} aria-label="Home">
+          <span className={styles.logoText}>Logo</span>
+        </Link>
 
-        <div className={styles.menuModal}>
-          <button className={styles.menuBtn} onClick={handleClick}>
-            Open / Close
+        <div className={styles.navContainer}>
+          <button 
+            className={styles.menuButton}
+            onClick={() => setIsMenuOpen(true)}
+            aria-expanded={isMenuOpen}
+            aria-controls="navigation"
+          >
+            <HiBars3 className={styles.menuIcon} />
+            <span className={styles.srOnly}>Menu</span>
           </button>
-          {open && <Dialog open={open} />}
+
+          <nav 
+            id="navigation"
+            className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}
+          >
+            <div className={styles.navHeader}>
+              <button
+                className={styles.closeButton}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <HiXMark className={styles.closeIcon} />
+                <span className={styles.srOnly}>Close menu</span>
+              </button>
+            </div>
+
+            <ul className={styles.menu}>
+              {['Home', 'Services', 'Contact'].map((item) => (
+                <li key={item} className={styles.menuItem}>
+                  <Link
+                    href={`/${item.toLowerCase()}`}
+                    className={styles.menuLink}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
-        <DarkModeToggle />
       </div>
     </header>
   );
-}
+};
+
+export default Header;
