@@ -5,7 +5,7 @@ import { BiRocket } from 'react-icons/bi';
 
 import Button from '../UI/Button';
 import styles from '@/styles/components/Form/Form.module.scss';
-import { FormError } from '../../../types/form';
+import { FormError } from '@/src/types/form';
 
 export default function Form() {
   const [text, setText] = useState('');

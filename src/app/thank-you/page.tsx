@@ -1,4 +1,4 @@
-import styles from '../../styles/ThankYou.module.scss';
+import styles from '@/src/styles/ThankYou.module.scss';
 
 export default function ThankYou() {
   return (

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
-import styles from '../../styles/Contact.module.scss';
-import Form from '../components/Form/Form';
-import ListWithIcon from '../components/List/ListWithIcon';
+import styles from '@/src/styles/Contact.module.scss';
+import Form from '@/src/components/Form/Form';
+import ListWithIcon from '@/src/components/List/ListWithIcon';
 import {
   BiCalendar,
   BiSolidEnvelope,

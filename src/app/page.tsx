@@ -1,6 +1,6 @@
-import styles from '../styles/Home.module.scss';
 import type { Metadata } from 'next';
-import Hero from './components/Hero/Hero';
+import styles from '@/src/styles/Home.module.scss';
+import Hero from '@/src/components/Hero/Hero';
 
 export const metadata: Metadata = {
   title: 'Home | The Launch Market',
