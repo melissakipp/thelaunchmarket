@@ -8,15 +8,16 @@ EXPOSE 3000
 
 WORKDIR /app
 
-COPY package*.json ./
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates \
   git \
   openssh-client \
   && rm -rf /var/lib/apt/lists/*
 
+COPY package*.json ./
+
 RUN npm install -g npm@${NPM_VERSION} \
+  && ln -s /app/node_modules/.bin/next /usr/local/bin/next && \
   npm install && npm cache clean --force && \
   npx next telemetry disable \
   # smoke tests

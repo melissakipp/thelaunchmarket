@@ -1,14 +1,16 @@
 'use client';
 
-import React from 'react';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { HiBars3, HiXMark } from 'react-icons/hi2';
 import styles from '@/src/styles/components/Header/Header.module.scss';
+import Logo from '@/src/assets/the-launch-market_small-logo.svg';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
       return () => {
@@ -21,7 +23,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo} aria-label="Home">
-          <span className={styles.logoText}>Logo</span>
+          <Image src={Logo} alt="Logo" width={125} height={125} />
         </Link>
 
         <div className={styles.navContainer}>

@@ -5,15 +5,10 @@ const path = require('path');
 const nextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
-  // Enable app directory for newer features (server actions & optimized font loading)
-  experimental: {
-    serverActions: true,
-    optimizeFonts: true,
-  },
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, './'),
     };
     return config;
   },
@@ -32,7 +27,7 @@ const nextConfig = {
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
-    prependData: `@import "@/styles/variables.scss";`, // Optional: automatically import variables
+    // prependData: `@import "@/styles/variables.scss";`, // Optional: automatically import variables
   },
   output: 'standalone',
   typescript: {

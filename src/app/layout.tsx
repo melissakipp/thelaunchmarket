@@ -1,26 +1,23 @@
-'use client';
-
-import { ThemeProvider } from 'next-themes';
-
 import '@/src/styles/globals.scss';
-
 import Header from '@/src/components/Header/Header';
 import Footer from '@/src/components/Footer/Footer';
+import { Providers } from './providers';
 
+// Remove 'use client' from layout - it should be server component
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head />
-      <body>
-        <ThemeProvider>
+      <body suppressHydrationWarning>
+        <Providers>
           <Header />
-            {children}
+          <main>{children}</main>
           <Footer />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
