@@ -1,0 +1,110 @@
+// not-found.module.scss
+
+.notFoundContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #ffffff;
+  
+  // Ensure proper text contrast for accessibility
+  color: #2d3748;
+}
+
+.content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.title {
+  font-size: 8rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  
+  // Ensure proper contrast for large text (WCAG 2.1)
+  color: #1a202c;
+}
+
+.message {
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  font-weight: 500;
+}
+
+.suggestion {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.homeLink {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #3182ce;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+
+  // Ensure proper focus indication for keyboard navigation
+  &:focus {
+    outline: 3px solid #63b3ed;
+    outline-offset: 2px;
+  }
+
+  // Ensure proper hover state for mouse users
+  &:hover {
+    background-color: #2c5282;
+  }
+
+  // Ensure proper active state feedback
+  &:active {
+    background-color: #2a4365;
+  }
+}
+
+// Responsive design
+@media (max-width: 640px) {
+  .title {
+    font-size: 6rem;
+  }
+
+  .message {
+    font-size: 1.25rem;
+  }
+
+  .suggestion {
+    font-size: 1rem;
+  }
+}
+
+// Ensure proper contrast in dark mode
+@media (prefers-color-scheme: dark) {
+  .notFoundContainer {
+    background-color: #1a202c;
+    color: #e2e8f0;
+  }
+
+  .title {
+    color: #f7fafc;
+  }
+
+  .homeLink {
+    background-color: #4299e1;
+
+    &:hover {
+      background-color: #3182ce;
+    }
+
+    &:active {
+      background-color: #2c5282;
+    }
+
+    &:focus {
+      outline-color: #90cdf4;
+    }
+  }
+}
