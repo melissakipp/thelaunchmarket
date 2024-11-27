@@ -1,7 +1,5 @@
-@import 'normalize.scss';
-// @use 'typography';
-
-// @import 'typography.scss';
+@use 'normalize';
+@use 'typography';
 
 :root {
   color-scheme: light dark;
