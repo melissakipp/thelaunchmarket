@@ -8,13 +8,18 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/app
-      - /app/node_modules
-      - /app/.next
+      - .:/app:delegated
+      # Named volumes for persistent dependencies
+      - node_modules:/app/node_modules
+      - next-cache:/app/.next
     environment:
       - NODE_ENV=development
       - WATCHPACK_POLLING=true
-    command: sh -c "npm install && npm run dev"
+    user: "node"
+
+volumes:
+  node_modules:
+  next-cache:
 
   # nginx:
   #   image: nginx
