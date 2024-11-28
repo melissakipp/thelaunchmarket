@@ -26,8 +26,8 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   sassOptions: {
-    includePaths: [path.join(__dirname, 'src/styles')],
-    // prependData: `@import "@/styles/variables.scss";`, // Optional: automatically import variables
+    includePaths: ['./src/styles'],
+    implementation: require('sass')
   },
   output: 'standalone',
   typescript: {

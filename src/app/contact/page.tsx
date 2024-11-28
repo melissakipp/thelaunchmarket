@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import styles from '@/src/styles/Contact.module.scss';
-import Form from '@/src/components/Form/ContactForm';
+import Form from '@/src/components/Forms/ContactForm';
 import ListWithIcon from '@/src/components/List/ListWithIcon';
 import {
   BiCalendar,

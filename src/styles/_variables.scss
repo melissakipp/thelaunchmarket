@@ -1,0 +1,68 @@
+:root {
+  color-scheme: light dark;
+
+  --font-family: 'Roboto', sans-serif;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  /* Color Palette */
+  --primaryColor-300: hsl(48, 85%, 67%);
+  --primaryColor-600: hsl(42, 85%, 56%);
+  --primaryColor-900: hsl(27, 85%, 51%);
+
+  --secondaryColor: hsl(193, 43%, 54%);
+
+  --white: hsl(45, 40%, 98%);
+  --black: hsl(0, 0%, 2%);
+  --gray: hsl(0, 0%, 86%);
+  --grayShadow: rgba(0, 0, 0, 0.12);
+
+  --error-t-800: #d74332;
+
+  --borderColor: hsl(0, 0%, 86%);
+  --borderStyle: 1px solid var(--borderColor);
+
+  /* Default */
+  --background: white;
+  --foreground: var(--black);
+
+  --backgroundGradient: linear-gradient(
+    180deg,
+    #f2d562 0%,
+    #eeb52f 63.54%,
+    #ec7817 100%
+  );
+
+  --headerFooterBg: hsl(0, 0%, 100%);
+  --primaryBtn: var(--primaryColor-300);
+  --darkModeBg: hsl(0, 0%, 18%);
+
+  /* Buttons */
+  --btnPadding: 0.5rem 1rem;
+  --btnBorder: 1px solid var(--borderColor);
+
+  --boxShadow: var(--grayShadow) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
+  --lgShadow: 15px -8px #bae9f4;
+  --margin: 2rem 0;
+  --marginAll: 2rem;
+  --paddingXs: 0.5rem;
+  --paddingSm: 1rem;
+  --paddingLg: 2rem;
+  --radius: 0.5rem;
+  --circleRadius: 50%;
+
+  --ctaBox: var(--secondaryColor);
+
+  --logo: var(--white);
+}
+
+[data-theme='dark'] {
+  --headerFooterBg: hsl(30, 1%, 28%);
+  --background: var(--darkModeBg);
+  --foreground: var(--white);
+  --primaryBtn: var(--primaryColor-300);
+  --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px,
+    rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;
+  --gray: rgba(89,89,89,1);
+}

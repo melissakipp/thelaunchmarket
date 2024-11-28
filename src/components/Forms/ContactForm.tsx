@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { BiRocket } from 'react-icons/bi';
 
-import Button from '../UI/Button';
+import Button from '@/src/components/UI/Button';
 import styles from '@/src/styles/components/Forms/ContactForm.module.scss';
 import { FormError } from '@/src/types/form';
 
@@ -29,7 +29,7 @@ export default function Form() {
     };
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

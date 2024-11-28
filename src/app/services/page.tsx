@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
-import styles from '@/styles/Services.module.scss';
+import styles from '@/src/styles/Services.module.scss';
 
 export const metadata: Metadata = {
   title: 'Services | The Launch Market',
