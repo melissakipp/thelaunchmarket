@@ -11,10 +11,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <article>
-        <section>
-          <Hero />
-        </section>
-
+        <Hero />
         <section className={styles.ctaBox}>
           <p>Are you ready to launch your product or service to the market?</p>
         </section>
