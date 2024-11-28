@@ -12,7 +12,6 @@ const nextConfig = {
     };
     return config;
   },
-
   // Image optimization configuration
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -25,11 +24,10 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-  sassOptions: {
-    includePaths: ['./src/styles'],
-    implementation: require('sass')
-  },
   output: 'standalone',
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
   typescript: {
     ignoreBuildErrors: false,
   },
