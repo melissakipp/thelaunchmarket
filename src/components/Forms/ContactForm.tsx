@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import { BiRocket } from 'react-icons/bi';
 
-import Button from '@/src/components/UI/Button';
 import styles from '@/src/styles/components/Forms/ContactForm.module.scss';
+import Button from '@/src/components/UI/Button';
+
 import { FormError } from '@/src/types/form';
 
 export default function Form() {

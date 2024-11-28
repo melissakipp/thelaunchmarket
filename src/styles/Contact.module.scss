@@ -5,23 +5,43 @@
   justify-content: space-around;
   align-items: center;
   min-height: 100vh;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 2rem 2rem 2rem 2rem;
-  gap: 2rem;
-  .title {
-    margin: 3rem 0 3rem 0;
-  }
-  .greeting {
-    font-size: 2rem;
-    font-weight: 900;
-    text-align: center;
-    padding: 2rem 1rem 2rem 1rem;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 2rem 2rem 2rem;
+    gap: 2rem;
+    .title {
+      margin: 3rem 0 3rem 0;
+    }
+    .list {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 3rem;
+      list-style-type: none;
+      margin: 0 0 2rem 0;
+      li a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.25rem;
+        svg {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+    .greeting {
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+      padding: 2rem 1rem 2rem 1rem;
+    }
   }
 }
 
@@ -35,27 +55,7 @@
   }
 }
 
-.list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
-  gap: 3rem;
-  list-style-type: none;
-  margin: 0 0 2rem 0;
-  li a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.25rem;
-    svg {
-      width: 2rem;
-      height: 2rem;
-    }
-  }
-}
+
 
 /* Desktop */
 @media screen and (width >= 62.5em) {
