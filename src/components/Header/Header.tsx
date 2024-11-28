@@ -62,7 +62,7 @@ const Header = () => {
                     {item}
                   </Link>
                 </li>
-              ))};
+              ))}
             </ul>
           </nav>
         </div>
