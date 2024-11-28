@@ -55,7 +55,7 @@ const Header = () => {
               {['Home', 'Services', 'Contact'].map((item) => (
                 <li key={item} className={styles.menuItem}>
                   <Link
-                    href={`/${item.toLowerCase()}`}
+                    href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
                     className={styles.menuLink}
                     onClick={() => setIsMenuOpen(false)}
                   >
