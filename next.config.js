@@ -6,6 +6,12 @@ const nextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
   webpack: (config) => {
+    // Suppress warnings during the build
+    config.stats = {
+      warnings: false,
+    };
+
+    // Add resolve alias
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, './'),
@@ -27,6 +33,7 @@ const nextConfig = {
   output: 'standalone',
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
+    silenceDeprecations: ["legacy-js-api"],
   },
   typescript: {
     ignoreBuildErrors: false,
