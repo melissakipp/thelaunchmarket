@@ -1,5 +1,4 @@
-// ServicesPage.tsx
-import React from 'react';
+import Link from 'next/link';
 import { 
   FiLayout, 
   FiCode, 
@@ -10,7 +9,7 @@ import {
   FiZap, 
   FiGlobe 
 } from 'react-icons/fi';
-import '../../styles/Services.module.scss';
+import './Services.css';
 
 interface ServiceItem {
   id: number;
@@ -129,14 +128,14 @@ const ServicesPage = () => {
   ];
 
   return (
-    <main className="container">
-      <article>
-        <section className="hero">
+    <main className="serviceContainer">
+      <article className='servicesPage'>
+        <section className="serviceHero">
           <h1>Transform Your Digital Presence</h1>
           <p>We define, design, and develop world-class digital products that people love to use, helping businesses succeed by connecting them with the right customers online.</p>
         </section>
 
-        <section className="services">
+        <section className="servicesSection">
           <div>
             <div className="servicesGrid">
               {services.map((service) => {
@@ -193,7 +192,7 @@ const ServicesPage = () => {
           <div>
             <h2>Ready to Transform Your Digital Presence?</h2>
             <p>Let's work together to create something amazing.</p>
-            <button className="primaryBtn">Get Started</button>
+            <Link href="/contact" className="primaryBtn">Get Started by contact us</Link>
           </div>
         </section>
       </article>
