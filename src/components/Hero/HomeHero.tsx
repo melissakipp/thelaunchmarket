@@ -1,4 +1,4 @@
-export default function Hero() {
+export default function HomeHero() {
   return (
     <section>
       <p>Welcome to</p>
