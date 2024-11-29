@@ -8,7 +8,7 @@ import {
   BiCode,
   BiSearchAlt
 } from 'react-icons/bi';
-import styles from '@/src/styles/components/Footer/Footer.module.scss';
+import './Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -20,14 +20,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerContent}>
-        <div className={styles.footerSection}>
+    <footer className="footer">
+      <div className="footerContent">
+        <div className="footerSection">
           <h4>The Launch Market</h4>
-          <p className={styles.tagline}>
+          <p className="tagline">
             Creating beautiful and functional websites that deliver results
           </p>
-          <div className={styles.social}>
+          <div className="social">
             <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <BiLogoLinkedin />
             </Link>
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className={styles.footerSection}>
+        <div className="footerSection">
           <h4>Services</h4>
           <ul>
             {services.map((service, index) => (
@@ -51,7 +51,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className={styles.footerSection}>
+        <div className="footerSection">
           <h4>Contact</h4>
           <p>
             <BiSolidEnvelope />{' '}
@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className={styles.footerBottom}>
+      <div className="footerBottom">
         <p>
           <BiCopyright /> {currentYear} Launch Market. All rights reserved.
           {' | '}
