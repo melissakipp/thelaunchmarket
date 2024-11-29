@@ -1,13 +1,8 @@
 import type { Metadata } from 'next';
-
-import './Contact.module.css';
+import styles from './Contact.module.css'; // Import the CSS module
 import Form from '@/src/components/Forms/ContactForm';
 import ListWithIcon from '@/src/components/List/ListWithIcon';
-import {
-  BiCalendar,
-  BiSolidEnvelope,
-  BiLogoLinkedinSquare,
-} from 'react-icons/bi';
+import { BiCalendar, BiSolidEnvelope, BiLogoLinkedinSquare } from 'react-icons/bi';
 
 export const metadata: Metadata = {
   title: 'Contact | The Launch Market',
@@ -16,32 +11,32 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <main className='contactMain'>
-      <article className='contactContainer'>
-        <div className='contactTitle'>
+    <main className={styles.contactMain}>
+      <article className={styles.contactContainer}>
+        <div className={styles.contactTitle}>
           <h1>Contact Us</h1>
-          <p>Hello</p> 
+          <p>Hello</p>
         </div>
         <section>
-          <ul className='contactList'>
+          <ul className={styles.contactList}>
             <ListWithIcon
-              name='Calendar'
+              name="Calendar"
               icon={<BiCalendar />}
-              href='https://calendly.com/melissakipp/15-minute-chat'
+              href="https://calendly.com/melissakipp/15-minute-chat"
             />
             <ListWithIcon
-              name='Email'
+              name="Email"
               icon={<BiSolidEnvelope />}
-              href='mailto:info@thelaunchmarket.com'
+              href="mailto:info@thelaunchmarket.com"
             />
             <ListWithIcon
-              name='LinkedIn'
+              name="LinkedIn"
               icon={<BiLogoLinkedinSquare />}
-              href='https://www.linkedin.com/company/launchmarket/'
+              href="https://www.linkedin.com/company/launchmarket/"
             />
           </ul>
         </section>
-        <section className='formContainer'>
+        <section className={styles.formContainer}>
           <Form />
         </section>
       </article>

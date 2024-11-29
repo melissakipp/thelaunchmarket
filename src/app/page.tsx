@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import './Home.module.css';
+import styles from './Home.module.css'; // Import the CSS module
 import Hero from '@/src/components/Hero/HomeHero';
 import HomeCta from '@/src/components/Cta/HomeCta';
 
@@ -10,10 +10,12 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className='homeMain'>
+    <main className={styles.homeMain}> {/* Use styles object */}
       <article>
         <Hero />
-        <HomeCta />
+        <div className={styles.homeCta}> {/* Use styles for .homeCta */}
+          <HomeCta />
+        </div>
       </article>
     </main>
   );

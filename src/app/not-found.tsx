@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect } from 'react';
-import './not-found.css';
+import styles from './not-found.module.css'; // Import the CSS module
 
 export default function NotFound() {
   useEffect(() => {
@@ -11,24 +11,24 @@ export default function NotFound() {
   }, []);
 
   return (
-    <main 
-      className="notFoundContainer"
+    <main
+      className={styles.notFoundContainer} // Use styles object for className
       role="main"
       aria-labelledby="notFoundTitle"
     >
-      <div className="content">
-        <h1 id="notFoundTitle" className="title">
+      <div className={styles.content}>
+        <h1 id="notFoundTitle" className={styles.title}>
           404
         </h1>
-        <p className="message">
+        <p className={styles.message}>
           Oops! The page you're looking for cannot be found.
         </p>
-        <p className="suggestion">
+        <p className={styles.suggestion}>
           The page might have been moved or deleted. Let's get you back on track.
         </p>
-        <Link 
+        <Link
           href="/"
-          className="homeLink"
+          className={styles.homeLink} // Use styles for link class
           aria-label="Return to homepage"
         >
           Return to Homepage

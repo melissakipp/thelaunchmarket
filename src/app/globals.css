@@ -59,6 +59,13 @@
   --ctaBox: var(--secondaryColor);
 
   --logo: var(--white);
+
+  --primary: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --background-light: #f3f4f6;
+  --container-width: 1200px;
 }
 
 [data-theme='dark'] {

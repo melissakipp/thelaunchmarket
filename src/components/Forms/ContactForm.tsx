@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 import { BiRocket } from 'react-icons/bi';
-
-import './ContactForm.module.css';
+import styles from './ContactForm.module.css'; // Import the CSS module
 import Button from '@/src/components/UI/Button';
+
 interface FormError {
   message: string;
   status?: number;
   details?: string;
-};
+}
 
 export default function Form() {
   const [text, setText] = useState('');
@@ -18,7 +18,7 @@ export default function Form() {
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(event.target.value);
-    setCounter(text.length);
+    setCounter(event.target.value.length);
   };
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -52,7 +52,6 @@ export default function Form() {
         throw new Error(response.statusText);
       }
     } catch (error) {
-      // TypeScript handling for the error
       const formError = error as FormError; // Cast error to FormError
       console.error('Error submitting the form:', formError.message);
       alert(`Failed to send the message: ${formError.message}`);
@@ -63,10 +62,10 @@ export default function Form() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <header className='contactHeader'>
+      <header className={styles.contactHeader}>
         <h3>Contact Form</h3>
         <p>
-          Thank you for exploring The Launch Market! We are excited to hear from you and learn about your project. Don't hesitate to drop us a message or schedule a 15 minute chat with us through the scheduling link. We look forward to hearing from you!
+          Thank you for exploring The Launch Market! We are excited to hear from you and learn about your project. Don't hesitate to drop us a message or schedule a 15-minute chat with us through the scheduling link. We look forward to hearing from you!
         </p>
         <p>
           <small>
@@ -75,77 +74,77 @@ export default function Form() {
         </p>
       </header>
 
-      <div className='contactForm__container'>
-        <fieldset className='contactForm__fieldset'>
+      <div className={styles.contactForm__container}>
+        <fieldset className={styles.contactForm__fieldset}>
           <legend>Contact Information</legend>
-          <div className='contactForm__info'>
-            <label htmlFor='name'>
+          <div className={styles.contactForm__info}>
+            <label htmlFor="name">
               Full Name: <span>*</span>
               <input
-                id='name'
-                type='text'
-                data-type='text'
-                name='name'
+                id="name"
+                type="text"
+                data-type="text"
+                name="name"
                 required
-                aria-required='true'
+                aria-required="true"
               />
             </label>
-            <p className='contactForm__smText'>
+            <p className={styles.contactForm__smText}>
               <small>Example: John Doe</small>
             </p>
           </div>
-          <div className='contactForm__info'>
-            <label className='label' htmlFor='email'>
+          <div className={styles.contactForm__info}>
+            <label htmlFor="email">
               Email: <span>*</span>
               <input
-                id='email'
-                type='email'
-                data-type='email'
-                name='email'
+                id="email"
+                type="email"
+                data-type="email"
+                name="email"
                 required
-                aria-required='true'
+                aria-required="true"
               />
             </label>
-            <p className='contactForm__smText'>
+            <p className={styles.contactForm__smText}>
               <small>Example: johndoe@email.com</small>
             </p>
           </div>
         </fieldset>
 
-        <fieldset className='contactForm__msg'>
-          <label htmlFor='message'>
+        <fieldset className={styles.contactForm__msg}>
+          <label htmlFor="message">
             Your Message & Question(s): <span>*</span>
             <textarea
-              id='message'
-              name='message'
-              aria-required={'true'}
+              id="message"
+              name="message"
+              aria-required="true"
               rows={10}
               cols={50}
               required
               onChange={handleChange}
             ></textarea>
           </label>
-          <p className='contactForm__smText'>
-            <small>Minimum 30 character</small>
+          <p className={styles.contactForm__smText}>
+            <small>Minimum 30 characters</small>
           </p>
-          <p className='counter'>
+          <p className={styles.counter}>
             <strong>
               Characters:{' '}
-              <output htmlFor='message' aria-live='polite'>
+              <output htmlFor="message" aria-live="polite">
                 {counter}/300
               </output>
             </strong>
           </p>
         </fieldset>
       </div>
-      <div className='contactForm__btn'>
+      <div className={styles.contactForm__btn}>
         <Button
-          type='submit'
+          type="submit"
           disabled={loading}
-          value='Send Message'
-          data-callback='onSubmit'
-          data-action='submit'
-          className='submitBtn'
+          value="Send Message"
+          data-callback="onSubmit"
+          data-action="submit"
+          className={styles.submitBtn}
         >
           Submit
           <BiRocket />
