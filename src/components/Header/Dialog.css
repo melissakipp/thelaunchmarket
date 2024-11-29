@@ -27,15 +27,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    list-style-type: none;
-    padding: 1rem;
-    &__item {
-      margin: auto auto 2rem auto;
-    }
-  }
+}
+
+.modal .menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  padding: 1rem;
+}
+
+.modal .menu__item {
+  margin: auto auto 2rem auto;
 }

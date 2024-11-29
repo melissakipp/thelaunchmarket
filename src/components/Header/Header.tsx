@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiBars3, HiXMark } from 'react-icons/hi2';
-import styles from '@/src/styles/components/Header/Header.module.scss';
+import './Header.css';
 import Logo from '@/src/assets/the-launch-market_small-logo.svg';
 
 const Header = () => {
@@ -20,43 +20,43 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
-        <Link href="/" className={styles.logo} aria-label="Home">
-          <Image src={Logo} alt="Logo" width={125} height={125} />
+    <header className='header'>
+      <div className='container'>
+        <Link href='/' className='logo' aria-label='Home'>
+          <Image src={Logo} alt='Logo' width={125} height={125} />
         </Link>
 
-        <div className={styles.navContainer}>
+        <div className='navContainer'>
           <button 
-            className={styles.menuButton}
+            className='menuButton'
             onClick={() => setIsMenuOpen(true)}
             aria-expanded={isMenuOpen}
-            aria-controls="navigation"
+            aria-controls='navigation'
           >
-            <HiBars3 className={styles.menuIcon} />
-            <span className={styles.srOnly}>Menu</span>
+            <HiBars3 className='menuIcon' />
+            <span className='srOnly'>Menu</span>
           </button>
 
           <nav 
-            id="navigation"
-            className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}
+            id='navigation'
+            className={`${'nav'} ${isMenuOpen ? 'navOpen' : ''}`}
           >
-            <div className={styles.navHeader}>
+            <div className='navHeader'>
               <button
-                className={styles.closeButton}
+                className='closeButton'
                 onClick={() => setIsMenuOpen(false)}
               >
-                <HiXMark className={styles.closeIcon} />
-                <span className={styles.srOnly}>Close menu</span>
+                <HiXMark className='closeIcon' />
+                <span className='srOnly'>Close menu</span>
               </button>
             </div>
 
-            <ul className={styles.menu}>
+            <ul className='menu'>
               {['Home', 'Services', 'Contact'].map((item) => (
-                <li key={item} className={styles.menuItem}>
+                <li key={item} className='menuItem'>
                   <Link
                     href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                    className={styles.menuLink}
+                    className='menuLink'
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item}
