@@ -1,0 +1,83 @@
+/* Mobile first */
+.contactMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.contactList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
+  list-style-type: none;
+  margin: 0 0 2rem 0;
+  
+}
+
+.contactList li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  
+}
+
+.greeting {
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+.contactSvg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 2rem 2rem 2rem;
+  gap: 2rem;
+}
+
+.formContainer {
+  border: var(--borderStyle);
+  border-radius: 11px;
+  outline: 2px solid var(--primaryColor-300);
+}
+
+.formContainer span {
+  color: var(--error-t-800);
+}
+
+.contactTitle {
+  margin: 3rem 0 3rem 0;
+}
+
+
+/* Desktop */
+@media screen and (width >= 62.5em) {
+  .contactMain {
+    padding: 3rem;
+  }
+  .contactContainer {
+    width: 40vw;
+  }
+}
+
+/* Large desktop */
+/* @media screen and (width >= 75em) {
+  .contactContainer {
+    width: 40vw;
+  }
+} */
+
