@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import { BiRocket } from 'react-icons/bi';
 
-import styles from '@/src/styles/components/Forms/ContactForm.module.scss';
+import './ContactForm.css';
 import Button from '@/src/components/UI/Button';
+import CustomBtn from '@/src/components/UI/CustomBtn';
 interface FormError {
   message: string;
   status?: number;
@@ -62,11 +63,11 @@ export default function Form() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
-      <header className={styles.header}>
+    <form onSubmit={handleSubmit}>
+      <header className='contactHeader'>
         <h3>Contact Form</h3>
         <p>
-          Thank you for exploring the Launch Market! We are excited to hear from you and learn about your project. Don't hesitate to drop us a message or schedule a 15 minute chat with us through the scheduling link. We look forward to hearing from you!
+          Thank you for exploring The Launch Market! We are excited to hear from you and learn about your project. Don't hesitate to drop us a message or schedule a 15 minute chat with us through the scheduling link. We look forward to hearing from you!
         </p>
         <p>
           <small>
@@ -75,50 +76,47 @@ export default function Form() {
         </p>
       </header>
 
-      <div className={styles.container}>
-        <fieldset className={styles.fieldset}>
-          <legend className={styles.legend}>Contact Information</legend>
-
-          <label className={styles.label} htmlFor='name'>
-            Full Name: <span>*</span>
-          </label>
-          <input
-            className={styles.input}
-            id='name'
-            type='text'
-            data-type='text'
-            name='name'
-            required
-            aria-required='true'
-          />
-          <div>
-            <small>Example: John Doe</small>
+      <div className='contactForm__container'>
+        <fieldset className='contactForm__fieldset'>
+          <legend>Contact Information</legend>
+          <div className='contactForm__info'>
+            <label htmlFor='name'>
+              Full Name: <span>*</span>
+              <input
+                id='name'
+                type='text'
+                data-type='text'
+                name='name'
+                required
+                aria-required='true'
+              />
+            </label>
+            <p className='contactForm__smText'>
+              <small>Example: John Doe</small>
+            </p>
           </div>
-          <label className={styles.label} htmlFor='email'>
-            Email: <span>*</span>
-          </label>
-          <input
-            className={styles.input}
-            id='email'
-            type='email'
-            data-type='email'
-            name='email'
-            required
-            aria-required='true'
-          />
-          <div>
-            <small>Example: johndoe@email.com</small>
+          <div className='contactForm__info'>
+            <label className='label' htmlFor='email'>
+              Email: <span>*</span>
+              <input
+                id='email'
+                type='email'
+                data-type='email'
+                name='email'
+                required
+                aria-required='true'
+              />
+            </label>
+            <p className='contactForm__smText'>
+              <small>Example: johndoe@email.com</small>
+            </p>
           </div>
         </fieldset>
 
-        <fieldset className={styles.textArea}>
-          {/* <legend className={styles.legend}>
-            Details about your request
-          </legend> */}
-          <label className={styles.label} htmlFor='message'>
+        <fieldset className='contactForm__msg'>
+          <label htmlFor='message'>
             Your Message & Question(s): <span>*</span>
             <textarea
-              className={styles.input}
               id='message'
               name='message'
               aria-required={'true'}
@@ -128,10 +126,10 @@ export default function Form() {
               onChange={handleChange}
             ></textarea>
           </label>
-          <p>
+          <p className='contactForm__smText'>
             <small>Minimum 30 character</small>
           </p>
-          <p className={styles.counter}>
+          <p className='counter'>
             <strong>
               Characters:{' '}
               <output htmlFor='message' aria-live='polite'>
@@ -141,14 +139,14 @@ export default function Form() {
           </p>
         </fieldset>
       </div>
-      <div className={styles.btnContainer}>
+      <div className='contactForm__btn'>
         <Button
           type='submit'
           disabled={loading}
           value='Send Message'
           data-callback='onSubmit'
           data-action='submit'
-          className={styles.submitBtn}
+          className='submitBtn'
         >
           Submit
           <BiRocket />
