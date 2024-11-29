@@ -1,16 +1,18 @@
 /* Mobile first */
-.main {
+.thankYouMain {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 4rem;
   height: 50vh;
-  h1 {
-    font-size: 2.5rem;
-  }
-  p {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
+}
+
+.thankYouMain h1 {
+  font-size: 2.5rem;
+}
+.thankYouMain p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
