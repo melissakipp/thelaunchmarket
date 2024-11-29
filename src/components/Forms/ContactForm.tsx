@@ -3,9 +3,8 @@
 import { useState } from 'react';
 import { BiRocket } from 'react-icons/bi';
 
-import './ContactForm.css';
+import './ContactForm.module.css';
 import Button from '@/src/components/UI/Button';
-import CustomBtn from '@/src/components/UI/CustomBtn';
 interface FormError {
   message: string;
   status?: number;

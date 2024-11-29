@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiBars3, HiXMark } from 'react-icons/hi2';
-import './Header.css';
+import './Header.module.css';
 import Logo from '@/src/assets/the-launch-market_small-logo.svg';
 
 const Header = () => {

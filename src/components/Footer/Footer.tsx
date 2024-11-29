@@ -8,7 +8,7 @@ import {
   BiCode,
   BiSearchAlt
 } from 'react-icons/bi';
-import './Footer.css';
+import './Footer.module.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

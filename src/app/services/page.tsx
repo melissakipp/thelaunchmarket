@@ -9,7 +9,7 @@ import {
   FiZap, 
   FiGlobe 
 } from 'react-icons/fi';
-import './Services.css';
+import './Services.module.css';
 
 interface ServiceItem {
   id: number;

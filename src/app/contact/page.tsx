@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import './Contact.css';
+import './Contact.module.css';
 import Form from '@/src/components/Forms/ContactForm';
 import ListWithIcon from '@/src/components/List/ListWithIcon';
 import {

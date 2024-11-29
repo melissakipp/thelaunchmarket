@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import styles from '@/src/styles/components/Header/Dialog.module.scss';
+import styles from './Dialog.module.css';
 
 export default function Dialog({ open }: { open: boolean }) {
   return (
