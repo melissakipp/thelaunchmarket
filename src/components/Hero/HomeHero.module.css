@@ -1,0 +1,32 @@
+.hero {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.primaryLink {
+  display: inline-flex;
+  align-items: center;
+  background-color: #2563eb;
+  border-radius: 0.5rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  margin: 2rem auto auto auto;
+  transition: background-color 0.2s;
+}
+
+.primaryLink:hover {
+  background: #1d4ed8;
+}
+
+.primaryLink svg {
+  margin-left: 0.5rem;
+}

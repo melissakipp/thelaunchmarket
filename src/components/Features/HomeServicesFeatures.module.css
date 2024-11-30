@@ -1,0 +1,32 @@
+.services {
+  padding: 4rem 0;
+}
+
+.services h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.serviceGrid h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.serviceGrid ul {
+  list-style: none;
+  padding: 0;
+}
+
+.serviceGrid li {
+  color: #666;
+  margin-bottom: 0.5rem;
+}

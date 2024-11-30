@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
-import styles from './Home.module.css'; // Import the CSS module
+import styles from './Home.module.css'; 
 import Hero from '@/src/components/Hero/HomeHero';
-import HomeCta from '@/src/components/Cta/HomeCta';
+import Feature from '@/src/components/Features/HomeFeature';
+import ServicesFeatures from '@/src/components/Features/HomeServicesFeatures';
+import Cta from '@/src/components/Cta/HomeCta'; 
 
 export const metadata: Metadata = {
   title: 'Home | The Launch Market',
@@ -10,12 +12,12 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className={styles.homeMain}> {/* Use styles object */}
+    <main className={styles.homeMain}> 
       <article>
-        <Hero />
-        <div className={styles.homeCta}> {/* Use styles for .homeCta */}
-          <HomeCta />
-        </div>
+        <Hero /> 
+        <Feature />
+        <ServicesFeatures />
+        <Cta />  
       </article>
     </main>
   );
