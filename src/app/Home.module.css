@@ -8,17 +8,6 @@
   min-height: 100vh;
 }
 
-/* Accessibility */
-/* .srOnly:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-} */
-
 .homeCta {
   background-color: var(--ctaBox);
   border-radius: var(--radius);
