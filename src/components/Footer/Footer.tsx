@@ -72,7 +72,7 @@ const Footer = () => {
 
       <div className={styles.footerBottom}>
         <p>
-          <BiCopyright /> {currentYear} Launch Market. All rights reserved.
+          <BiCopyright /> {currentYear} The Launch Market. All rights reserved.
           {' | '}
           <span>
             Created by <a href="https://melissajkipp.com">Melissa Kipp</a>
