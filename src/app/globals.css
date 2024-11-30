@@ -11,7 +11,7 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   /* Color Palette */
-  --primaryColor-300: hsl(48, 85%, 67%);
+  --primaryColor-300: #f2d663;
   --primaryColor-600: hsl(42, 85%, 56%);
   --primaryColor-900: hsl(27, 85%, 51%);
 
@@ -20,12 +20,14 @@
 
   --white: hsl(45, 40%, 98%);
   --black: hsl(0, 0%, 2%);
+  --liteBlack: hsl(57, 12%, 7%);
   --gray: hsl(0, 0%, 86%);
   --lightGray: hsl(0, 0%, 93%);
   --darkGray: hsl(0, 0%, 35%);
   --offWhite: hsl(0, 0%, 97%);
   --grayShadow: rgba(0, 0, 0, 0.12);
   --natural: hsl(44, 96%, 89%);
+  --liteNatural: hsl(46, 94%, 97%);
 
   --error-t-800: #d74332;
   --success-s-600:#20906e;
