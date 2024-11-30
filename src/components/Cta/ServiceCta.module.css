@@ -31,7 +31,7 @@
 }
 
 .primaryBtn:hover {
-  background-color: var(--background-light);
+  background-color: var(--offWhite);
 }
 
 @media (max-width: 768px) {

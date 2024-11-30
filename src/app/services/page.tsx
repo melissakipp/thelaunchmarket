@@ -40,49 +40,43 @@ const ServicesPage = () => {
       id: 1,
       icon: FiLayout,
       title: 'UI/UX Design',
-      description:
-        'User-centric design that focuses on conversion optimization and customer engagement across all platforms.',
-      color: 'blue',
+      description: 'User-centric design that focuses on conversion optimization and customer engagement across all platforms.',
+      color: 'primary',
     },
     {
       id: 2,
       icon: FiCode,
       title: 'Web Development',
-      description:
-        "Custom website development that's fast, secure, and user-friendly, built with the latest technologies.",
-      color: 'green',
+      description: "Custom website development that's fast, secure, and user-friendly, built with the latest technologies.",
+      color: 'secondary',
     },
     {
       id: 3,
       icon: FiFeather,
       title: 'Brand Identity',
-      description:
-        'Transform your brand through strategic visual identity and compelling communications.',
-      color: 'purple',
+      description: 'Transform your brand through strategic visual identity and compelling communications.',
+      color: 'info',
     },
     {
       id: 4,
       icon: FiShoppingCart,
       title: 'E-commerce Solutions',
-      description:
-        'Custom online store development with secure payment processing and inventory management.',
-      color: 'yellow',
+      description: 'Custom online store development with secure payment processing and inventory management.',
+      color: 'warning',
     },
     {
       id: 5,
       icon: FiSearch,
       title: 'SEO Optimization',
-      description:
-        'Improve your search engine rankings and drive organic traffic to your website.',
-      color: 'red',
+      description: 'Improve your search engine rankings and drive organic traffic to your website.',
+      color: 'error',
     },
     {
       id: 6,
       icon: FiSettings,
       title: 'Website Maintenance',
-      description:
-        'Ongoing support and updates to keep your website secure, fast, and up-to-date.',
-      color: 'indigo',
+      description: 'Ongoing support and updates to keep your website secure, fast, and up-to-date.',
+      color: 'success',
     },
   ];
 

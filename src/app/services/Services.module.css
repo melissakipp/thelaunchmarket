@@ -7,7 +7,6 @@
 /* Services Section */
 .servicesSection {
   padding: 4rem 0;
-  background-color: white;
 }
 
 .servicesGrid {
@@ -20,8 +19,8 @@
 .serviceCard {
   padding: 2rem;
   border-radius: 0.5rem;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--liteNatural);
+  box-shadow: var(--boxShadow);
   transition: transform 0.3s ease;
 }
 
@@ -46,21 +45,44 @@
 }
 
 .serviceCard p {
-  color: var(--text-secondary);
+  color: var(--liteBlack);
 }
 
 /* Color variations for service cards */
-.serviceCard.blue .icon { background-color: #dbeafe; color: #2563eb; }
-.serviceCard.green .icon { background-color: #dcfce7; color: #16a34a; }
-.serviceCard.purple .icon { background-color: #f3e8ff; color: #9333ea; }
-.serviceCard.yellow .icon { background-color: #fef9c3; color: #ca8a04; }
-.serviceCard.red .icon { background-color: #fee2e2; color: #dc2626; }
-.serviceCard.indigo .icon { background-color: #e0e7ff; color: #4f46e5; }
+.serviceCard.primary .icon {
+  background-color: var(--primaryColor-300);
+  color: var(--primaryColor-900);
+}
+
+.serviceCard.secondary .icon {
+  background-color: var(--secondaryColor-400);
+  color: var(--darkMode);
+}
+
+.serviceCard.info .icon {
+  background-color: var(--info-700);
+  color: var(--white);
+}
+
+.serviceCard.success .icon {
+  background-color: var(--success-s-600);
+  color: var(--white);
+}
+
+.serviceCard.warning .icon {
+  background-color: var(--warning-w-600);
+  color: var(--white);
+}
+
+.serviceCard.error .icon {
+  background-color: var(--error-t-800);
+  color: var(--white);
+}
 
 /* Core Values Section */
 .core-values {
   padding: 4rem 0;
-  background-color: var(--background-light);
+  background-color: var(--offWhite);
 }
 
 .coreValues h2 {
@@ -89,14 +111,9 @@
   margin-bottom: 1rem;
 }
 
-.valueCard p {
-  color: var(--text-secondary);
-}
-
 /* Client Types Section */
 .clientTypes {
   padding: 4rem 0;
-  background-color: white;
 }
 
 .clientTypes h2 {
@@ -114,8 +131,10 @@
 
 .clientCard {
   padding: 2rem;
-  background-color: var(--background-light);
+  background-color: var(--offWhite);
   border-radius: 0.5rem;
+  box-shadow: var(--boxShadow);
+
 }
 
 .clientCard .icon {
@@ -125,7 +144,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
+  color: var(--primaryColor-900);
 }
 
 .clientCard h3 {
@@ -134,7 +153,7 @@
 }
 
 .clientCard p {
-  color: var(--text-secondary);
+  color: var(--liteBlack);
 }
 
 /* Responsive Styles */

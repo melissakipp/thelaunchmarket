@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./ServiceCta.module.css";
+import CustomBtnLink from "../UI/Links/CustomBtnLink";
 
 export default function ServiceCta() {
   return (
@@ -7,9 +8,9 @@ export default function ServiceCta() {
           <div>
             <h2>Ready to Transform Your Digital Presence?</h2>
             <p>Let's work together to create something amazing.</p>
-            <Link href="/contact" className={styles.primaryBtn}>
+            <CustomBtnLink href="/contact" variant="cta">
               Get Started by Contacting Us
-            </Link>
+            </CustomBtnLink>
           </div>
         </section>
   );
