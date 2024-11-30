@@ -10,20 +10,22 @@
 
 /* Hero Section */
 .serviceHero {
+  background-color: var(--background-light);
+  margin: 4rem 0;
   padding: 4rem 0;
   text-align: center;
-  background-color: var(--background-light);
 }
 
-.hero h1 {
+.serviceHero h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: var(--text-primary);
 }
 
-.hero p {
+.serviceHero p {
   font-size: 1.25rem;
+  width: 6;
   max-width: 800px;
   margin: 0 auto;
   color: var(--text-secondary);
@@ -36,6 +38,7 @@
 }
 
 .servicesGrid {
+  list-style-type: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
@@ -94,6 +97,7 @@
 }
 
 .valuesGrid {
+  list-style-type: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
@@ -129,6 +133,7 @@
 }
 
 .clientsGrid {
+  list-style-type: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;

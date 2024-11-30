@@ -142,61 +142,60 @@ const ServicesPage = () => {
         <section className={styles.serviceHero}>
           <h1>Transform Your Digital Presence</h1>
           <p>
-            We define, design, and develop world-class digital products that people love to use,
-            helping businesses succeed by connecting them with the right customers online.
+            We define, design, and develop world-class digital products that people love to use, helping businesses succeed by connecting them with the right customers online.
           </p>
         </section>
 
         <section className={styles.servicesSection}>
           <div>
-            <div className={styles.servicesGrid}>
+            <ul className={styles.servicesGrid}>
               {services.map((service) => {
                 const IconComponent = service.icon;
                 return (
-                  <div key={service.id} className={`${styles.serviceCard} ${styles[service.color]}`}>
+                  <li key={service.id} className={`${styles.serviceCard} ${styles[service.color]}`}>
                     <div className={styles.icon}>
-                      <IconComponent size={24} />
+                      <IconComponent size={24} aria-hidden='true'/>
                     </div>
                     <h3>{service.title}</h3>
                     <p>{service.description}</p>
-                  </div>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           </div>
         </section>
 
         <section className={styles.coreValues}>
           <div>
             <h2>Our Core Values</h2>
-            <div className={styles.valuesGrid}>
+            <ul className={styles.valuesGrid}>
               {coreValues.map((value) => (
-                <div key={value.id} className={styles.valueCard}>
+                <li key={value.id} className={styles.valueCard}>
                   <h3>{value.title}</h3>
                   <p>{value.description}</p>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
 
         <section className={styles.clientTypes}>
           <div>
             <h2>Who We Serve</h2>
-            <div className={styles.clientsGrid}>
+            <ul className={styles.clientsGrid}>
               {clientTypes.map((client) => {
                 const IconComponent = client.icon;
                 return (
-                  <div key={client.id} className={styles.clientCard}>
+                  <li key={client.id} className={styles.clientCard}>
                     <div className={styles.icon}>
-                      <IconComponent size={24} />
+                      <IconComponent size={24} aria-hidden='true'/>
                     </div>
                     <h3>{client.title}</h3>
                     <p>{client.description}</p>
-                  </div>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           </div>
         </section>
 
