@@ -4,8 +4,8 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background-color: #ffffff;
-  color: #2d3748;
+  background-color: var(--offWhite);
+  color: var(--darkMode);
 }
 
 .content {
@@ -18,7 +18,7 @@
   font-weight: 700;
   margin: 0;
   line-height: 1;
-  color: #1a202c;
+  color: var(--black);
 }
 
 .message {
@@ -36,25 +36,25 @@
 .homeLink {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #3182ce;
-  color: #ffffff;
+  background-color: var(--primaryColor-300);
+  color: var(--darkMode);
   text-decoration: none;
   border-radius: 0.375rem;
-  font-weight: 500;
+  font-weight: 700;
   transition: background-color 0.2s ease;
 }
 
 .homeLink:focus {
-  outline: 3px solid #63b3ed;
+  outline: 3px solid var(--primaryColor-900);
   outline-offset: 2px;
 }
 
 .homeLink:hover {
-  background-color: #2c5282;
+  background-color: var(--primaryColor-600);
 }
 
 .homeLink:active {
-  background-color: #2a4365;
+  background-color: var(--primaryColor-300);
 }
 
 @media (max-width: 640px) {
@@ -73,27 +73,27 @@
 
 @media (prefers-color-scheme: dark) {
   .notFoundContainer {
-    background-color: #1a202c;
-    color: #e2e8f0;
+    background-color: var(--darkMode);
+    color: var(--offWhite);
   }
 
   .title {
-    color: #f7fafc;
+    color: var(--white);
   }
 
   .homeLink {
-    background-color: #4299e1;
+    background-color: var(--primaryColor-300);
   }
 
   .homeLink:hover {
-    background-color: #3182ce;
+    background-color: var(--primaryColor-600);
   }
 
   .homeLink:active {
-    background-color: #2c5282;
+    background-color: var(--primaryColor-600);
   }
 
   .homeLink:focus {
-    outline-color: #90cdf4;
+    outline-color: var(--primaryColor-900);
   }
 }
