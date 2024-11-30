@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './Contact.module.css'; // Import the CSS module
 import Form from '@/src/components/Forms/ContactForm';
-import ListWithIcon from '@/src/components/List/ListWithIcon';
+import ListWithIcon from '@/src/components/UI/List/ListWithIcon';
 import { BiCalendar, BiSolidEnvelope, BiLogoLinkedinSquare } from 'react-icons/bi';
 
 export const metadata: Metadata = {
