@@ -67,6 +67,16 @@
   background-color: var(--offWhite);
 }
 
+.cta {
+  background-color: var(--offWhite);
+  color: var(--black);
+  letter-spacing: 1px;
+}
+
+.outline:hover:not(.disabled) {
+  background-color: var(--offWhite);
+}
+
 /* Icon positioning */
 .iconLeft, .iconRight {
   display: inline-flex;

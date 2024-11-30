@@ -3,7 +3,7 @@ import { IconType } from 'react-icons';
 import classNames from 'classnames';
 import styles from './CustomBtnLink.module.css';
 
-type Variant = 'link' | 'primary' | 'secondary' | 'outline';
+type Variant = 'link' | 'primary' | 'secondary' | 'outline' | 'cta';
 type Size = 'sm' | 'md' | 'lg';
 
 interface CustomBtnLinkProps {
