@@ -20,9 +20,14 @@
   --white: hsl(45, 40%, 98%);
   --black: hsl(0, 0%, 2%);
   --gray: hsl(0, 0%, 86%);
+  --lightGray: hsl(0, 0%, 93%);
   --grayShadow: rgba(0, 0, 0, 0.12);
+  --natural: hsl(44, 96%, 89%);
 
   --error-t-800: #d74332;
+  --success-s-600:#20906e;
+  --warning-w-600: #EFC235;
+  --info-700: #3D7AA9;
 
   --borderColor: hsl(0, 0%, 86%);
   --borderStyle: 1px solid var(--borderColor);
