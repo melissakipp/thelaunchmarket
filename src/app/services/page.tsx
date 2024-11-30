@@ -10,6 +10,8 @@ import {
   FiGlobe,
 } from 'react-icons/fi';
 import styles from './Services.module.css';
+import ServiceCta from '@/src/components/Cta/ServiceCta';
+import ServiceHero from '@/src/components/Hero/ServiceHero';
 
 interface ServiceItem {
   id: number;
@@ -139,12 +141,8 @@ const ServicesPage = () => {
   return (
     <main className={styles.serviceContainer}>
       <article className={styles.servicesPage}>
-        <section className={styles.serviceHero}>
-          <h1>Transform Your Digital Presence</h1>
-          <p>
-            We define, design, and develop world-class digital products that people love to use, helping businesses succeed by connecting them with the right customers online.
-          </p>
-        </section>
+        
+        <ServiceHero />
 
         <section className={styles.servicesSection}>
           <div>
@@ -199,15 +197,8 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        <section className={styles.cta}>
-          <div>
-            <h2>Ready to Transform Your Digital Presence?</h2>
-            <p>Let's work together to create something amazing.</p>
-            <Link href="/contact" className={styles.primaryBtn}>
-              Get Started by Contacting Us
-            </Link>
-          </div>
-        </section>
+        <ServiceCta />
+        
       </article>
     </main>
   );

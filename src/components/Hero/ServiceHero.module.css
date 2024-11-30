@@ -1,0 +1,22 @@
+.serviceHero {
+  background-color: var(--lightGray);
+  color: var(--black);
+  margin: 4rem 0;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.serviceHero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.serviceHero p {
+  font-size: 1.25rem;
+  width: 6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+}

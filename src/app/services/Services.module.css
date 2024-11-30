@@ -4,33 +4,6 @@
   padding: 0 1rem;
 }
 
-.servicesPage {
-  color: var(--text-primary);
-}
-
-/* Hero Section */
-.serviceHero {
-  background-color: var(--background-light);
-  margin: 4rem 0;
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.serviceHero h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-}
-
-.serviceHero p {
-  font-size: 1.25rem;
-  width: 6;
-  max-width: 800px;
-  margin: 0 auto;
-  color: var(--text-secondary);
-}
-
 /* Services Section */
 .servicesSection {
   padding: 4rem 0;
@@ -111,9 +84,9 @@
 }
 
 .valueCard h3 {
+  border-bottom: 3px solid var(--secondaryColor);
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: var(--primary);
 }
 
 .valueCard p {
@@ -162,42 +135,6 @@
 
 .clientCard p {
   color: var(--text-secondary);
-}
-
-/* CTA Section */
-.cta {
-  border-radius: 12px;
-  margin: 2rem auto;
-  padding: 4rem 0;
-  text-align: center;
-  background: linear-gradient(to right, var(--primary), var(--primary-dark));
-  color: white;
-}
-
-.cta h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.cta p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-}
-
-.primaryBtn {
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  background-color: white;
-  color: var(--primary);
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.primaryBtn:hover {
-  background-color: var(--background-light);
 }
 
 /* Responsive Styles */
