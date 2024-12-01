@@ -6,6 +6,7 @@
 
 /* Services Section */
 .servicesSection {
+  margin: 8rem auto;
   padding: 4rem 0;
 }
 
@@ -80,9 +81,9 @@
 }
 
 /* Core Values Section */
-.core-values {
+.coreValues {
+  margin: auto auto 8rem auto;
   padding: 4rem 0;
-  background-color: var(--offWhite);
 }
 
 .coreValues h2 {
@@ -113,6 +114,7 @@
 
 /* Client Types Section */
 .clientTypes {
+  margin: auto auto 8rem auto;
   padding: 4rem 0;
 }
 
