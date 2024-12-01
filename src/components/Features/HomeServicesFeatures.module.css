@@ -18,7 +18,7 @@
 
 .grid {
   display: grid;
-  gap: 2rem;
+  gap: 6rem;
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
@@ -44,8 +44,7 @@
 .cardTitle {
   font-size: 1.25rem;
   line-height: 1.75rem;
-  font-weight: 600;
-  /* color: var(--text-primary); */
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
