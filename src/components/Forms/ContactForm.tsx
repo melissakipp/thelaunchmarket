@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { BiRocket } from 'react-icons/bi';
 import styles from './ContactForm.module.css'; // Import the CSS module
-import Button from '@/src/components/UI/Buttons/Button';
 import CustomBtn from '@/src/components/UI/Buttons/CustomBtn';
 
 interface FormError {
