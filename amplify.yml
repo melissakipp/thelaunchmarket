@@ -3,10 +3,15 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm use 20
-        - npm ci
+        - nvm install 18.17.0
+        - nvm use 18.17.0
+        - npm install
     build:
       commands:
+        # Add environment variables check before build
+        - echo "Checking environment variables..."
+        - if [ -z "$EMAIL_USER" ]; then echo "EMAIL_USER is not set"; fi
+        - if [ -z "$EMAIL_PASS" ]; then echo "EMAIL_PASS is not set"; fi
         - npm run build
   artifacts:
     baseDirectory: .next
@@ -15,4 +20,8 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-      - .next/cache/**/*
+  customRules:
+    - pattern: "**/*"
+      headers:
+        - key: "Cache-Control"
+          value: "public, max-age=0, must-revalidate"
