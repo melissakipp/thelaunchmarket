@@ -49,7 +49,7 @@
 
 .secondary {
   background-color: var(--offWhite);
-  color: var(--secondaryColor);
+  color: var(--black);
 }
 
 .secondary:hover:not(.disabled) {
@@ -59,7 +59,7 @@
 .outline {
   background-color: transparent;
   border: 2px solid var(--secondaryColor);
-  color: var(--secondaryColor);
+  color: var(--black);
   letter-spacing: 1px;
 }
 
