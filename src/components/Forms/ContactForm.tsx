@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { BiRocket } from 'react-icons/bi';
 import styles from './ContactForm.module.css'; // Import the CSS module
 import Button from '@/src/components/UI/Buttons/Button';
+import CustomBtn from '@/src/components/UI/Buttons/CustomBtn';
 
 interface FormError {
   message: string;
@@ -78,15 +79,15 @@ export default function Form() {
         <fieldset className={styles.contactForm__fieldset}>
           <legend>Contact Information</legend>
           <div className={styles.contactForm__info}>
-            <label htmlFor="name">
+            <label htmlFor='name'>
               Full Name: <span>*</span>
               <input
-                id="name"
-                type="text"
-                data-type="text"
-                name="name"
+                id='name'
+                type='text'
+                data-type='text'
+                name='name'
                 required
-                aria-required="true"
+                aria-required='true'
               />
             </label>
             <p className={styles.contactForm__smText}>
@@ -94,15 +95,15 @@ export default function Form() {
             </p>
           </div>
           <div className={styles.contactForm__info}>
-            <label htmlFor="email">
+            <label htmlFor='email'>
               Email: <span>*</span>
               <input
-                id="email"
-                type="email"
-                data-type="email"
-                name="email"
+                id='email'
+                type='email'
+                data-type='email'
+                name='email'
                 required
-                aria-required="true"
+                aria-required='true'
               />
             </label>
             <p className={styles.contactForm__smText}>
@@ -112,12 +113,12 @@ export default function Form() {
         </fieldset>
 
         <fieldset className={styles.contactForm__msg}>
-          <label htmlFor="message">
+          <label htmlFor='message'>
             Your Message & Question(s): <span>*</span>
             <textarea
-              id="message"
-              name="message"
-              aria-required="true"
+              id='message'
+              name='message'
+              aria-required='true'
               rows={10}
               cols={50}
               required
@@ -130,7 +131,7 @@ export default function Form() {
           <p className={styles.counter}>
             <strong>
               Characters:{' '}
-              <output htmlFor="message" aria-live="polite">
+              <output htmlFor='message' aria-live='polite'>
                 {counter}/300
               </output>
             </strong>
@@ -138,17 +139,27 @@ export default function Form() {
         </fieldset>
       </div>
       <div className={styles.contactForm__btn}>
-        <Button
-          type="submit"
+        {/* <Button
+          type='submit'
           disabled={loading}
-          value="Send Message"
-          data-callback="onSubmit"
-          data-action="submit"
+          value='Send Message'
+          data-callback='onSubmit'
+          data-action='submit'
           className={styles.submitBtn}
         >
           Submit
           <BiRocket />
-        </Button>
+        </Button> */}
+         <CustomBtn
+          type='submit'
+          variant='secondary'
+          size='md'
+          isLoading={loading}
+          startIcon={<BiRocket />}
+          disabled={loading}
+        >
+          Send Message
+        </CustomBtn>
       </div>
     </form>
   );
