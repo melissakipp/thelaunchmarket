@@ -60,13 +60,22 @@
   font-size: 0.75rem;
 }
 
-/* .contactForm__btn .submitBtn {
-  background-color: var(--grayShadow);
+.required {
+  color: var(--error-t-800);
+}
+
+.error {
+  color: var(--error-t-800);
+  background-color: var(--error-t-100);
   padding: 0.75rem;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  margin: auto auto 2rem 1rem;
-} */
+  border-radius: 0.375rem;
+  margin: 1rem;
+}
+
+.success {
+  color: var(--success-s-600);
+  background-color: var(--success-s-100);
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  margin: 1rem;
+}
