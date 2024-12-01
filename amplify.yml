@@ -1,0 +1,24 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 18.17.0
+        - nvm use 18.17.0
+        - npm install
+    build:
+      commands:
+        - echo "Checking environment variables..."
+        - |
+          if [ -z "$EMAIL_USER" ] || [ -z "$EMAIL_PASS" ]; then
+            echo "Required environment variables are missing"
+            exit 1
+          fi
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
