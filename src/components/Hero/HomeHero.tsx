@@ -1,7 +1,6 @@
 import { FiArrowRight } from 'react-icons/fi';
 import styles from './HomeHero.module.css';
 import CustomBtnLink from '../UI/Links/CustomBtnLink';
-import CustomLink from '../UI/Links/CustomBtnLink';
 
 
 export default function HomeHero() {
@@ -11,7 +10,13 @@ export default function HomeHero() {
       <h2>Modern Web Design for <br />Your Growing Brand</h2>
       <p>Beautiful, functional websites built for your future. No complexity, just results.</p>
       {/* Outline Button */}
-      <CustomBtnLink href="/about" variant="outline" size="sm">
+      <CustomBtnLink 
+        href='/about'
+        variant='outline' 
+        size='sm'
+        icon={FiArrowRight}
+        iconPosition='right'
+      >
         Get Started
       </CustomBtnLink>
     </section>
