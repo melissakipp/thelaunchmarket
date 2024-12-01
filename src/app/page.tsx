@@ -1,6 +1,9 @@
-import styles from '../styles/Home.module.scss';
 import type { Metadata } from 'next';
-import Hero from './components/Hero/Hero';
+import styles from './Home.module.css'; 
+import Hero from '@/src/components/Hero/HomeHero';
+import Feature from '@/src/components/Features/HomeFeature';
+import ServicesFeatures from '@/src/components/Features/HomeServicesFeatures';
+import Cta from '@/src/components/Cta/HomeCta'; 
 
 export const metadata: Metadata = {
   title: 'Home | The Launch Market',
@@ -9,15 +12,12 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className={styles.homeMain}> 
       <article>
-        <section>
-          <Hero />
-        </section>
-
-        <section className={styles.ctaBox}>
-          <p>Are you ready to launch your product or service to the market?</p>
-        </section>
+        <Hero /> 
+        <Feature />
+        <ServicesFeatures />
+        <Cta />  
       </article>
     </main>
   );

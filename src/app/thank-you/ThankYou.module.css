@@ -1,0 +1,54 @@
+/* Mobile first */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.messageWrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #4b5563;
+}
+
+.envelopeWrapper {
+  position: relative;
+  width: 100%;
+  height: 8rem;
+}
+
+.envelope {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  color: var(--primaryColor-900);
+  animation: moveEnvelope 3s ease-in-out infinite;
+}
+
+@keyframes moveEnvelope {
+  0% {
+    transform: translate(-50%, 0) rotate(0deg);
+    left: 15%;
+  }
+  50% {
+    transform: translate(0, -20px) rotate(10deg);
+    left: 50%;
+  }
+  100% {
+    transform: translate(50%, 0) rotate(0deg);
+    left: 85%;
+  }
+}

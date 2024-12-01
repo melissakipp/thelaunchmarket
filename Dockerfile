@@ -1,24 +1,34 @@
-FROM node:21.7.3-bullseye
+FROM node:23.3.0-bookworm-slim
 ENV NODE_ENV development
+WORKDIR /app
 
-ENV NPM_VERSION 10.8.3
+ENV NODE_VERSION 23.3.0
 
 EXPOSE 3000
 
-WORKDIR /home/nextjs/app
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  ca-certificates \
+  git \
+  openssh-client \
+  && rm -rf /var/lib/apt/lists/*
 
 COPY package*.json ./
 
-RUN apt update && apt -y install --no-install-recommends ca-certificates git git-lfs openssh-client curl jq cmake sqlite3 openssl psmisc python3 && \
-  apt-get clean autoclean && apt-get autoremove --yes && rm -rf /var/lib/{apt,dpkg,cache,log}
-
 RUN npm install -g npm@${NPM_VERSION} \
+  && ln -s /app/node_modules/.bin/next /usr/local/bin/next && \
   npm install && npm cache clean --force && \
-  npx next telemetry disable
+  npx next telemetry disable 
 
-RUN chown -R node:node .
+# Copy package files with correct ownership
+COPY --chown=node:node package*.json ./
+
+# Set ownership of the working directory
+RUN chown -R node:node /app
 USER node
 
-COPY . .
+# Copy the rest of the application with correct ownership
+COPY --chown=node:node . .
 
-CMD [ "node" ]
+CMD ["npm", "run", "dev"]

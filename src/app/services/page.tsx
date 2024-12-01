@@ -1,54 +1,200 @@
-import type { Metadata } from 'next';
-import Image from 'next/image';
+import {
+  FiLayout,
+  FiCode,
+  FiFeather,
+  FiShoppingCart,
+  FiSearch,
+  FiSettings,
+  FiZap,
+  FiGlobe,
+} from 'react-icons/fi';
+import styles from './Services.module.css';
+import ServiceCta from '@/src/components/Cta/ServiceCta';
+import ServiceHero from '@/src/components/Hero/ServiceHero';
 
-import styles from '@/styles/Services.module.scss';
+interface ServiceItem {
+  id: number;
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  color: string;
+}
 
-export const metadata: Metadata = {
-  title: 'Services | The Launch Market',
-  description: 'Welcome to The Launch Market',
+interface ClientType {
+  id: number;
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+interface CoreValue {
+  id: number;
+  title: string;
+  description: string;
+}
+
+const ServicesPage = () => {
+  const services: ServiceItem[] = [
+    {
+      id: 1,
+      icon: FiLayout,
+      title: 'UI/UX Design',
+      description: 'User-centric design that focuses on conversion optimization and customer engagement across all platforms.',
+      color: 'primary',
+    },
+    {
+      id: 2,
+      icon: FiCode,
+      title: 'Web Development',
+      description: "Custom website development that's fast, secure, and user-friendly, built with the latest technologies.",
+      color: 'secondary',
+    },
+    {
+      id: 3,
+      icon: FiFeather,
+      title: 'Brand Identity',
+      description: 'Transform your brand through strategic visual identity and compelling communications.',
+      color: 'info',
+    },
+    {
+      id: 4,
+      icon: FiShoppingCart,
+      title: 'E-commerce Solutions',
+      description: 'Custom online store development with secure payment processing and inventory management.',
+      color: 'warning',
+    },
+    {
+      id: 5,
+      icon: FiSearch,
+      title: 'SEO Optimization',
+      description: 'Improve your search engine rankings and drive organic traffic to your website.',
+      color: 'error',
+    },
+    {
+      id: 6,
+      icon: FiSettings,
+      title: 'Website Maintenance',
+      description: 'Ongoing support and updates to keep your website secure, fast, and up-to-date.',
+      color: 'success',
+    },
+  ];
+
+  const clientTypes: ClientType[] = [
+    {
+      id: 1,
+      icon: FiZap,
+      title: 'Startups',
+      description:
+        'We understand the unique challenges startups face and provide iterative, growth-focused solutions that add value while working within your constraints.',
+    },
+    {
+      id: 2,
+      icon: FiSettings,
+      title: 'Small Businesses',
+      description:
+        'We help small businesses overcome scaling challenges with time-efficient solutions that ensure smooth operations and sustainable growth.',
+    },
+    {
+      id: 3,
+      icon: FiGlobe,
+      title: 'Non-Profits',
+      description:
+        'We support your mission by solving technical challenges and raising awareness for your cause, helping you make a bigger impact in the world.',
+    },
+  ];
+
+  const coreValues: CoreValue[] = [
+    {
+      id: 1,
+      title: 'Quality First',
+      description: 'We are committed to delivering high-quality work in every project.',
+    },
+    {
+      id: 2,
+      title: 'Impact Driven',
+      description: 'Passionate about helping businesses succeed and making a positive impact.',
+    },
+    {
+      id: 3,
+      title: 'Customer Focus',
+      description: 'Dedicated to outstanding customer service and building strong partnerships.',
+    },
+    {
+      id: 4,
+      title: 'Innovation',
+      description: 'Bringing innovation and creativity to design and development solutions.',
+    },
+    {
+      id: 5,
+      title: 'Empathy',
+      description: 'Maintaining an empathy-driven, caring, and service-oriented mindset.',
+    },
+  ];
+
+  return (
+    <main className={styles.serviceContainer}>
+      <article className={styles.servicesPage}>
+        
+        <ServiceHero />
+
+        <section className={styles.servicesSection}>
+          <div>
+            <ul className={styles.servicesGrid}>
+              {services.map((service) => {
+                const IconComponent = service.icon;
+                return (
+                  <li key={service.id} className={`${styles.serviceCard} ${styles[service.color]}`}>
+                    <div className={styles.icon}>
+                      <IconComponent size={24} aria-hidden='true'/>
+                    </div>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+
+        <section className={styles.coreValues}>
+          <div>
+            <h2>Our Core Values</h2>
+            <ul className={styles.valuesGrid}>
+              {coreValues.map((value) => (
+                <li key={value.id} className={styles.valueCard}>
+                  <h3>{value.title}</h3>
+                  <p>{value.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className={styles.clientTypes}>
+          <div>
+            <h2>Who We Serve</h2>
+            <ul className={styles.clientsGrid}>
+              {clientTypes.map((client) => {
+                const IconComponent = client.icon;
+                return (
+                  <li key={client.id} className={styles.clientCard}>
+                    <div className={styles.icon}>
+                      <IconComponent size={24} aria-hidden='true'/>
+                    </div>
+                    <h3>{client.title}</h3>
+                    <p>{client.description}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+
+        <ServiceCta />
+        
+      </article>
+    </main>
+  );
 };
 
-export default function Services() {
-  return (
-    <article className={styles.container}>
-      <h1 className="srOnly">Services</h1>
-      <section className={styles.intro}>
-        <Image 
-          className={styles.image}
-          src="/images/superstition-mountains-2024_by-melissa-j-kipp.webp" 
-          alt="An photo of the Superstition Mountains in Arizona with the sun setting west of the mountain range, which casted a warm glow on the mountains." 
-          width={1000} 
-          height={400}
-          unoptimized
-          loading='lazy'
-          aria-hidden="true"
-        />
-        <p className={styles.text}>At The Launch Market, we're dedicated to helping your business thrive with tailored design, development, and marketing solutions. Whether you're looking to build a new website, refine your branding, or launch a targeted marketing campaign, our team is here to guide you every step of the way. Our proven process ensures clear communication, high-quality results, and a seamless experience from start to finish. Learn more about our services below, and get in touch to discuss how we can help you achieve your goals.</p>
-      </section>
-      <div className={styles.offer}>
-        <section>
-          <h2 className={styles.title}>Digital Marketing Services</h2>
-          <p>Our digital marketing services are designed to elevate your brand and connect you with your target audience through strategic campaigns. We tailor each marketing plan based on your unique needs and business goals.</p>
-         <h3>What We Offer:</h3> 
-          <ul>
-            <li>
-              <p><strong>Search Engine Optimization (SEO):</strong>&nbsp; Optimize your site to rank higher in search engines and drive organic traffic.</p>
-            </li>
-            <li>
-              <p><strong>Pay-Per-Click (PPC) Campaigns</strong>:&nbsp;Strategize and manage targeted paid ad campaigns on Google, Facebook, and Instagram to get immediate visibility.</p>
-            </li>
-            <li>
-              <p><strong>Social Media Management</strong>:&nbsp;We create engaging content and manage your presence on social platforms to grow your audience and foster engagement.</p>
-            </li>
-            <li>
-              <p><strong>Email Marketing</strong>:&nbsp;From crafting compelling newsletters to automating email funnels, we help nurture leads and retain customers.</p>
-            </li>
-            <li>
-              <p><strong>Analytics and Reporting</strong>:&nbsp;Data-driven marketing decisions are essential. We provide in-depth reporting and analysis to measure the success of your campaigns and continuously optimize for better results.</p>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </article>
-  )
-}
+export default ServicesPage;

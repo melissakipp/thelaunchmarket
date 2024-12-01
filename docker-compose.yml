@@ -2,16 +2,24 @@ version: '2.4'
 
 services:
   nextjs:
-    ports:
-      - 3000:3000
     build:
       context: .
       dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
     volumes:
-      - ./:/home/nextjs/app
+      - .:/app:delegated
+      # Named volumes for persistent dependencies
+      - node_modules:/app/node_modules
+      - next-cache:/app/.next
     environment:
       - NODE_ENV=development
-    command: npm run dev
+      - WATCHPACK_POLLING=true
+    user: "node"
+
+volumes:
+  node_modules:
+  next-cache:
 
   # nginx:
   #   image: nginx

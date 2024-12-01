@@ -1,0 +1,41 @@
+.cta {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.primaryLink {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--secondaryColor);
+  border-radius: 0.5rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 2rem auto auto auto;
+  padding: 0.75rem 2rem;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+}
+
+.cta .primaryLink:hover {
+  background-color: var(--primaryColor-300);
+  color: var(--black);
+}
+
+.primaryLink svg {
+  margin-left: 0.5rem;
+}

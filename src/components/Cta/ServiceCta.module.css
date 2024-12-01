@@ -1,0 +1,45 @@
+.cta {
+  background-color: var(--secondaryColor);
+  border-radius: 12px;
+  margin: auto auto 8rem auto;
+  padding: 4rem 0;
+  text-align: center;
+  /* background: linear-gradient(to right, var(--primary), var(--primary-dark)); */
+  color: white;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.primaryBtn {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background-color: white;
+  color: var(--black);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.primaryBtn:hover {
+  background-color: var(--offWhite);
+}
+
+@media (max-width: 768px) {
+  .cta h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta p {
+    font-size: 1.125rem;
+  }
+}

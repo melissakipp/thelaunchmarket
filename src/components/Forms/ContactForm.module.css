@@ -1,0 +1,72 @@
+.contactHeader {
+  padding: 1rem;
+}
+
+.contactHeader h3 {
+  font-size: 2rem;
+  margin: 3rem 0 3rem 0;
+  text-align: center;
+  border-bottom: 2px solid var(--primaryColor-300);
+  padding-bottom: 1rem;
+}
+
+.contactHeader p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.contactForm__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.contactForm__fieldset legend {
+  background-color: var(--grayShadow);
+  border-radius: 4px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: auto auto 1rem auto;
+  padding: .5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.contactForm__info {
+  margin: auto auto 1rem auto;
+}
+
+.contactForm__info label, .contactForm__msg label {
+  font-weight: 700;
+}
+
+.contactForm__info input, .contactForm__msg textarea {
+  border: var(--borderStyle);
+  border-radius: 6px;
+  padding: 0.55em;
+  width: 100%;
+}
+
+.contactForm__fieldset .counter {
+  font-size: 1rem;
+}
+
+.contactForm__smText small {
+  font-size: 0.75rem;
+}
+
+/* .contactForm__btn .submitBtn {
+  background-color: var(--grayShadow);
+  padding: 0.75rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: auto auto 2rem 1rem;
+} */

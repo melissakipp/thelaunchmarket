@@ -1,0 +1,21 @@
+/* Mobile first */
+.homeMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.homeCta {
+  background-color: var(--ctaBox);
+  border-radius: var(--radius);
+  box-shadow: var(--lgShadow);
+  color: var(--white);
+  font-weight: 700;
+  margin: var(--margin);
+  max-width: 500px;
+  padding: var(--paddingLg);
+  text-align: center;
+}
