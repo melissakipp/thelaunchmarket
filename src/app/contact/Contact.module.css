@@ -55,10 +55,6 @@
   outline: 2px solid var(--primaryColor-300);
 }
 
-.formContainer span {
-  color: var(--error-t-800);
-}
-
 /* Tablet */
 @media screen and (width >= 58em) {
   .contactMain {
