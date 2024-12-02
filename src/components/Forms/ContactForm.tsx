@@ -87,6 +87,47 @@ export default function Form() {
     }
   }
 
+  // Add test function
+  async function testEmailConfig() {
+    try {
+      console.group('Email Configuration Test');
+      console.log('Starting configuration test...');
+      
+      const response = await fetch('/api/send');
+      const data = await response.json();
+      
+      // Log each part of the configuration separately
+      console.log('API Status:', data.status);
+      console.log('Node Environment:', data.environment.nodeEnv);
+      
+      console.group('Email Configuration Details');
+      console.table({
+        'Email User Exists': data.environment.emailConfigured.userExists,
+        'Email User Length': data.environment.emailConfigured.userLength,
+        'Email Pass Exists': data.environment.emailConfigured.passExists,
+        'Email Pass Length': data.environment.emailConfigured.passLength
+      });
+      console.groupEnd();
+
+      // Add timestamp of test
+      console.log('Test completed at:', new Date().toLocaleString());
+      console.groupEnd();
+
+      // Show alert with formatted data
+      alert(
+        'Email Configuration Test Results:\n\n' +
+        `Status: ${data.status}\n` +
+        `Environment: ${data.environment.nodeEnv}\n\n` +
+        'Email Configuration:\n' +
+        `✓ Email User: ${data.environment.emailConfigured.userExists ? 'Configured' : 'Missing'}\n` +
+        `✓ Email Pass: ${data.environment.emailConfigured.passExists ? 'Configured' : 'Missing'}`
+      );
+    } catch (error) {
+      console.error('Configuration test failed:', error);
+      alert('Failed to check email configuration. See console for details.');
+    }
+  }
+
   return (
     <form onSubmit={handleSubmit} noValidate>
       <header className={styles.contactHeader}>
@@ -196,6 +237,19 @@ export default function Form() {
         >
           {loading ? 'Sending...' : 'Send Message'}
         </CustomBtn>
+        {/* Test button - only shown in development */}
+        {process.env.NODE_ENV === 'development' && (
+          <CustomBtn
+            type="button"
+            variant="secondary"
+            size="md"
+            onClick={testEmailConfig}
+            className={styles.testButton}
+            startIcon={<span role="img" aria-label="test">🔍</span>}
+          >
+            Test Config
+          </CustomBtn>
+        )}
       </div>
     </form>
   );
