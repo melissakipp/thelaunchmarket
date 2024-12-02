@@ -5,11 +5,10 @@ frontend:
       commands:
         - nvm install 18.18.0
         - nvm use 18.18.0
-        # Clear npm cache and remove node_modules
-        - npm cache clean --force
+        # Clean install approach
         - rm -rf node_modules
-        # Install dependencies including TypeScript
-        - npm ci
+        - rm -f package-lock.json
+        - npm install
     build:
       commands:
         - |
@@ -18,7 +17,7 @@ frontend:
           echo "EMAIL_USER exists: $(if [ ! -z "$EMAIL_USER" ]; then echo "YES"; else echo "NO"; fi)"
           echo "EMAIL_PASS exists: $(if [ ! -z "$EMAIL_PASS" ]; then echo "YES"; else echo "NO"; fi)"
         - echo "Starting build process..."
-        # Verify TypeScript is installed
+        # Verify TypeScript installation
         - echo "TypeScript version:" && npx tsc --version
         - npm run build
   artifacts:
