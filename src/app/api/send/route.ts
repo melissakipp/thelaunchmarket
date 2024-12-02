@@ -1,3 +1,4 @@
+// app/api/send/route.ts
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
@@ -7,97 +8,70 @@ type NodemailerError = Error & {
 };
 
 export async function POST(request: Request) {
-  // Initialize logging object
-  const debugLog = {
+  // Log environment variable status
+  console.log('API Route Environment Check:', {
     timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV,
-    requestId: crypto.randomUUID(),
-    stages: [] as string[],
-    envVars: {
-      hasEmailUser: !!process.env.EMAIL_USER,
-      hasEmailPass: !!process.env.EMAIL_PASS,
-      emailUserLength: process.env.EMAIL_USER?.length || 0,
-      emailPassLength: process.env.EMAIL_PASS?.length || 0
-    }
-  };
+    nodeEnv: process.env.NODE_ENV,
+    emailUserExists: !!process.env.EMAIL_USER,
+    emailUserLength: process.env.EMAIL_USER?.length ?? 0,
+    emailPassExists: !!process.env.EMAIL_PASS,
+    emailPassLength: process.env.EMAIL_PASS?.length ?? 0
+  });
 
   try {
-    debugLog.stages.push('Request started');
-    
-    // Log request headers (excluding sensitive data)
-    const safeHeaders = Object.fromEntries(
-      Array.from(request.headers.entries())
-        .filter(([key]) => !key.includes('cookie') && !key.includes('authorization'))
-    );
-    debugLog.stages.push('Headers processed');
-    console.log('Request headers:', safeHeaders);
+    // First verify we have the required environment variables
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error('Missing email configuration:', {
+        hasEmailUser: !!process.env.EMAIL_USER,
+        hasEmailPass: !!process.env.EMAIL_PASS
+      });
+      
+      return NextResponse.json({
+        message: 'Server configuration error',
+        details: 'Email service not properly configured'
+      }, { status: 500 });
+    }
 
+    // Log that we're about to parse the request
+    console.log('Parsing request body...');
     const body = await request.json();
-    debugLog.stages.push('Body parsed');
     
-    // Log sanitized request body
-    const sanitizedBody = {
-      hasName: !!body.name,
-      nameLength: body.name?.length,
-      hasEmail: !!body.email,
-      emailLength: body.email?.length,
-      hasMessage: !!body.message,
-      messageLength: body.message?.length
-    };
-    console.log('Sanitized request body:', sanitizedBody);
-
     const { name, email, message } = body;
 
+    // Validate request data
     if (!name || !email || !message) {
-      debugLog.stages.push('Validation failed');
-      console.log('Debug log at validation failure:', debugLog);
-      return NextResponse.json(
-        { message: 'Missing required fields', debug: debugLog },
-        { status: 400 }
-      );
+      console.log('Invalid request data:', { hasName: !!name, hasEmail: !!email, hasMessage: !!message });
+      return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
     }
 
-    const user = process.env.EMAIL_USER;
-    const pass = process.env.EMAIL_PASS;
-
-    if (!user || !pass) {
-      debugLog.stages.push('Environment variables missing');
-      console.error('Missing credentials debug log:', debugLog);
-      return NextResponse.json(
-        { 
-          message: 'Internal server error: Missing email configuration',
-          debug: debugLog 
-        },
-        { status: 500 }
-      );
-    }
-
-    debugLog.stages.push('Creating transport');
+    // Log transport creation attempt
+    console.log('Creating nodemailer transport...');
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       host: 'smtp.gmail.com',
       port: 465,
       secure: true,
       auth: {
-        user: user,
-        pass: pass,
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
-      debug: true,
-      logger: true // Enable built-in logger
+      debug: true, // Enable debug output
     });
 
-    debugLog.stages.push('Verifying transport');
+    // Verify transport configuration
+    console.log('Verifying transport configuration...');
     try {
       await transporter.verify();
-      debugLog.stages.push('Transport verified');
+      console.log('Transport verification successful');
     } catch (verifyError) {
-      debugLog.stages.push(`Transport verification failed: ${(verifyError as Error).message}`);
+      console.error('Transport verification failed:', verifyError);
       throw verifyError;
     }
 
-    debugLog.stages.push('Sending mail');
+    // Attempt to send email
+    console.log('Attempting to send email...');
     const mailResponse = await transporter.sendMail({
-      from: user,
+      from: process.env.EMAIL_USER,
       to: 'melissakipp.az@gmail.com',
       replyTo: email,
       subject: `New message from ${name}`,
@@ -108,60 +82,53 @@ export async function POST(request: Request) {
       `,
     });
 
-    debugLog.stages.push('Mail sent successfully');
-    console.log('Success debug log:', { ...debugLog, mailId: mailResponse.messageId });
+    console.log('Email sent successfully:', {
+      messageId: mailResponse.messageId,
+      response: mailResponse.response
+    });
 
-    return NextResponse.json(
-      { 
-        message: 'Email sent successfully',
-        messageId: mailResponse.messageId,
-        debug: debugLog 
-      },
-      { status: 200 }
-    );
+    return NextResponse.json({ 
+      message: 'Email sent successfully',
+      messageId: mailResponse.messageId
+    }, { status: 200 });
 
   } catch (error: unknown) {
-    debugLog.stages.push('Error occurred');
-    
     if (error instanceof Error) {
       const nodeMailerError = error as NodemailerError;
       
-      const errorDetails = {
+      console.error('Email send error:', {
         name: nodeMailerError.name,
         message: nodeMailerError.message,
         code: nodeMailerError.code,
-        stack: process.env.NODE_ENV === 'development' ? nodeMailerError.stack : undefined
-      };
-
-      console.error('Full error debug log:', {
-        ...debugLog,
-        error: errorDetails
+        command: nodeMailerError.command
       });
 
-      return NextResponse.json(
-        { 
-          message: 'Internal server error: Unable to send email',
-          details: nodeMailerError.message,
-          debug: debugLog,
-          error: errorDetails
-        },
-        { status: 500 }
-      );
+      return NextResponse.json({
+        message: 'Failed to send email',
+        details: nodeMailerError.message
+      }, { status: 500 });
     }
 
-    // Fallback for unknown errors
-    console.error('Unknown error debug log:', {
-      ...debugLog,
-      error: 'Unknown error type'
-    });
-
-    return NextResponse.json(
-      { 
-        message: 'Internal server error: An unexpected error occurred',
-        details: 'Unknown error',
-        debug: debugLog
-      },
-      { status: 500 }
-    );
+    console.error('Unknown error:', error);
+    return NextResponse.json({
+      message: 'An unexpected error occurred',
+      details: 'Unknown error type'
+    }, { status: 500 });
   }
+}
+
+// Add a test endpoint to verify environment variables
+export async function GET(request: Request) {
+  return NextResponse.json({
+    status: 'API Route Operational',
+    environment: {
+      nodeEnv: process.env.NODE_ENV,
+      emailConfigured: {
+        userExists: !!process.env.EMAIL_USER,
+        userLength: process.env.EMAIL_USER?.length ?? 0,
+        passExists: !!process.env.EMAIL_PASS,
+        passLength: process.env.EMAIL_PASS?.length ?? 0
+      }
+    }
+  });
 }

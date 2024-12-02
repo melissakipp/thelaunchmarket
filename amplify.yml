@@ -8,12 +8,12 @@ frontend:
         - npm install
     build:
       commands:
-        - echo "Checking environment variables..."
         - |
-          if [ -z "$EMAIL_USER" ] || [ -z "$EMAIL_PASS" ]; then
-            echo "Required environment variables are missing"
-            exit 1
-          fi
+          echo "Environment Check:"
+          echo "NODE_ENV: $NODE_ENV"
+          echo "EMAIL_USER exists: $(if [ ! -z "$EMAIL_USER" ]; then echo "YES"; else echo "NO"; fi)"
+          echo "EMAIL_PASS exists: $(if [ ! -z "$EMAIL_PASS" ]; then echo "YES"; else echo "NO"; fi)"
+        - echo "Starting build process..."
         - npm run build
   artifacts:
     baseDirectory: .next
