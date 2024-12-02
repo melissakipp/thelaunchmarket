@@ -5,12 +5,15 @@ frontend:
       commands:
         - nvm install 18.18.0
         - nvm use 18.18.0
-        # Clean and install dependencies
+        # Clean and fresh install
         - rm -rf node_modules
         - rm -f package-lock.json
-        # Install TypeScript globally to ensure it's available
-        - npm install -g typescript
+        # Install TypeScript and types globally
+        - npm install -g typescript @types/node @types/react @types/react-dom
+        # Install project dependencies
         - npm install
+        # Verify TypeScript installation
+        - tsc --version
     build:
       commands:
         - |
@@ -19,7 +22,6 @@ frontend:
           echo "EMAIL_USER exists: $(if [ ! -z "$EMAIL_USER" ]; then echo "YES"; else echo "NO"; fi)"
           echo "EMAIL_PASS exists: $(if [ ! -z "$EMAIL_PASS" ]; then echo "YES"; else echo "NO"; fi)"
         - echo "Starting build process..."
-        # Build the application
         - npm run build
   artifacts:
     baseDirectory: .next
