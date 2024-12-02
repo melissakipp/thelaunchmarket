@@ -1,6 +1,6 @@
 {
   "name": "thelaunchmarket",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -15,23 +15,23 @@
     "next": "^15.0.3",
     "next-themes": "^0.4.3",
     "nodemailer": "^6.9.15",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^5.3.0"
   },
   "devDependencies": {
     "@aws-amplify/backend": "^1.2.1",
     "@aws-amplify/backend-cli": "^1.2.5",
-    "@types/node": "^22.10.1",
+    "@types/node": "^20.10.3",
     "@types/nodemailer": "^6.4.15",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
     "@types/sass": "^1.43.1",
     "aws-cdk": "^2.156.0",
     "aws-cdk-lib": "^2.156.0",
     "constructs": "^10.3.0",
     "esbuild": "^0.24.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.3.3"
   }
 }
