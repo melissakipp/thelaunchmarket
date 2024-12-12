@@ -1,6 +1,5 @@
 .section {
   padding: 4rem 1rem;
-  /* background-color: var(--background); */
   transition: background-color 0.3s ease;
 }
 
@@ -63,7 +62,6 @@
 }
 
 .cardDescription {
-  color: var(--muted-foreground);
   font-size: 1rem;
   line-height: 1.5rem;
   margin: auto auto 1rem auto;
