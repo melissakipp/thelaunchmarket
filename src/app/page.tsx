@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import styles from './Home.module.css'; 
+import styles from '@/src/styles/Home.module.css'; 
 import Hero from '@/src/components/Hero/HomeHero';
 import Feature from '@/src/components/Features/HomeFeature';
 import ServicesFeatures from '@/src/components/Features/HomeServicesFeatures';
