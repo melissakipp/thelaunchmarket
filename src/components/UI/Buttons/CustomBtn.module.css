@@ -1,9 +1,10 @@
+/* CustomBtn.module.css */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius);
   cursor: pointer;
   font-weight: 500;
   margin: 0 1rem 3rem 1rem;
@@ -23,8 +24,8 @@
 
 /* Variants */
 .primary {
-  background-color: var(--primaryColor-300);
-  color: var(--black);
+  background-color: var(--primaryBtn);
+  color: var(--foreground);
 }
 
 .primary:hover {
@@ -36,83 +37,92 @@
 }
 
 .secondary {
-  background-color: #e5e7eb;
-  color: #111827;
+  background-color: var(--secondaryColor);
+  color: var(--foreground);
 }
 
 .secondary:hover {
-  background-color: #d1d5db;
+  background-color: var(--secondaryColor-400);
 }
 
 .secondary:focus-visible {
-  outline-color: #6b7280;
+  outline-color: var(--secondaryColor);
 }
 
 .danger {
-  background-color: #dc2626;
-  color: white;
+  background-color: var(--error-t-800);
+  color: var(--white);
 }
 
 .danger:hover {
-  background-color: #b91c1c;
+  background-color: var(--error-t-100);
+  color: var(--error-t-800);
 }
 
 .danger:focus-visible {
-  outline-color: #ef4444;
+  outline-color: var(--error-t-800);
 }
 
 .ghost {
   background-color: transparent;
-  color: #374151;
+  color: var(--textSecondary);
+  border: var(--borderStyle);
 }
 
 .ghost:hover {
-  background-color: #f3f4f6;
+  background-color: var(--gray);
+  color: var(--foreground);
 }
 
 .ghost:focus-visible {
-  outline-color: #6b7280;
+  outline-color: var(--borderColor);
 }
 
-/* Sizes */
+/* Add these button-specific dark mode overrides */
+[data-theme='dark'] .primary {
+  background-color: var(--primaryBtn);
+  color: var(--black); /* Keep text dark on light background */
+}
+
+[data-theme='dark'] .secondary {
+  background-color: var(--secondaryColor);
+  color: var(--black);
+}
+
+[data-theme='dark'] .ghost {
+  border-color: var(--borderColor);
+  color: var(--foreground);
+}
+
+[data-theme='dark'] .ghost:hover {
+  background-color: var(--darkGray);
+  color: var(--white);
+}
+
+/* Sizes remain the same */
 .small {
-  padding: 0.375rem 0.75rem;
+  padding: var(--paddingXs) var(--paddingSm);
   font-size: 0.875rem;
 }
 
 .medium {
-  padding: 0.5rem 1rem;
+  padding: var(--paddingSm);
   font-size: 1rem;
 }
 
 .large {
-  padding: 0.75rem 1.5rem;
+  padding: var(--paddingSm) var(--paddingLg);
   font-size: 1.125rem;
 }
 
-/* Full width */
-.fullWidth {
-  width: 100%;
-}
-
-/* Icons */
-.startIcon {
-  margin-right: 0.5rem;
-  display: inline-flex;
-}
-
-.endIcon {
-  margin-left: 0.5rem;
-  display: inline-flex;
-}
-
-/* Loading spinner */
+/* Loading spinner modifications */
 .spinner {
   animation: spin 1s linear infinite;
   margin-right: 0.5rem;
   height: 1rem;
   width: 1rem;
   margin-left: -0.25rem;
+  color: currentColor;
 }
 
 .spinnerTrack {

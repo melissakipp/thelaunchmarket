@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import { useTheme } from 'next-themes';
 import { cn } from '@/src/lib/utils/cn';
 
 import styles from './CustomBtn.module.css';
@@ -37,13 +38,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   children,
   ...props
 }, ref) => {
-  const buttonClasses = [
+  const { theme } = useTheme();
+
+  const buttonClasses = cn(
     styles.button,
-    variants[variant],
-    sizes[size],
-    fullWidth ? styles.fullWidth : '',
+    styles[variant],
+    styles[size],
+    fullWidth && styles.fullWidth,
+    // Optional: Add theme-specific classes
+    theme === 'dark' && styles[`${variant}Dark`],
     className
-  ].filter(Boolean).join(' ');
+  );
 
   return (
     <button

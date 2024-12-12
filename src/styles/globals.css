@@ -52,6 +52,22 @@
   --paddingSm: 1rem;
   --paddingLg: 2rem;
 
+  /* Button-specific variables */
+  --btn-primary-bg: var(--primaryColor-300);
+  --btn-primary-text: var(--black);
+  --btn-primary-hover: var(--gray);
+  
+  --btn-secondary-bg: var(--secondaryColor);
+  --btn-secondary-text: var(--black);
+  --btn-secondary-hover: var(--secondaryColor-400);
+  
+  --btn-danger-bg: var(--error-t-800);
+  --btn-danger-text: var(--white);
+  --btn-danger-hover: var(--error-t-100);
+  
+  --btn-ghost-text: var(--textSecondary);
+  --btn-ghost-hover: var(--gray);
+
   /* Typography */
   --fontFamily: 'Roboto', sans-serif;
   --fontMono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -68,6 +84,11 @@
   --borderColor: var(--darkGray);
   --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px,
     rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;
+
+  /* Button-specific dark mode overrides */
+  --btn-primary-hover: var(--primaryColor-600);
+  --btn-secondary-hover: var(--secondaryColor);
+  --btn-ghost-hover: var(--darkGray);
 
   & img {
     filter: brightness(0.8) contrast(1.2);
