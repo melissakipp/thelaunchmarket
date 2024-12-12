@@ -13,6 +13,7 @@
   --lightGray: #f0f0ef;
   --darkGray: #595959;
   --grayShadow: hsla(0, 0%, 0%, 0.12);
+  --secondaryColor-100: rgba(186, 233, 244,.25);
 
   /* Status Colors */
   --error-800: #d74332;
