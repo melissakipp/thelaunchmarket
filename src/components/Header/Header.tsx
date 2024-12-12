@@ -24,7 +24,13 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo} aria-label="Home">
-          <Image src={Logo} alt="Logo" width={125} height={125} />
+          <Image 
+            src={Logo}
+            alt="Logo"
+            width={125}
+            height={125}
+            className="darkModeLogo"
+          />
         </Link>
 
         <div className={styles.navContainer}>

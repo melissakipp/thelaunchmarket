@@ -1,227 +1,162 @@
-/* @use 'normalize' as *;
-@use 'typography';
-@use 'variables'; */
-
 :root {
-  color-scheme: light dark;
-
-  --font-family: 'Roboto', sans-serif;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  /* Color Palette */
+  /* Base Colors */
   --primaryColor-300: #f2d663;
-  --primaryColor-600: hsl(42, 85%, 56%);
-  --primaryColor-900: hsl(27, 85%, 51%);
+  --primaryColor-600: #eeb52f;
+  --primaryColor-900: #ec7718;
+  --secondaryColor: #57a6bc;
+  --secondaryColor-400: #70cae1;
 
-  --secondaryColor: hsl(193, 43%, 54%);
-  --secondaryColor-400: hsl(192, 65%, 66%);
+  /* Neutral Colors */
+  --white: #fcfbf8;
+  --black: #050505;
+  --gray: #dbdbdb;
+  --lightGray: #f0f0ef;
+  --darkGray: #595959;
+  --grayShadow: hsla(0, 0%, 0%, 0.12);
 
-  --white: hsl(45, 40%, 98%);
-  --black: hsl(0, 0%, 2%);
-  --textSecondary: #505050;
-  --liteBlack: hsl(57, 12%, 7%);
-  --gray: hsl(0, 0%, 86%);
-  --lightGray: hsl(53, 2%, 94%);
-  --darkGray: hsl(0, 0%, 35%);
-  --offWhite: hsl(0, 0%, 97%);
-  --grayShadow: rgba(0, 0, 0, 0.12);
-  --natural: hsl(44, 96%, 89%);
-  --liteNatural: #fffcf5;
-
-  --error-t-800: #d74332;
-  --error-t-100: #FDCCC3;
-  --success-s-600:#20906e;
-  --success-s-100: #B5E2D5;
-  --warning-w-600: #EFC235;
+  /* Status Colors */
+  --error-800: #d74332;
+  --error-100: #FDCCC3;
+  --success-600: #20906e;
+  --success-100: #B5E2D5;
+  --warning-600: #EFC235;
   --info-700: #3D7AA9;
 
-  --borderColor: hsl(0, 0%, 86%);
-  --borderStyle: 1px solid var(--borderColor);
-
-  /* Default */
-  --background: white;
+  /* Semantic Colors - Light Theme */
+  --background: var(--white);
   --foreground: var(--black);
+  --headerFooterBg: var(--white);
+  --borderColor: var(--gray);
+  --textSecondary: #505050;
 
+  /* Component-specific */
+  --primaryBtn: var(--primaryColor-300);
+  --ctaBox: var(--secondaryColor);
+  
+  /* Gradients & Shadows */
   --backgroundGradient: linear-gradient(
     180deg,
-    #f2d562 0%,
-    #eeb52f 63.54%,
-    #ec7817 100%
+    var(--primaryColor-300) 0%,
+    var(--primaryColor-600) 63.54%,
+    var(--primaryColor-900) 100%
   );
-
-  --headerFooterBg: hsl(0, 0%, 100%);
-  --primaryBtn: var(--primaryColor-300);
-  --darkModeBg: hsl(0, 0%, 18%);
-
-  /* Buttons */
-  --btnPadding: 0.5rem 1rem;
-  --btnBorder: 1px solid var(--borderColor);
-
-  --boxShadow: var(--grayShadow) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;;
+  --boxShadow: var(--grayShadow) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   --lgShadow: 15px -8px #bae9f4;
+
+  /* Spacing & Layout */
+  --radius: 0.5rem;
+  --container-width: 1200px;
+  --btnPadding: 0.5rem 1rem;
   --margin: 2rem 0;
-  --marginAll: 2rem;
   --paddingXs: 0.5rem;
   --paddingSm: 1rem;
   --paddingLg: 2rem;
-  --radius: 0.5rem;
-  --circleRadius: 50%;
 
-  --ctaBox: var(--secondaryColor);
-
-  --logo: var(--white);
-
-  /* --primary: #3b82f6;
-  --primary-dark: #1d4ed8;
-  --text-primary: #1f2937; */
-  
-  /* --background-light: #f3f4f6; */
-  --container-width: 1200px;
+  /* Typography */
+  --fontFamily: 'Roboto', sans-serif;
+  --fontMono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 }
 
+/* Dark Theme Overrides */
 [data-theme='dark'] {
-  --headerFooterBg: hsl(30, 1%, 28%);
-  --background: var(--darkModeBg);
+  --background: #2e2e2e;
   --foreground: var(--white);
-  --primaryBtn: var(--primaryColor-300);
+  --headerFooterBg: #2e2e2e;
+  --textSecondary: var(--lightGray);
+  --borderColor: var(--darkGray);
   --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px,
     rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;
-  --gray: rgba(89,89,89,1);
+
+  & img {
+    filter: brightness(0.8) contrast(1.2);
+  }
+
+  & .icon {
+    color: var(--foreground);
+  }
+
+  /* Update SVG handling for dark mode */
+  & svg {
+    filter: brightness(0) invert(1); /* This makes dark SVGs white */
+  }
 }
 
+[data-theme='dark'] .darkModeLogo {
+  filter: brightness(0) invert(1);
+}
+
+/* Base Styles */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+html {
+  font-size: 100%;
+  color-scheme: light dark;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: var(--fontFamily);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 100vw;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme Toggle Styles */
 .toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: var(--btnBorder);
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--borderColor);
   border-radius: var(--radius);
   background-color: var(--background);
   color: var(--foreground);
   padding: var(--paddingXs);
   transition: all 0.2s ease-in-out;
-}
 
-.toggle:hover {
-  background-color: var(--gray);
-}
+  &:hover {
+    background-color: var(--gray);
+    opacity: 0.8;
+  }
 
-.toggle .icon {
-  width: 20px;
-  height: 20px;
-  color: var(--foreground);
-}
-
-/* Optional: Add transition for smooth theme changes */
-body {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Ensure SVG icons change color with theme */
-[data-theme='dark'] .icon {
-  color: var(--foreground);
-}
-
-/* Apply the filter directly on the body tag */
-body.dark-theme img {
-  filter: brightness(0.8) contrast(1.2);
-}
-
-/* Or apply it via media query */
-@media (prefers-color-scheme: dark) {
-  img {
-    filter: brightness(0.8) contrast(1.2);
+  & .icon {
+    width: 20px;
+    height: 20px;
+    color: var(--foreground);
   }
 }
 
-/* SVG icon */
-body.dark-theme svg.icon path {
-  fill: var(--white);
-}
-
-/* Font icon (using Font Awesome as an example) */
-body.dark-theme .fa {
-  color: #efefef;
-}
-
-*,
-*::after,
-*::before {
+/* Utility Classes */
+.srOnly:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
   border: 0;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 100%;
-}
-
-html,
-body {
-  color: var(--foreground);
-  background-color: var(--background);
-  font-family: var(--font-family);
-  font-weight: 400;
-  line-height: 1.5;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body::after[data-theme='dark'] {
-  background-color: var(--background);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  border: var(--btnBorder);
-  border-radius: var(--radius);
-  background-color: transparent;
-  box-shadow: var(--boxShadow);
-  cursor: pointer;
-  font-weight: 700;
-  margin: var(--margin);
-  padding: 0;
-  transition: all 0.2s ease-in-out;
-  /* padding: 0.75rem; */
 }
 
 .smallLetterSpacing {
   letter-spacing: -0.15px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
-/* Accessibility */
-.srOnly:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.toggle {
-  cursor: pointer;
-  height: 40px;
-  width: 40px;
-}
-
-.toggle:is(:hover, :focus) {
-  opacity: 0.8;
-}
-
+/* Layout Components */
 .containerToggles {
   display: flex;
   justify-content: center;
