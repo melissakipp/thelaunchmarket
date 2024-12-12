@@ -72,7 +72,7 @@ export default function HomeServicesFeatures() {
                       className={styles.featureItem}
                     >
                       <span className={styles.bullet} aria-hidden="true" />
-                      {feature}
+                       {feature}
                     </li>
                   ))}
                 </ul>
