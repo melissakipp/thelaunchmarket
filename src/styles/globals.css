@@ -84,6 +84,7 @@
   --foreground: var(--white);
   --headerFooterBg: #2e2e2e;
   --textSecondary: var(--lightGray);
+  --darkGray: var(--gray);
   --borderColor: var(--darkGray);
   --boxShadow: rgba(252, 252, 252, 0.3) 0px 1px 2px 0px,
     rgba(252, 252, 252, 0.15) 0px 1px 3px 1px;

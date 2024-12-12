@@ -48,7 +48,7 @@
 }
 
 .secondary {
-  background-color: var(--offWhite);
+  background-color: var(--lightGray);
   color: var(--foreground);
 }
 
@@ -64,14 +64,15 @@
 }
 
 .outline:hover:not(.disabled) {
-  background-color: var(--offWhite);
+  background-color: var(--lightGray);
   color: var(--black); /* Ensure text is visible on light background */
 }
 
 .cta {
-  background-color: var(--offWhite);
-  color: var(--foreground);
-  letter-spacing: 1px;
+  background-color: var(--lightGray);
+  color: var(--black);
+  font-weight: 700;
+  letter-spacing: .75px;
 }
 
 /* Dark mode overrides */
@@ -109,7 +110,6 @@
 
 [data-theme='dark'] .cta {
   background-color: var(--darkGray);
-  color: var(--white);
 }
 
 /* Icon positioning */

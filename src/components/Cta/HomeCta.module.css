@@ -11,7 +11,7 @@
 
 .cta p {
   font-size: 1.25rem;
-  color: #666;
+  color: var(--darkGray);
   margin-bottom: 2rem;
 }
 
