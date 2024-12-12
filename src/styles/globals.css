@@ -33,15 +33,17 @@
   --primaryBtn: var(--primaryColor-300);
   --ctaBox: var(--secondaryColor);
   
-  /* Gradients & Shadows */
-  --backgroundGradient: linear-gradient(
-    180deg,
-    var(--primaryColor-300) 0%,
-    var(--primaryColor-600) 63.54%,
-    var(--primaryColor-900) 100%
-  );
+  /* Shadows */
   --boxShadow: var(--grayShadow) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   --lgShadow: 15px -8px #bae9f4;
+
+  /* Gradient variables */
+  --featureGradient: linear-gradient(
+    180deg,
+    hsla(48, 85%, 67%, 3%) 0%,
+    hsla(42, 85%, 56%, 28%) 60%,
+    hsla(27, 85%, 51%, 48%) 100%
+  );
 
   /* Spacing & Layout */
   --radius: 0.5rem;
@@ -89,6 +91,14 @@
   --btn-primary-hover: var(--primaryColor-600);
   --btn-secondary-hover: var(--secondaryColor);
   --btn-ghost-hover: var(--darkGray);
+
+  /* Gradient */
+  --featureGradient: linear-gradient(
+    180deg,
+    rgba(219, 219, 219, 0.08) 0%,  /* --gray */
+    rgba(89, 89, 89, 0.12) 50%,     /* --darkGray */
+    rgba(46, 46, 46, 0.05) 100%     /* --darkModeBg */
+  );
 
   & img {
     filter: brightness(0.8) contrast(1.2);

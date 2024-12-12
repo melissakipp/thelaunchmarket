@@ -1,11 +1,13 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { FiArrowRight } from 'react-icons/fi';
+import { useScrollAnimation } from '@/src/hooks/useScrollAnimation';
+import { HiSparkles, HiFastForward, HiCursorClick } from "react-icons/hi";
+
 import styles from './HomeFeature.module.css';
-import CustomBtnLink from '../UI/Links/CustomBtnLink';
 
 export default function HomeFeature() {
   const [isVisible, setIsVisible] = useState(false);
+  const listRef = useScrollAnimation<HTMLUListElement>();
 
   useEffect(() => {
     setIsVisible(true);
@@ -24,18 +26,11 @@ export default function HomeFeature() {
         </div>
         <div className={styles.featureText}>
           <h2>Launch Your Digital Journey</h2>
-          <div className={styles.featurePoints}>
-            <span>✨ Modern Design</span>
-            <span>🚀 Fast Development</span>
-            <span>💎 Quality Results</span>
-          </div>
-          {/* <CustomBtnLink 
-            href="/work" 
-            variant="primary" 
-            icon={FiArrowRight}
-          >
-            See Our Work
-          </CustomBtnLink> */}
+          <ul ref={listRef} className={styles.featurePoints}>
+            <li><span aria-hidden="true">✨</span>&nbsp;Modern Design</li>
+            <li><span aria-hidden="true">🚀</span>&nbsp;Fast Development</li>
+            <li><span aria-hidden="true">💎</span>&nbsp;Quality Results</li>
+          </ul>
         </div>
       </div>
     </section>
