@@ -3,8 +3,8 @@
   --primaryColor-300: #f2d663;
   --primaryColor-600: #eeb52f;
   --primaryColor-900: #ec7718;
-  --secondaryColor: #57a6bc;
-  --secondaryColor-400: #70cae1;
+  --accent: #57a6bc;
+  --accent-400: #70cae1;
 
   /* Neutral Colors */
   --white: #fcfbf8;
@@ -13,7 +13,7 @@
   --lightGray: #f0f0ef;
   --darkGray: #595959;
   --grayShadow: hsla(0, 0%, 0%, 0.12);
-  --secondaryColor-100: rgba(186, 233, 244,.25);
+  --accent-100: rgba(186, 233, 244,.25);
 
   /* Status Colors */
   --error-800: #d74332;
@@ -32,7 +32,7 @@
 
   /* Component-specific */
   --primaryBtn: var(--primaryColor-300);
-  --ctaBox: var(--secondaryColor);
+  --ctaBox: var(--accent);
   
   /* Shadows */
   --boxShadow: var(--grayShadow) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -60,9 +60,9 @@
   --btn-primary-text: var(--black);
   --btn-primary-hover: var(--gray);
   
-  --btn-secondary-bg: var(--secondaryColor);
+  --btn-secondary-bg: var(--accent);
   --btn-secondary-text: var(--black);
-  --btn-secondary-hover: var(--secondaryColor-400);
+  --btn-secondary-hover: var(--accent-400);
   
   --btn-danger-bg: var(--error-t-800);
   --btn-danger-text: var(--white);
@@ -90,7 +90,7 @@
 
   /* Button-specific dark mode overrides */
   --btn-primary-hover: var(--primaryColor-600);
-  --btn-secondary-hover: var(--secondaryColor);
+  --btn-secondary-hover: var(--accent);
   --btn-ghost-hover: var(--darkGray);
 
   /* Gradient */

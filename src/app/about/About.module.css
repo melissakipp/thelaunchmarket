@@ -23,7 +23,7 @@
 }
 
 .gridItem {
-  background: var(--secondaryColor-100);
+  background: var(--accent-100);
   border-radius: var(--radius);
   box-shadow: var(--boxShadow);
   padding: var(--paddingLg);

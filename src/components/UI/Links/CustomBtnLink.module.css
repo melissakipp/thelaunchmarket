@@ -39,12 +39,12 @@
 }
 
 .primary {
-  background-color: var(--secondaryColor);
+  background-color: var(--accent);
   color: var(--white);
 }
 
 .primary:hover:not(.disabled) {
-  background-color: var(--secondaryColor-400);
+  background-color: var(--accent-400);
 }
 
 .secondary {
@@ -58,7 +58,7 @@
 
 .outline {
   background-color: transparent;
-  border: 2px solid var(--secondaryColor);
+  border: 2px solid var(--accent);
   color: var(--foreground);
   letter-spacing: 1px;
 }
@@ -80,12 +80,12 @@
 }
 
 [data-theme='dark'] .primary {
-  background-color: var(--secondaryColor);
+  background-color: var(--accent);
   color: var(--white);
 }
 
 [data-theme='dark'] .primary:hover:not(.disabled) {
-  background-color: var(--secondaryColor-400);
+  background-color: var(--accent-400);
 }
 
 [data-theme='dark'] .secondary {
@@ -98,12 +98,12 @@
 }
 
 [data-theme='dark'] .outline {
-  border-color: var(--secondaryColor);
+  border-color: var(--accent);
   color: var(--foreground);
 }
 
 [data-theme='dark'] .outline:hover:not(.disabled) {
-  background-color: var(--secondaryColor);
+  background-color: var(--accent);
   color: var(--white);
 }
 

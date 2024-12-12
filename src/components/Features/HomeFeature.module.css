@@ -30,7 +30,7 @@
 }
 
 .sparkles, .forward, .click {
-  color: var(--secondaryColor);
+  color: var(--accent);
 }
 
 .pulseCircle {
@@ -101,7 +101,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: var(--secondaryColor);
+  background: var(--accent);
   color: var(--white);
   border: none;
   border-radius: var(--radius);
@@ -111,16 +111,16 @@
 }
 
 .ctaButton:hover {
-  background: var(--secondaryColor-400);
+  background: var(--accent-400);
   transform: translateY(-2px);
 }
 
 [data-theme='dark'] .ctaButton {
-  background: var(--secondaryColor-400);
+  background: var(--accent-400);
 }
 
 [data-theme='dark'] .ctaButton:hover {
-  background: var(--secondaryColor);
+  background: var(--accent);
 }
 
 /* Keyframes remain the same */

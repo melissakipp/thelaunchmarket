@@ -37,16 +37,16 @@
 }
 
 .secondary {
-  background-color: var(--secondaryColor);
+  background-color: var(--accent);
   color: var(--foreground);
 }
 
 .secondary:hover {
-  background-color: var(--secondaryColor-400);
+  background-color: var(--accent-400);
 }
 
 .secondary:focus-visible {
-  outline-color: var(--secondaryColor);
+  outline-color: var(--accent);
 }
 
 .danger {
@@ -85,7 +85,7 @@
 }
 
 [data-theme='dark'] .secondary {
-  background-color: var(--secondaryColor);
+  background-color: var(--accent);
   color: var(--black);
 }
 
