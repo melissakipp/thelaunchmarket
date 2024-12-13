@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { BiRocket } from 'react-icons/bi';
+import Button from '@/src/components/UI/Buttons/CustomBtn';
 import styles from './ContactForm.module.css';
-import CustomBtn from '@/src/components/UI/Buttons/CustomBtn';
+import { BiRocket } from 'react-icons/bi';
 
 interface FormError {
   message: string;
@@ -96,7 +96,7 @@ export default function Form() {
       const response = await fetch('/api/send');
       const data = await response.json();
       
-      // Log each part of the configuration separately
+      // DEBUG: Log each part of the configuration separately
       console.log('API Status:', data.status);
       console.log('Node Environment:', data.environment.nodeEnv);
       
@@ -109,11 +109,11 @@ export default function Form() {
       });
       console.groupEnd();
 
-      // Add timestamp of test
+      // DEBUG: Add timestamp of test
       console.log('Test completed at:', new Date().toLocaleString());
       console.groupEnd();
 
-      // Show alert with formatted data
+      // DEBUG: Show alert with formatted data
       alert(
         'Email Configuration Test Results:\n\n' +
         `Status: ${data.status}\n` +
@@ -225,32 +225,10 @@ export default function Form() {
           </p>
         </fieldset>
       </div>
-
-      <div className={styles.contactForm__btn}>
-        <CustomBtn
-          type="submit"
-          variant="secondary"
-          size="md"
-          isLoading={loading}
-          startIcon={<BiRocket />}
-          disabled={loading}
-        >
-          {loading ? 'Sending...' : 'Send Message'}
-        </CustomBtn>
-        {/* Test button - only shown in development */}
-        {process.env.NODE_ENV === 'development' && (
-          <CustomBtn
-            type="button"
-            variant="secondary"
-            size="md"
-            onClick={testEmailConfig}
-            className={styles.testButton}
-            startIcon={<span role="img" aria-label="test">🔍</span>}
-          >
-            Test Config
-          </CustomBtn>
-        )}
-      </div>
+      <Button variant='primary' size='sm' startIcon={<BiRocket />}>
+        {loading ? 'Sending...' : 'Send Message'}
+      </Button>
+      
     </form>
   );
 }

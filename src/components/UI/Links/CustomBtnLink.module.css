@@ -4,7 +4,7 @@
   justify-content: center;
   gap: 0.5rem;
   text-decoration: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   font-weight: 500;
   transition: all 0.2s ease;
   cursor: pointer;
@@ -12,7 +12,7 @@
 
 /* Size variants */
 .sm {
-  padding: 0.5rem 1rem;
+  padding: var(--paddingXs) var(--paddingSm);
   font-size: 0.875rem;
 }
 
@@ -29,7 +29,7 @@
 /* Style variants */
 .link {
   padding: 0;
-  color: var(--black);
+  color: var(--foreground);
   background: none;
   border-radius: 0;
 }
@@ -39,17 +39,17 @@
 }
 
 .primary {
-  background-color: var(--secondaryColor);
+  background-color: var(--accent);
   color: var(--white);
 }
 
 .primary:hover:not(.disabled) {
-  background-color: var(--secondaryColor-400);
+  background-color: var(--accent-400);
 }
 
 .secondary {
-  background-color: var(--offWhite);
-  color: var(--black);
+  background-color: var(--lightGray);
+  color: var(--foreground);
 }
 
 .secondary:hover:not(.disabled) {
@@ -58,23 +58,58 @@
 
 .outline {
   background-color: transparent;
-  border: 2px solid var(--secondaryColor);
-  color: var(--black);
+  border: 2px solid var(--accent);
+  color: var(--foreground);
   letter-spacing: 1px;
 }
 
 .outline:hover:not(.disabled) {
-  background-color: var(--offWhite);
+  background-color: var(--lightGray);
+  color: var(--black); /* Ensure text is visible on light background */
 }
 
 .cta {
-  background-color: var(--offWhite);
+  background-color: var(--lightGray);
   color: var(--black);
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: .75px;
 }
 
-.outline:hover:not(.disabled) {
-  background-color: var(--offWhite);
+/* Dark mode overrides */
+[data-theme='dark'] .link {
+  color: var(--foreground);
+}
+
+[data-theme='dark'] .primary {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+[data-theme='dark'] .primary:hover:not(.disabled) {
+  background-color: var(--accent-400);
+}
+
+[data-theme='dark'] .secondary {
+  background-color: var(--darkGray);
+  color: var(--white);
+}
+
+[data-theme='dark'] .secondary:hover:not(.disabled) {
+  background-color: var(--gray);
+}
+
+[data-theme='dark'] .outline {
+  border-color: var(--accent);
+  color: var(--foreground);
+}
+
+[data-theme='dark'] .outline:hover:not(.disabled) {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+[data-theme='dark'] .cta {
+  background-color: var(--darkGray);
 }
 
 /* Icon positioning */

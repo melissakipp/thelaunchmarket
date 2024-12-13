@@ -10,7 +10,6 @@ import {
 } from 'react-icons/fi';
 import styles from './Services.module.css';
 import ServiceCta from '@/src/components/Cta/ServiceCta';
-import ServiceHero from '@/src/components/Hero/ServiceHero';
 
 interface ServiceItem {
   id: number;
@@ -134,8 +133,13 @@ const ServicesPage = () => {
   return (
     <main className={styles.serviceContainer}>
       <article className={styles.servicesPage}>
-        
-        <ServiceHero />
+
+        <section className={styles.serviceHero}>
+          <h1>Transform Your Digital Presence</h1>
+          <p>
+            We define, design, and develop world-class digital products that people love to use, helping businesses succeed by connecting them with the right customers online.
+          </p>
+        </section>
 
         <section className={styles.servicesSection}>
           <div>

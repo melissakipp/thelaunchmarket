@@ -1,7 +1,5 @@
 .footer {
-  background-color: #f8f9fa;
   padding: 3rem 2rem 1.5rem;
-  color: #333;
 }
 
 .footerSection h4 {
@@ -72,6 +70,21 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
+
+}
+
+[data-theme='dark'] .footerSection p, 
+[data-theme='dark'] .footerSection li,
+[data-theme='dark'] .footerSection a {
+  color: var(--white);
+}
+
+[data-theme='dark'] .footerBottom {
+  color: var(--white);
+}
+
+[data-theme='dark'] .footerBottom a {
+  color: var(--white);
 }
 
 @media (max-width: 768px) {

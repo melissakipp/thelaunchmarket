@@ -4,6 +4,31 @@
   padding: 0 1rem;
 }
 
+.serviceHero {
+  background-color: var(--background);
+  border: 1px solid var(--borderColor);
+  border-radius: var(--radius);
+  color: var(--foreground);
+  margin: 8rem 0;
+  padding: 4rem 0;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.serviceHero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.serviceHero p {
+  font-size: 1.25rem;
+  max-width: 65ch;
+  margin: 0 auto;
+  color: var(--textSecondary);
+}
+
 /* Services Section */
 .servicesSection {
   margin: 8rem auto;
@@ -19,10 +44,11 @@
 
 .serviceCard {
   padding: 2rem;
-  border-radius: 0.5rem;
-  background-color: var(--liteNatural);
+  border-radius: var(--radius);
+  background-color: var(--background);
+  border: 1px solid var(--borderColor);
   box-shadow: var(--boxShadow);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .serviceCard:hover {
@@ -33,7 +59,7 @@
   width: 3rem;
   height: 3rem;
   margin-bottom: 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,21 +69,22 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  color: var(--foreground);
 }
 
 .serviceCard p {
-  color: var(--liteBlack);
+  color: var(--textSecondary);
 }
 
 /* Color variations for service cards */
 .serviceCard.primary .icon {
   background-color: var(--primaryColor-300);
-  color: var(--primaryColor-900);
+  color: var(--black);
 }
 
 .serviceCard.secondary .icon {
-  background-color: var(--secondaryColor-400);
-  color: var(--darkMode);
+  background-color: var(--accent-400);
+  color: var(--black);
 }
 
 .serviceCard.info .icon {
@@ -66,17 +93,17 @@
 }
 
 .serviceCard.success .icon {
-  background-color: var(--success-s-600);
+  background-color: var(--success-600);
   color: var(--white);
 }
 
 .serviceCard.warning .icon {
-  background-color: var(--warning-w-600);
-  color: var(--white);
+  background-color: var(--warning-600);
+  color: var(--black);
 }
 
 .serviceCard.error .icon {
-  background-color: var(--error-t-800);
+  background-color: var(--error-800);
   color: var(--white);
 }
 
@@ -90,6 +117,7 @@
   text-align: center;
   font-size: 2rem;
   margin-bottom: 3rem;
+  color: var(--foreground);
 }
 
 .valuesGrid {
@@ -101,15 +129,19 @@
 
 .valueCard {
   padding: 2rem;
-  background-color: white;
-  border-radius: 0.5rem;
+  background-color: var(--background);
+  border: 1px solid var(--borderColor);
+  border-radius: var(--radius);
   text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .valueCard h3 {
-  border-bottom: 3px solid var(--secondaryColor);
+  border-bottom: 3px solid var(--accent);
   font-size: 1.25rem;
   margin-bottom: 1rem;
+  color: var(--foreground);
+  padding-bottom: 0.5rem;
 }
 
 /* Client Types Section */
@@ -122,6 +154,7 @@
   text-align: center;
   font-size: 2rem;
   margin-bottom: 3rem;
+  color: var(--foreground);
 }
 
 .clientsGrid {
@@ -133,10 +166,15 @@
 
 .clientCard {
   padding: 2rem;
-  background-color: var(--offWhite);
-  border-radius: 0.5rem;
+  background-color: var(--background);
+  border: 1px solid var(--borderColor);
+  border-radius: var(--radius);
   box-shadow: var(--boxShadow);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
+.clientCard:hover {
+  transform: translateY(-5px);
 }
 
 .clientCard .icon {
@@ -152,37 +190,40 @@
 .clientCard h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
+  color: var(--foreground);
 }
 
 .clientCard p {
-  color: var(--liteBlack);
+  color: var(--textSecondary);
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .hero {
+  .serviceHero {
     padding: 3rem 0;
   }
-
-  .hero h1 {
+  
+  .serviceHero h1 {
     font-size: 2rem;
   }
-
-  .hero p {
+  
+  .serviceHero p {
     font-size: 1.125rem;
   }
-
+  
   .servicesGrid,
   .valuesGrid,
   .clientsGrid {
     grid-template-columns: 1fr;
   }
+}
 
-  .cta h2 {
-    font-size: 1.75rem;
-  }
-
-  .cta p {
-    font-size: 1.125rem;
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .serviceCard,
+  .clientCard,
+  .serviceHero,
+  .valueCard {
+    transition: none;
   }
 }

@@ -1,5 +1,6 @@
 .section {
   padding: 4rem 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .container {
@@ -13,7 +14,8 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--black);
+  color: var(--foreground);
+  transition: color 0.3s ease;
 }
 
 .grid {
@@ -30,11 +32,20 @@
   }
 }
 
-/* Add these styles to enhance the base Card component */
 .card {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: var(--card-background);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-hover);
 }
 
 .cardHeader {
@@ -46,24 +57,25 @@
   line-height: 1.75rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  /* color: var(--foreground); */
+  transition: color 0.3s ease;
 }
 
 .cardDescription {
-  color: var(--darkGray);
   font-size: 1rem;
   line-height: 1.5rem;
   margin: auto auto 1rem auto;
+  transition: color 0.3s ease;
 }
 
 .cardContent {
   flex-grow: 1;
 }
 
-.featureList {
+.featureList { 
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -72,19 +84,50 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: var(--foreground);
+  transition: color 0.3s ease;
 }
 
 .bullet {
   width: 0.375rem;
   height: 0.375rem;
-  background-color: var(--secondaryColor);
+  background-color: var(--accent);
   border-radius: 9999px;
   flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .card {
+  background-color: var(--card-background-dark);
+  border-color: var(--border-dark);
+}
+
+[data-theme="dark"] .card:hover {
+  border-color: var(--border-hover-dark);
 }
 
 /* High contrast mode support */
 @media (forced-colors: active) {
   .bullet {
     background-color: CanvasText;
+  }
+  
+  .card {
+    border: 2px solid CanvasText;
+  }
+}
+
+/* Reduce motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover,
+  .section,
+  .heading,
+  .cardTitle,
+  .cardDescription,
+  .featureItem,
+  .bullet {
+    transition: none;
   }
 }

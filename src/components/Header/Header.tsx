@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiBars3, HiXMark } from 'react-icons/hi2';
-import styles from './Header.module.css'; // Import the CSS module
+import styles from './Header.module.css'; 
 import Logo from '@/src/assets/the-launch-market_small-logo.svg';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,20 +24,16 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo} aria-label="Home">
-          <Image src={Logo} alt="Logo" width={125} height={125} />
+          <Image 
+            src={Logo}
+            alt="Logo"
+            width={125}
+            height={125}
+            className="darkModeLogo"
+          />
         </Link>
 
         <div className={styles.navContainer}>
-          <button
-            className={styles.menuButton}
-            onClick={() => setIsMenuOpen(true)}
-            aria-expanded={isMenuOpen}
-            aria-controls="navigation"
-          >
-            <HiBars3 className={styles.menuIcon} />
-            <span className={styles.srOnly}>Menu</span>
-          </button>
-
           <nav
             id="navigation"
             className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}
@@ -65,6 +62,19 @@ const Header = () => {
               ))}
             </ul>
           </nav>
+          
+          <div className={styles.controls}>
+            <ThemeToggle />
+            <button
+              className={styles.menuButton}
+              onClick={() => setIsMenuOpen(true)}
+              aria-expanded={isMenuOpen}
+              aria-controls="navigation"
+            >
+              <HiBars3 className={styles.menuIcon} />
+              <span className={styles.srOnly}>Menu</span>
+            </button>
+          </div>
         </div>
       </div>
     </header>

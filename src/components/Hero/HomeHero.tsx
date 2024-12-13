@@ -17,7 +17,7 @@ export default function HomeHero() {
         icon={FiArrowRight}
         iconPosition='right'
       >
-        Get Started
+        Learn more <span className='srOnly'>about The Launch Market</span>
       </CustomBtnLink>
     </section>
   );
