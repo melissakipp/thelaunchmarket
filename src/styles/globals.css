@@ -97,11 +97,18 @@
 --button-transition: all 0.2s ease-in-out;
 --button-font-weight: 500;
 
-  /* Typography */
-  --fontFamily: 'Roboto', sans-serif;
-  --fontMono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+/* Typography */
+--fontFamily: 'Roboto', sans-serif;
+--fontMono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+  'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+  'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+/* Light mode colors */
+--footer-bg: #f8f9fa;
+--footer-text: #333;
+--footer-text-muted: #666;
+--footer-border: #ddd;
+--footer-link-hover: #000;
 }
 
 /* Dark Theme Overrides */
@@ -129,6 +136,12 @@
     rgba(46, 46, 46, 0.05) 100%     /* --darkModeBg */
   );
 
+  --footer-bg: #1a1a1a;
+  --footer-text: #e1e1e1;
+  --footer-text-muted: #a0a0a0;
+  --footer-border: #333;
+  --footer-link-hover: #fff;
+
   & img {
     filter: brightness(0.8) contrast(1.2);
   }
@@ -141,6 +154,7 @@
   & svg {
     filter: brightness(0) invert(1); /* This makes dark SVGs white */
   }
+  
 }
 
 [data-theme='dark'] .darkModeLogo {
