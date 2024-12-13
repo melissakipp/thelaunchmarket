@@ -24,7 +24,7 @@
 
 .serviceHero p {
   font-size: 1.25rem;
-  max-width: 800px;
+  max-width: 65ch;
   margin: 0 auto;
   color: var(--textSecondary);
 }

@@ -1,25 +1,44 @@
 .aboutContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
   font-family: var(--fontFamily);
   line-height: 1.6;
-  margin: 0 3rem; 
-  max-width: var(--container-width);
-  padding: 4rem var(--paddingSm);
+  margin: 5rem auto; 
+  padding: 4rem auto;
+}
+
+.centerContent {
+  max-width: 1200px;
 }
 
 .heroSection {
   text-align: center;
-  margin-bottom: 4rem;
+  margin: 4rem auto;
+}
+
+.heroSection p {
+  font-size: 1.25rem;
+}
+
+.heroSection p, .ourStory {
+  margin: 0 auto;
+  max-width: 65ch;
+  text-align: center;
+  width: 100%;
 }
 
 .section {
-  margin-bottom: 3rem;
+  margin: 8rem auto;
 }
 
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin: 2rem auto auto auto;
 }
 
 .gridItem {
@@ -56,8 +75,15 @@
 
 .title {
   font-size: 1.8rem;
-  margin-bottom: var(--paddingSm);
   color: var(--foreground);
+  text-align: center;
+}
+
+.description {
+  margin: 0 auto;
+  max-width: 65ch;
+  text-align: center;
+  width: 100%;
 }
 
 .boldFont {

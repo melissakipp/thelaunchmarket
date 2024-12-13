@@ -97,18 +97,13 @@
 --button-transition: all 0.2s ease-in-out;
 --button-font-weight: 500;
 
+
+
 /* Typography */
 --fontFamily: 'Roboto', sans-serif;
 --fontMono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
   'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
   'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-/* Light mode colors */
---footer-bg: #f8f9fa;
---footer-text: #333;
---footer-text-muted: #666;
---footer-border: #ddd;
---footer-link-hover: #000;
 }
 
 /* Dark Theme Overrides */
