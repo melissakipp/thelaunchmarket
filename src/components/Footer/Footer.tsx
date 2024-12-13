@@ -29,7 +29,7 @@ const Footer = () => {
           </p>
           <div className={styles.social}>
             <Link
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/melissajkipp/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -37,7 +37,7 @@ const Footer = () => {
               <BiLogoLinkedin />
             </Link>
             <Link
-              href="https://github.com"
+              href="https://github.com/melissakipp/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
