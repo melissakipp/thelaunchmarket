@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 interface ListWithIconProps {
   name: string;
-  icon: JSX.Element;
+  icon: React.ReactElement;
   href: string;
 }
 
