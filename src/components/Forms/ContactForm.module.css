@@ -1,5 +1,6 @@
 .contactHeader {
   padding: 1rem;
+  color: var(--foreground);
 }
 
 .contactHeader h3 {
@@ -8,11 +9,15 @@
   text-align: center;
   border-bottom: 2px solid var(--primaryColor-300);
   padding-bottom: 1rem;
+  color: var(--foreground);
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .contactHeader p {
   font-size: 1rem;
   text-align: center;
+  color: var(--textSecondary);
+  transition: color 0.3s ease;
 }
 
 .contactForm__container {
@@ -25,9 +30,15 @@
   margin-bottom: 20px;
 }
 
+.contactForm__fieldset {
+  border: none;
+  padding: 0;
+}
+
 .contactForm__fieldset legend {
-  background-color: var(--grayShadow);
-  border-radius: 4px;
+  background-color: var(--accent-100);
+  border: 1px solid var(--borderColor);
+  border-radius: var(--radius);
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -35,47 +46,118 @@
   padding: .5rem;
   text-align: center;
   width: 100%;
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .contactForm__info {
   margin: auto auto 1rem auto;
 }
 
-.contactForm__info label, .contactForm__msg label {
+.contactForm__info label,
+.contactForm__msg label {
   font-weight: 700;
+  color: var(--foreground);
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.contactForm__info input, .contactForm__msg textarea {
-  border: var(--borderStyle);
-  border-radius: 6px;
-  padding: 0.55em;
+.contactForm__info input,
+.contactForm__msg textarea {
+  border: 1px solid var(--borderColor);
+  border-radius: var(--radius);
+  padding: 0.75rem;
   width: 100%;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contactForm__info input:focus,
+.contactForm__msg textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
 }
 
 .contactForm__fieldset .counter {
   font-size: 1rem;
+  color: var(--textSecondary);
 }
 
 .contactForm__smText small {
   font-size: 0.75rem;
+  color: var(--textSecondary);
 }
 
 .required {
-  color: var(--error-t-800);
+  color: var(--error-800);
 }
 
 .error {
-  color: var(--error-t-800);
-  background-color: var(--error-t-100);
+  color: var(--error-800);
+  background-color: var(--error-100);
   padding: 0.75rem;
-  border-radius: 0.375rem;
+  border-radius: var(--radius);
   margin: 1rem;
+  border: 1px solid var(--error-800);
 }
 
 .success {
-  color: var(--success-s-600);
-  background-color: var(--success-s-100);
+  color: var(--success-600);
+  background-color: var(--success-100);
   padding: 0.75rem;
-  border-radius: 0.375rem;
+  border-radius: var(--radius);
   margin: 1rem;
+  border: 1px solid var(--success-600);
+}
+
+/* Dark mode specific adjustments */
+[data-theme='dark'] .contactForm__info input,
+[data-theme='dark'] .contactForm__msg textarea {
+  background-color: var(--background);
+  border-color: var(--borderColor);
+}
+
+[data-theme='dark'] .contactForm__info input:focus,
+[data-theme='dark'] .contactForm__msg textarea:focus {
+  outline-color: var(--accent-400);
+  border-color: var(--accent-400);
+}
+
+[data-theme='dark'] .contactForm__fieldset legend {
+  background-color: var(--accent-100);
+}
+
+[data-theme='dark'] .error {
+  background-color: rgba(215, 67, 50, 0.1);
+  border-color: var(--error-800);
+}
+
+[data-theme='dark'] .success {
+  background-color: rgba(32, 144, 110, 0.1);
+  border-color: var(--success-600);
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .contactForm__info input,
+  .contactForm__msg textarea {
+    border: 2px solid CanvasText;
+  }
+  
+  .error,
+  .success {
+    border: 2px solid CanvasText;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .contactHeader h3,
+  .contactHeader p,
+  .contactForm__fieldset legend,
+  .contactForm__info input,
+  .contactForm__msg textarea {
+    transition: none;
+  }
 }

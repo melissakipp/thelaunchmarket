@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { BiRocket } from 'react-icons/bi';
+import Button from '@/src/components/UI/Buttons/CustomBtn';
 import styles from './ContactForm.module.css';
-import CustomBtn from '@/src/components/UI/Buttons/CustomBtn';
+import { BiRocket } from 'react-icons/bi';
 
 interface FormError {
   message: string;
@@ -225,32 +225,10 @@ export default function Form() {
           </p>
         </fieldset>
       </div>
-
-      <div className={styles.contactForm__btn}>
-        <CustomBtn
-          type="submit"
-          variant="secondary"
-          size="md"
-          isLoading={loading}
-          startIcon={<BiRocket />}
-          disabled={loading}
-        >
-          {loading ? 'Sending...' : 'Send Message'}
-        </CustomBtn>
-        {/* Test button - only shown in development */}
-        {process.env.NODE_ENV === 'development' && (
-          <CustomBtn
-            type="button"
-            variant="secondary"
-            size="md"
-            onClick={testEmailConfig}
-            className={styles.testButton}
-            startIcon={<span role="img" aria-label="test">🔍</span>}
-          >
-            Test Config
-          </CustomBtn>
-        )}
-      </div>
+      <Button variant='primary' size='sm' startIcon={<BiRocket />}>
+        {loading ? 'Sending...' : 'Send Message'}
+      </Button>
+      
     </form>
   );
 }
