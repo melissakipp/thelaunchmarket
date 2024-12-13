@@ -96,7 +96,7 @@ export default function Form() {
       const response = await fetch('/api/send');
       const data = await response.json();
       
-      // Log each part of the configuration separately
+      // DEBUG: Log each part of the configuration separately
       console.log('API Status:', data.status);
       console.log('Node Environment:', data.environment.nodeEnv);
       
@@ -109,11 +109,11 @@ export default function Form() {
       });
       console.groupEnd();
 
-      // Add timestamp of test
+      // DEBUG: Add timestamp of test
       console.log('Test completed at:', new Date().toLocaleString());
       console.groupEnd();
 
-      // Show alert with formatted data
+      // DEBUG: Show alert with formatted data
       alert(
         'Email Configuration Test Results:\n\n' +
         `Status: ${data.status}\n` +

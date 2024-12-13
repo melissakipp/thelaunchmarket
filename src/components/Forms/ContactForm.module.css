@@ -36,7 +36,6 @@
 }
 
 .contactForm__fieldset legend {
-  background-color: var(--accent-100);
   border: 1px solid var(--borderColor);
   border-radius: var(--radius);
   font-size: 1.25rem;
@@ -52,6 +51,10 @@
 
 .contactForm__info {
   margin: auto auto 1rem auto;
+}
+
+.contactForm__fieldset legend {
+  background-color: var(--gray);
 }
 
 .contactForm__info label,
@@ -114,7 +117,6 @@
 /* Dark mode specific adjustments */
 [data-theme='dark'] .contactForm__info input,
 [data-theme='dark'] .contactForm__msg textarea {
-  background-color: var(--background);
   border-color: var(--borderColor);
 }
 
@@ -125,16 +127,16 @@
 }
 
 [data-theme='dark'] .contactForm__fieldset legend {
-  background-color: var(--accent-100);
+  background-color: var(--grayShadow);
 }
 
 [data-theme='dark'] .error {
-  background-color: rgba(215, 67, 50, 0.1);
+  background-color: rgba(215, 67, 50, 0.2);
   border-color: var(--error-800);
 }
 
 [data-theme='dark'] .success {
-  background-color: rgba(32, 144, 110, 0.1);
+  background-color: rgba(32, 144, 110, 0.2);
   border-color: var(--success-600);
 }
 
