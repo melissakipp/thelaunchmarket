@@ -1,0 +1,216 @@
+# Robots.txt for Launch Market
+# This file helps reduce unwanted bot traffic and AWS costs
+# Last updated: November 2025
+
+# ==================================
+# SITEMAP REFERENCE
+# ==================================
+Sitemap: https://your-domain.com/sitemap.xml
+
+# ==================================
+# GOOD BOTS - FULL ACCESS
+# ==================================
+# Google
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-Mobile
+User-agent: Googlebot-News
+Crawl-delay: 1
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /.well-known/
+Allow: /
+
+# Bing
+User-agent: Bingbot
+User-agent: BingPreview
+Crawl-delay: 1
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_next/
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Crawl-delay: 2
+Disallow: /api/
+Disallow: /admin/
+Allow: /
+
+# ==================================
+# AI/ML BOTS - LIMITED ACCESS
+# ==================================
+# OpenAI GPTBot - Allow but with restrictions
+User-agent: GPTBot
+Crawl-delay: 10
+Disallow: /api/
+Disallow: /admin/
+Disallow: /user/
+Disallow: /private/
+Disallow: /account/
+Allow: /blog/
+Allow: /public/
+
+# Anthropic ClaudeBot
+User-agent: ClaudeBot
+Crawl-delay: 10
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+# ==================================
+# SOCIAL MEDIA BOTS - ALLOW
+# ==================================
+User-agent: facebookexternalhit
+User-agent: Twitterbot
+User-agent: LinkedInBot
+User-agent: WhatsApp
+User-agent: Slackbot
+Disallow: /api/
+Disallow: /admin/
+Allow: /
+
+# ==================================
+# MONITORING/UPTIME BOTS - ALLOW SPECIFIC
+# ==================================
+User-agent: UptimeRobot
+Allow: /health
+Allow: /status
+Disallow: /
+
+# ==================================
+# BAD BOTS - COMPLETE BLOCK
+# ==================================
+# Security Scanners
+User-agent: zgrab
+User-agent: CensysInspect
+User-agent: masscan
+User-agent: nmap
+User-agent: sqlmap
+User-agent: nikto
+User-agent: WPScan
+User-agent: Jorgee
+User-agent: securiscan
+Disallow: /
+
+# Aggressive Scrapers
+User-agent: SemrushBot
+User-agent: AhrefsBot
+User-agent: MJ12bot
+User-agent: DotBot
+User-agent: MegaIndex
+User-agent: serpstatbot
+User-agent: BLEXBot
+User-agent: AlphaBot
+User-agent: James BOT
+User-agent: Xenu Link Sleuth
+Disallow: /
+
+# Content Scrapers
+User-agent: HTTrack
+User-agent: WebCopier
+User-agent: WebReaper
+User-agent: Teleport Pro
+User-agent: Offline Explorer
+User-agent: SiteSnagger
+User-agent: WinHTTrack
+User-agent: WebZIP
+User-agent: Wget
+User-agent: curl
+Disallow: /
+
+# Email Harvesters
+User-agent: EmailCollector
+User-agent: EmailSiphon
+User-agent: EmailWolf
+User-agent: ExtractorPro
+User-agent: Mata Hari
+Disallow: /
+
+# SEO Tools (Aggressive)
+User-agent: Screaming Frog SEO Spider
+Crawl-delay: 20
+Disallow: /api/
+Allow: /
+
+# Other Problematic Bots
+User-agent: PetalBot
+User-agent: Bytespider
+User-agent: YouBot
+User-agent: Baiduspider
+User-agent: YandexBot
+User-agent: facebookplatform
+User-agent: Discordbot
+User-agent: ia_archiver
+User-agent: Wayback Machine
+User-agent: SeznamBot
+User-agent: CCBot
+User-agent: ZoominfoBot
+User-agent: Amazonbot
+Disallow: /
+
+# ==================================
+# CATCH-ALL RULES
+# ==================================
+# Default rule for all other bots
+User-agent: *
+Crawl-delay: 5
+# Block sensitive paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /config/
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /logs/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /vendor/
+Disallow: /.well-known/
+Disallow: /_next/static/
+Disallow: /_next/image
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+# Block file types
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.config$
+Disallow: /*.bak$
+Disallow: /*.old$
+Disallow: /*.log$
+Disallow: /*.sql$
+Disallow: /*.zip$
+Disallow: /*.tar$
+Disallow: /*.gz$
+# Allow public content
+Allow: /blog/
+Allow: /about/
+Allow: /contact/
+Allow: /products/
+Allow: /services/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.woff$
+Allow: /*.woff2$
+
+# ==================================
+# SPECIAL DIRECTIVES
+# ==================================
+# Prevent indexing of development/staging sites
+# Uncomment for non-production environments:
+# User-agent: *
+# Disallow: /
+
+# Note: Some bots ignore robots.txt, which is why
+# WAF rules are still necessary for enforcement
