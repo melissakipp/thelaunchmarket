@@ -26,6 +26,7 @@ Allow: /
 # Bing
 User-agent: Bingbot
 User-agent: BingPreview
+
 Crawl-delay: 1
 Disallow: /api/
 Disallow: /admin/
