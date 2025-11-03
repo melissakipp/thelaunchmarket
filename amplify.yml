@@ -3,17 +3,13 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 18.18.0
-        - nvm use 18.18.0
-        # Clean and fresh install
-        - rm -rf node_modules
-        - rm -f package-lock.json
-        # Install TypeScript and types globally
-        - npm install -g typescript @types/node @types/react @types/react-dom
-        # Install project dependencies
-        - npm install
-        # Verify TypeScript installation
-        - tsc --version
+        # Use the pre-installed Node version or specify one that's already cached
+        - node --version
+        - npm --version
+        # Use npm ci for faster, more reliable installs
+        - npm ci
+        # Verify TypeScript is installed from package.json
+        - npx tsc --version
     build:
       commands:
         - |
@@ -30,3 +26,4 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
+      - .next/cache/**/*
